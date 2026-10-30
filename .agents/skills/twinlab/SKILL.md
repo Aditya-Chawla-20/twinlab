@@ -7,7 +7,7 @@ Read `PRODUCT.md`, `specs/ARCHITECTURE.md` and the latest `specs/PROGRESS.md` en
 
 Application implementation is original. Open-source projects in `specs/SOURCES.md` are references, not a template to copy. Keep dependencies small and preserve license notices.
 
-The user runs all paid Meta tests. Do not call Meta APIs, inspect a key, enable live mode or use paid controls during agent QA. Use injected fake transport and synthetic observations. Sample output must remain labeled synthetic; never describe it as live model evidence.
+Ordinary agent QA uses injected fake transport and synthetic observations. Paid agent tests require an explicit user budget and the persistent capped test runner; never reset its ledger or expose credentials. Current session authorization on 2026-10-30 is at most $10 total for Meta testing. Sample output must remain labeled synthetic; record any actual provider evidence separately.
 
 Keep fitting and evaluation deterministic. Fit only training observations, rank by training criteria, and report chronological validation separately. Do not turn model prose into measured parameters. Require calibration before metric claims, preserve missing observations, and require confirmed constant frame rate for SAM frame-to-time conversion.
 

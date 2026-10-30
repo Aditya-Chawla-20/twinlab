@@ -1,6 +1,6 @@
 # User-run Meta validation and costs
 
-No live Meta API requests were made by the coding agent. All integration checks use an injected fake transport. Provider access, current response compatibility, real-video segmentation and billing must be checked by you.
+Initially all integration checks used fake transport. The user later authorized agent testing under a $10 ceiling: live Muse/SAM tests on the generated sample completed for $0.161266 based on reported usage. See AGENT-TESTING.md. Real-video accuracy and final billing still need independent verification.
 
 ## Start locally
 1. Install Node 22.9+ and run `npm ci`.

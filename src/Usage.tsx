@@ -62,7 +62,7 @@ export function Usage({
               maxLength={120}
               value={target}
               onChange={(e) => setTarget(e.target.value)}
-              placeholder="e.g. blue pendulum bob"
+              placeholder="e.g. blue ball"
             />
           </label>
           <label>

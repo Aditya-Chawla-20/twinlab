@@ -46,7 +46,7 @@ export default function App() {
   const [dialog, setDialog] = useState<"plan" | "track" | null>(null),
     [consent, setConsent] = useState(false),
     [busy, setBusy] = useState(false),
-    [target, setTarget] = useState("blue pendulum bob");
+    [target, setTarget] = useState("blue ball");
   const [keyboardX, setKeyboardX] = useState("480"),
     [keyboardY, setKeyboardY] = useState("300");
   const [tracks, setTracks] = useState<{ objectId: string; points: Point[] }[]>(
@@ -784,7 +784,9 @@ export default function App() {
                     <div className="canvas-caption">
                       <span className="canvas-dot" />
                       {project.synthetic
-                        ? "Generated pendulum · no Meta inference"
+                        ? project.runs.some((r) => r.status === "completed")
+                          ? "Generated input · live Meta run recorded"
+                          : "Generated pendulum · no Meta inference"
                         : `${project.media.width} × ${project.media.height} · original recording`}
                     </div>
                   )}
@@ -1039,7 +1041,9 @@ export default function App() {
                   <div className="video-footnote">
                     <Icon name="info" size={15} />
                     {project.synthetic
-                      ? "Synthetic observations are preloaded to explore the complete workflow."
+                      ? project.points.some((p) => p.source === "sam")
+                        ? "Live SAM observations from generated footage; this is not a physical measurement."
+                        : "Synthetic observations are preloaded to explore the complete workflow."
                       : "Mark at least 12 points, or review a SAM track. Missing frames are never interpolated into observations."}
                   </div>
                 )}

@@ -43,7 +43,7 @@ export function Evidence({
           <h2>Every prediction starts with an observation.</h2>
           <p>
             {project.synthetic
-              ? "This project uses generated footage and synthetic observations. It demonstrates the workflow, not measured model accuracy."
+              ? "This project uses generated footage. Observation sources are listed below. This is not evidence of real-world measurement accuracy."
               : "Review each point against the original recording. A model fit does not establish a physical cause."}
           </p>
         </div>

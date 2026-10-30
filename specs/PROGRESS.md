@@ -77,3 +77,21 @@
 - Current paid path: one Standard Muse Spark 1.3 planning call and one SAM 3.1 tracking call, with no automatic retries. Planning output cap is 4,000 tokens including reasoning.
 - Wrote specs/COSTING.md with exact rate arithmetic, explicit token scenarios, video-length sensitivity and optional Contributor-mode tradeoff. A 12 s / 30 fps sample plus assumed 10k uncached Spark input and 1k output totals $0.08875; token usage is illustrative, not measured or guaranteed.
 - No Meta requests, credential reads, token-count calls or credit spending performed. No application code or pricing mode changed.
+
+## Agent-authorized live Meta test — 2026-10-30
+- User superseded the earlier self-testing-only restriction and explicitly authorized agent Meta testing with a cumulative $10 ceiling. User saved the credential locally; no secret was printed or committed.
+- Created the ignored .env.local only while absent, with owner-only permissions and an empty key field. Existing app live mode remains false.
+- Added an explicit --live smoke-test runner, constrained to the bundled validated 12 s / 30 fps / 360-frame clip, Standard Muse Spark 1.3 and SAM 3.1, one-shot requests and no automatic retries.
+- The test transport persists non-refundable conservative reservations before dispatch: $1.50 per Muse plan and $0.40 per SAM track; cumulative reservations may not exceed $10. Unknown/failed requests retain reservations, and corruption/write failure stops dispatch. Separate lock prevents concurrent test runners.
+- Ran 16 offline tests plus strict typecheck and build successfully. Budget tests cover reservation before transport, cumulative ceiling, unsupported requests and ledger write failure. Dry run made no provider call.
+- Started one authorized live plan-and-track test. Final results and actual reported usage will be recorded after completion. Provider billing remains authoritative.
+
+## Live test result and prompt correction
+- Completed 4 paid inference requests. Muse: $0.008807 and $0.008459; SAM: two requests of $0.072 each. Total computed from reported usage: **$0.161266**. No further paid requests planned.
+- First SAM noun phrase returned zero objects; a deliberate separate test with `blue ball` returned one complete 360-point track and 360 masks. Short visual target wording is now the default and is requested in planner instructions.
+- Compared SAM positions with the known generated reference: RMSE 0.52525 px, max error 1.25202 px; local damped fit validation RMSE 0.00081327 m in synthetic scale. Real-footage accuracy remains untested.
+- Final Muse regression check returned a schema-valid plan with target `blue ball`. Model warnings still include an incorrect possible second-ball interpretation; proposals require human review.
+- Added source-aware copy so generated input with live SAM points is not mislabeled as a zero-inference demo. No automatic zero-match retry added.
+- Conservative test reservations total $3.80; these reservations are not the actual $0.161266 usage cost. Saved raw outputs and a reopenable project only in ignored local artifacts.
+- User reported a rounded billing drop consistent with the first three requests. The final planning check completed afterward and is included in the four-request total. No private account balances or billing identifiers are published.
+- Restarted the dev server with the configured key and application live mode off. Browser handle reconnection failed after API verification; manual opening of the saved evidence project is not claimed as completed.

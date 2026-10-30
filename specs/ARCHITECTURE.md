@@ -26,3 +26,6 @@ Frequency/damping search is bounded with refinement; coefficients are solved by 
 - Browser fitting capped at 2,000 observations; move into a Web Worker when supported datasets exceed this bound.
 - SAM boxes become reviewable center observations; mask centroid measurement is a later precision improvement, not a present claim.
 - Uniform frame-rate confirmation is mandatory before mapping SAM indices to timestamps. Variable-frame-rate videos need transcoding or an actual frame timestamp table.
+
+## Authorized live test harness
+The user later authorized agent testing up to $10 total. scripts/meta-live-test.ts invokes the same provider integration through a constrained transport with a durable, conservative reservation ledger and a single-runner lock. This applies to the authorized test runner, not to unrelated account activity or the normal manual UI endpoint. Only metadata/usage is durable on the server; projects and videos still require explicit export/relinking. Completed live results are recorded in AGENT-TESTING.md; no additional paid tests are planned.

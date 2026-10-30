@@ -5,7 +5,7 @@ A local-first experimental workbench for makers and prototype engineers. Import 
 ## User commitments
 - Original application code; study open-source work without copying application implementations.
 - Important decisions, progress and verification evidence live in `specs/`.
-- User alone triggers paid Meta API runs and checks billing. No paid calls by coding agents.
+- Paid runs require explicit user authorization. On 2026-10-30 the user authorized agent Meta testing up to $10 total through the persistent capped test runner; default app live mode stays off.
 - Server-only key. Default live mode off. No retries, hidden inference or model calls on startup.
 - Calibration, numerical calculations and evaluation are deterministic. Models propose, humans review.
 

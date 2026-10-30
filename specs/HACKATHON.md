@@ -12,7 +12,7 @@ Original TwinLab application, generated sample video/data, numerical fitting/val
 6. 2:45–3:00 — Explain what was built, limits and next independent experiment.
 
 ## Required before submission
-- [ ] User verifies actual Muse Spark and SAM access and billing.
+- [x] Actual Muse Spark and SAM access tested on generated footage under explicit user authorization. Reported-usage costs recorded; final billing remains provider-authoritative.
 - [ ] Real fixed-camera experiment with known scale, confirmed timing and independent manually marked landmarks.
 - [ ] Record tracking error and comparison against Tracker / manual baseline; no superiority claim without results.
 - [ ] Verify a different recording; current chronological validation does not establish cross-experiment generalization.
@@ -22,4 +22,4 @@ Original TwinLab application, generated sample video/data, numerical fitting/val
 
 Deadline in supplied guide: November 4, 2026 9:00 PM EST / November 5 7:30 AM IST. Recheck official platform before submission.
 
-This implementation is not a submitted hackathon entry. Public repository creation is authorized and recorded in the progress log; paid inference is not yet verified.
+This implementation is not a submitted hackathon entry. Public repository creation is authorized and recorded in the progress log; paid inference is now verified on a generated fixture; real-world accuracy remains unverified.

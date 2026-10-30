@@ -70,3 +70,10 @@ These numbers verify the known synthetic calculation, not camera calibration qua
 - API usage visibly showed zero requests / $0 and no configured credential. No live Meta requests made.
 - Kept the user-facing app tab open. This is a running local development app, not a public web deployment.
 - Walkthrough screenshot: [current demo](assets/twinlab-demo.png).
+
+## Authorized live Meta verification — 2026-10-30
+The user subsequently authorized agent testing up to $10. The capped runner completed four inference requests for a reported-usage-based total of **$0.161266**, with no automatic retries. Details, request breakdown, limitations and source measurements are in [AGENT-TESTING.md](AGENT-TESTING.md).
+
+Muse planning and SAM video tracking now have actual provider evidence on our generated 12-second clip. The first SAM target returned no matches; `blue ball` produced all 360 observations. Position error against the generated reference was 0.52525 px RMSE. This does not establish real-world physical accuracy. Application live controls remain off. A browser reconnection limitation prevented GUI import of the verified project during this turn; the saved project is available locally.
+
+After changes, the offline suite has 16 tests including persistent-budget enforcement. Strict typecheck and production build passed.
