@@ -4,6 +4,7 @@ export type Project = {
   version: 1;
   name: string;
   question: string;
+  trackingTarget: string;
   media: {
     name: string;
     width: number;
@@ -26,6 +27,7 @@ export function sampleProject(): Project {
     name: "Pendulum study",
     question:
       "Does a damped model predict the unseen motion better than an ideal oscillator?",
+    trackingTarget: "blue ball",
     media: {
       name: "pendulum-synthetic.mp4",
       width: 960,
@@ -56,6 +58,7 @@ export function emptyProject(): Project {
     ...sampleProject(),
     name: "Untitled experiment",
     question: "What explains the motion in this experiment?",
+    trackingTarget: "",
     points: [],
     calibration: null,
     synthetic: false,
@@ -80,6 +83,8 @@ export function parseProject(raw: unknown): Project {
     p.name.length > 120 ||
     typeof p.question !== "string" ||
     p.question.length > 2000 ||
+    (p.trackingTarget !== undefined &&
+      (typeof p.trackingTarget !== "string" || p.trackingTarget.length > 120)) ||
     typeof p.synthetic !== "boolean" ||
     !p.media ||
     typeof p.media.name !== "string" ||
@@ -163,7 +168,13 @@ export function parseProject(raw: unknown): Project {
       ))
   )
     throw new Error("Project plan is invalid.");
-  return { ...p, points };
+  return {
+    ...p,
+    points,
+    trackingTarget:
+      p.trackingTarget ??
+      (p.synthetic && p.media.name === "pendulum-synthetic.mp4" ? "blue ball" : ""),
+  };
 }
 export function download(
   name: string,

@@ -32,3 +32,6 @@ The user later authorized agent testing up to $10 total. scripts/meta-live-test.
 
 ## Footage provenance
 The existing Project.synthetic flag is an explicit generated/AI-footage declaration, separate from Point.source (manual, SAM or generated coordinates). Importing a manual CSV does not clear the video-origin declaration. Generated footage remains labeled in the workspace, evidence and reports. User-provided unmarked footage is not independently authenticated as physical camera evidence.
+
+## Tracking target persistence
+The current tracking target is part of the portable project (trackingTarget), not separate App state. New videos start with a blank target. The bundled sample uses blue ball. Legacy project imports use those same safe defaults; importing a Muse proposal alone does not silently apply its target. A reviewed proposal updates axis and tracking target together. Targets are at most 120 characters.

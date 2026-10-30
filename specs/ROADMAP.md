@@ -1,6 +1,6 @@
 # TwinLab completion roadmap
 
-Status checked: 2026-10-30. Baseline source commit for the resumed work: fa6b2db. This is the plan for a credible hackathon submission; proposed work below is not already implemented or authorized for new paid execution merely by appearing here.
+Status checked: 2026-10-30. Baseline source commit for the latest resumed work: cf27395. This is the plan for a credible hackathon submission; proposed work below is not already implemented or authorized for new paid execution merely by appearing here.
 
 ## Intended finished product
 A maker or experimenter imports a fixed-camera recording, states a question, reviews a Muse plan, confirms the tracked object and scale, inspects SAM observations, fits an explicit motion model, checks predictions on data not used for fitting, and exports reproducible evidence. A judge can reproduce a representative example and understand the actual role of each Meta model.
@@ -20,7 +20,7 @@ Finish one well-validated practical workflow first. The proposed main example is
 | Generated-reference comparison | Complete for fixture only | Position RMSE 0.52525 px; later-point model validation RMSE 0.00081327 m in synthetic scale; not camera accuracy |
 | Credentials and accounting | Implemented | Server-only ignored key, explicit paid actions, no automatic retries, local run ledger |
 | Agent test spending guard | Implemented and checked | Persistent conservative reservations, $10 cumulative ceiling for the scoped test runner; not a general account/UI spending limit |
-| Engineering checks | Last run passed | 19 offline tests, strict typecheck and production build |
+| Engineering checks | Last run passed | 20 offline tests, strict typecheck and production build |
 | Documentation and reproduction | Implemented | Sources, architecture, decisions, walkthrough, cost scenarios, live test evidence and generated sample |
 
 Live testing total from reported usage: $0.161266 across four inference requests. Test reservations retained: $3.80, which is not actual spend. No further paid requests were started to prepare this roadmap.
@@ -41,7 +41,7 @@ Done when: actual saved live results travel through the UI and exports correctly
 ### 2. Acquire real experiment recordings and independent references
 Owner: user supplies recordings or authorizes suitable source footage; agent prepares fixtures and measurements.
 
-The user plans to supply an AI-generated practical-use-case clip first. Use that as generated workflow footage, not a replacement for the physical evidence below.
+The user supplied the first AI-generated practical-use-case clip. Its 10-second, 24 fps / 240-frame video was inspected and imported locally; see CLIP-REVIEW.md. It currently has no observations or Meta runs. Use that as generated workflow footage, not a replacement for the physical evidence below.
 
 Minimum physical capture set:
 - A: 10–20 seconds of a slowly wobbling flexible phone/camera holder after release, fixed camera, visible known-length reference in the motion plane, plain background and one identifiable moving assembly. A pendulum remains an optional controlled baseline.

@@ -4,7 +4,7 @@
 Local application implemented. Live Muse/SAM calls are verified on generated footage; a real physical experiment and the complete live browser flow remain outstanding. Public repository created at https://github.com/Aditya-Chawla-20/twinlab; initial source push was verified against the remote main branch. No hosted application deployment exists.
 
 ## Automated checks
-Latest `npm run check` passed: 19 Node built-in tests, strict TypeScript (including unused-code checks), and Vite production build. The original build had 13 tests; 3 subsequent checks cover the capped test runner, and 3 more cover validation-timestamp leakage, actual partition propagation through rendered components/exports, and unfitted evidence.
+Latest `npm run check` passed: 20 Node built-in tests, strict TypeScript (including unused-code checks), and Vite production build. The original build had 13 tests; 3 subsequent checks cover the capped test runner, and 3 more cover validation-timestamp leakage, actual partition propagation through rendered components/exports, and unfitted evidence. One additional check covers saved tracking targets, bounded input and legacy defaults.
 
 Checks cover:
 - Recovery of known synthetic damping and later-sample prediction.
@@ -92,3 +92,13 @@ After changes, the offline suite has 16 tests including persistent-budget enforc
 - Screenshot: assets/twinlab-generated-source.png. The workbench still shows the existing generated pendulum fixture; no mount clip has been supplied.
 - The in-app browser still could not bind; Chrome could. Importing the saved live SAM project failed because Chrome extension file-URL access is not enabled. Required user setting was communicated; no permission workaround attempted. That live-results GUI check remains pending.
 - Local server stays running, configured=true / enabled=false. The usage ledger remains four requests totaling $0.161266. No paid requests were made in this resumed turn.
+
+
+## User-provided AI clip intake — 2026-10-30
+- Reviewed the generated camera-mount MP4: H.264 1280×720, 10 s video / 10.026667 s container duration, 240 decoded frames, verified constant 24 fps from all timestamps. Source hash and local checks are in CLIP-REVIEW.md.
+- Imported the actual video, played it and confirmed playback advanced. Declared generated input, used pixel units, selected phone and confirmed 24 fps. No points or numerical results were invented.
+- Found and fixed a save/reopen bug: the tracking target was App-only state. Saved target now survives project reopening and video relinking, and reviewing a Muse proposal updates the same field.
+- Added one regression: saved phone target survives parsing; numeric/oversized targets fail; old sample defaults to blue ball, while other old projects get a blank target. 20 offline tests plus strict typecheck and production build passed.
+- Actual Chrome Save → downloaded project → Open → verify phone/24 fps → relink original video passed. The new source remains marked generated and calibration remains null.
+- Downloads imports work; Documents project access still fails. The old saved-live-SAM project GUI check remains open. The new clip's model analysis is also pending: zero observations / no new Meta runs.
+- No video or frames published. Screenshot and project stay in ignored artifacts/camera-mount. No new paid calls; ledger still four requests / $0.161266.

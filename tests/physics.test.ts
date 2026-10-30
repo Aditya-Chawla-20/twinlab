@@ -1,7 +1,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { fitModels, metersPerPixel, type Point } from "../src/lib/physics";
-import { parseProject, sampleProject } from "../src/lib/project";
+import { emptyProject, parseProject, sampleProject } from "../src/lib/project";
 import { cost } from "../src/lib/meta";
 
 test("known synthetic damping is recovered and predicts later samples", () => {
@@ -61,6 +61,20 @@ test("untrusted imports reject duplicate time, invalid calibration and oversized
   assert.throws(() =>
     parseProject({ ...p, points: Array(2001).fill(p.points[0]) }),
   );
+});
+test("saved tracking targets survive reopen and legacy projects get safe defaults", () => {
+  const p = { ...emptyProject(), trackingTarget: "phone", synthetic: true };
+  assert.equal(
+    parseProject(JSON.parse(JSON.stringify(p))).trackingTarget,
+    "phone",
+  );
+  assert.throws(() => parseProject({ ...p, trackingTarget: 42 }));
+  assert.throws(() => parseProject({ ...p, trackingTarget: "x".repeat(121) }));
+  assert.equal(
+    parseProject({ ...sampleProject(), trackingTarget: undefined }).trackingTarget,
+    "blue ball",
+  );
+  assert.equal(parseProject({ ...p, trackingTarget: undefined }).trackingTarget, "");
 });
 test("cost uses reported units, cached tokens, and minimum video billing", () => {
   assert.equal(cost("track", { video_frames_processed: 300 }), 0.06);

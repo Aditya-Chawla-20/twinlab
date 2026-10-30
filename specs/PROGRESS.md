@@ -113,3 +113,11 @@
 - Added explicit generated/AI input declaration using Project.synthetic; CSV observation import no longer changes video origin. Updated workspace/report wording for imported generated clips, preserving manual/SAM point sources.
 - Verified declaration toggling, model selection, evidence and actual Markdown download in Chrome. Saved an updated screenshot. Restored generated source and damped baseline; left the app open.
 - 19 offline tests, strict typecheck and production build passed. No new paid calls; four-request ledger still totals $0.161266. Real footage, frozen-model transfer, public judge access and submission remain outstanding.
+
+
+## Generated camera-mount video received — 2026-10-30
+- User supplied gemini_generated_video_fad646de.mp4 in Downloads. Inspected codec, dimensions, byte size, duration, all decoded timestamps and visual contact sheet; verified 240 frames at 24 fps rather than assuming the prompt's 30 fps.
+- Imported and played the video in Chrome. Prepared a generated, pixel-only camera-mount project with phone target and verified timing. Original video remains untouched; artifacts are ignored.
+- Discovered that the tracking target was not saved with a project. Moved it into the existing portable contract, with safe legacy defaults and bounded input. Removed the duplicate App state; reviewed all target setters/callers.
+- Verified actual saved project reopening in Downloads retains phone / 24 fps / generated declaration, then relinked the MP4. Documents-based project import remains blocked and was not worked around.
+- 20 offline tests, strict typecheck and production build passed. No paid calls or fake observations. New clip remains ready for the next bounded Meta tracking step; it is not a completed analysis. See CLIP-REVIEW.md.

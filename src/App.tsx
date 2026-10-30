@@ -45,8 +45,7 @@ export default function App() {
     [runs, setRuns] = useState<Run[]>([]);
   const [dialog, setDialog] = useState<"plan" | "track" | null>(null),
     [consent, setConsent] = useState(false),
-    [busy, setBusy] = useState(false),
-    [target, setTarget] = useState("blue ball");
+    [busy, setBusy] = useState(false);
   const [keyboardX, setKeyboardX] = useState("480"),
     [keyboardY, setKeyboardY] = useState("300");
   const [tracks, setTracks] = useState<{ objectId: string; points: Point[] }[]>(
@@ -371,7 +370,7 @@ export default function App() {
       form.set("file", f);
       form.set("stage", stage);
       form.set("question", project.question);
-      form.set("target", target);
+      form.set("target", project.trackingTarget ?? "");
       form.set("fps", String(project.media.fps));
       form.set("duration", String(project.media.duration));
       form.set("cfrConfirmed", String(project.media.cfrConfirmed));
@@ -1116,8 +1115,10 @@ export default function App() {
                 onPlan={() => openPaid("plan")}
                 onApplyPlan={() => {
                   if (!project.plan) return;
-                  update({ axis: project.plan.axis });
-                  setTarget(project.plan.target.slice(0, 120));
+                  update({
+                    axis: project.plan.axis,
+                    trackingTarget: project.plan.target.slice(0, 120),
+                  });
                   setSelected(project.plan.suggestedModel);
                   setNotice(
                     "Applied the proposed axis, target and model. Fits still use only your observations.",
@@ -1261,8 +1262,8 @@ export default function App() {
             update={update}
             status={status}
             runs={runs}
-            target={target}
-            setTarget={setTarget}
+            target={project.trackingTarget ?? ""}
+            setTarget={(trackingTarget) => update({ trackingTarget })}
           />
         )}
         <footer className="footer">
