@@ -22,7 +22,7 @@ export function Evidence({
   update: (p: Partial<Project>) => void;
 }) {
   const [page, setPage] = useState(0);
-  const split = Math.floor(project.points.length * project.trainFraction);
+  const split = fit?.trainCount ?? 0;
   return (
     <section className="panel evidence-panel">
       <div className="panel-header">
@@ -50,7 +50,7 @@ export function Evidence({
         <dl>
           <div>
             <dt>Source</dt>
-            <dd>{project.synthetic ? "Synthetic sample" : "User-provided"}</dd>
+            <dd>{project.synthetic ? "Generated footage" : "User-provided"}</dd>
           </div>
           <div>
             <dt>Observations</dt>
@@ -99,7 +99,13 @@ export function Evidence({
                 <td>
                   <span className="badge neutral">{p.source}</span>
                 </td>
-                <td>{page * 30 + i < split ? "Training" : "Validation"}</td>
+                <td>
+                  {!fit
+                    ? "Unfitted"
+                    : page * 30 + i < split
+                      ? "Training"
+                      : "Validation"}
+                </td>
                 <td>
                   <button
                     className="text-button"

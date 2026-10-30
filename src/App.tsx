@@ -283,7 +283,7 @@ export default function App() {
       });
       const parsed = parseProject({ ...project, points });
       if (id !== epoch.current) return;
-      update({ points: parsed.points, synthetic: false });
+      update({ points: parsed.points });
       setSelected("auto");
       setNotice(
         "Imported observations are user-provided; inspect them against the video.",
@@ -490,7 +490,7 @@ export default function App() {
           <div>
             <div className="breadcrumb">
               Workspace <span>/</span>{" "}
-              {project.synthetic ? "Sample experiments" : "My experiments"}
+              {project.synthetic ? "Generated experiments" : "My experiments"}
             </div>
             <input
               className="project-title"
@@ -625,7 +625,7 @@ export default function App() {
                   <span
                     className={project.synthetic ? "badge" : "badge neutral"}
                   >
-                    {project.synthetic ? "Synthetic sample" : "Local video"}
+                    {project.synthetic ? "Generated footage" : "Local video"}
                   </span>
                 </div>
                 <div
@@ -786,7 +786,7 @@ export default function App() {
                       {project.synthetic
                         ? project.runs.some((r) => r.status === "completed")
                           ? "Generated input · live Meta run recorded"
-                          : "Generated pendulum · no Meta inference"
+                          : "Generated footage · no recorded Meta run"
                         : `${project.media.width} × ${project.media.height} · original recording`}
                     </div>
                   )}
@@ -1043,7 +1043,9 @@ export default function App() {
                     {project.synthetic
                       ? project.points.some((p) => p.source === "sam")
                         ? "Live SAM observations from generated footage; this is not a physical measurement."
-                        : "Synthetic observations are preloaded to explore the complete workflow."
+                        : project.points.some((p) => p.source === "synthetic")
+                          ? "Synthetic observations are preloaded to explore the complete workflow."
+                          : "Generated footage: observations describe this clip, not a physical experiment."
                       : "Mark at least 12 points, or review a SAM track. Missing frames are never interpolated into observations."}
                   </div>
                 )}
@@ -1158,7 +1160,6 @@ export default function App() {
                 fit={fit}
                 calibration={project.calibration}
                 axis={project.axis}
-                fraction={project.trainFraction}
                 currentTime={time}
                 onSeek={seek}
                 residual={residual}
@@ -1271,7 +1272,7 @@ export default function App() {
           </span>
           <span>
             {project.synthetic
-              ? "Synthetic sample · not measured evidence"
+              ? "Generated footage · not physical evidence"
               : "Local experiment"}
             <span className="footer-dot">·</span>Numerical analysis runs on your
             device

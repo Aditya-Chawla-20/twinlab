@@ -29,6 +29,7 @@ See [the guided demo](specs/WALKTHROUGH.md) for the sample workflow, model compa
 
 ## Documentation
 - [Completion roadmap](specs/ROADMAP.md)
+- [Practical use case and video brief](specs/USE-CASE.md)
 - [Progress and decisions](specs/PROGRESS.md)
 - [Architecture and scope](specs/ARCHITECTURE.md)
 - [Sources and originality](specs/SOURCES.md)

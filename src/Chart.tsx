@@ -5,7 +5,6 @@ export function Chart({
   fit,
   calibration,
   axis,
-  fraction,
   currentTime,
   onSeek,
   residual = false,
@@ -15,7 +14,6 @@ export function Chart({
   fit: Fit | null;
   calibration: Calibration | null;
   axis: "x" | "y";
-  fraction: number;
   currentTime: number;
   onSeek: (t: number) => void;
   residual?: boolean;
@@ -33,7 +31,7 @@ export function Chart({
     pad = { l: 62, r: 22, t: 20, b: 30 };
   const start = data[0].t,
     end = data.at(-1)!.t,
-    split = Math.floor(points.length * fraction),
+    split = fit.trainCount,
     holdout = points[split].t;
   const all = data.flatMap((d) =>
       residual

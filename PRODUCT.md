@@ -16,5 +16,8 @@ A local-first experimental workbench for makers and prototype engineers. Import 
 - A stationary camera and motion in a calibrated plane are required for metric interpretation. Bounding-box centers are not centers of mass. Occlusions remain missing observations.
 - Live model access is verified on generated footage. Demand and real-video accuracy remain unverified.
 
+## Proposed first practical use case
+A maker evaluates how a flexible phone/camera mount settles after a disturbance, then checks a frozen model on another release. The pendulum is a numerical regression fixture. Generated footage supports a labeled workflow demo; real recordings are required for physical validation. Details: specs/USE-CASE.md.
+
 ## Interface assumptions
 Operate mode: video and observations lead; compact controls and plots support the task. Desktop workbench with responsive stacked layout on small screens. No marketing landing page needed.

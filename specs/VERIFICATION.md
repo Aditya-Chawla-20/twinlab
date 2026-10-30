@@ -4,7 +4,7 @@
 Local application implemented. Live Muse/SAM calls are verified on generated footage; a real physical experiment and the complete live browser flow remain outstanding. Public repository created at https://github.com/Aditya-Chawla-20/twinlab; initial source push was verified against the remote main branch. No hosted application deployment exists.
 
 ## Automated checks
-Latest `npm run check` passed: 16 Node built-in tests, strict TypeScript (including unused-code checks), and Vite production build. The original build had 13 tests; 3 subsequent checks cover the capped test runner.
+Latest `npm run check` passed: 19 Node built-in tests, strict TypeScript (including unused-code checks), and Vite production build. The original build had 13 tests; 3 subsequent checks cover the capped test runner, and 3 more cover validation-timestamp leakage, actual partition propagation through rendered components/exports, and unfitted evidence.
 
 Checks cover:
 - Recovery of known synthetic damping and later-sample prediction.
@@ -77,3 +77,18 @@ The user subsequently authorized agent testing up to $10. The capped runner comp
 Muse planning and SAM video tracking now have actual provider evidence on our generated 12-second clip. The first SAM target returned no matches; `blue ball` produced all 360 observations. Position error against the generated reference was 0.52525 px RMSE. This does not establish real-world physical accuracy. Application live controls remain off. A browser reconnection limitation prevented GUI import of the verified project during this turn; the saved project is available locally.
 
 After changes, the offline suite has 16 tests including persistent-budget enforcement. Strict typecheck and production build passed.
+
+
+## Resumed implementation and practical-use-case brief — 2026-10-30
+- User requested continuing development, then asked for a practical use case and offered to generate its video with AI. Proposed mount vibration/settling in USE-CASE.md; no physical result or customer validation is claimed.
+- Fixed a training-data boundary leak: the frequency-search sampling bound previously used held-out timestamps. A regression changes only later timestamps and proves fitted dynamics/ranking stay unchanged.
+- Fits now carry their actual trainCount. For a 12-point dataset requesting 60%, the fitter uses 8 training / 4 validation observations; the chart, model panel, evidence table, CSV and Markdown report now agree.
+- Unfitted observations are labeled unfitted rather than training/validation.
+- Added a native generated/AI-footage checkbox using the existing project contract, with labels in the workspace, evidence and report. CSV observation import preserves video provenance. No new dependencies, network calls or layout redesign.
+- React review: existing components and native form controls retained; checkbox is labeled, described and disabled during paid work; no new shared state, effects or data-fetching path. Chart derives its boundary from the actual fit.
+- 19 offline tests passed, including server-rendered chart/model/evidence integration checks. Strict TypeScript and Vite build passed.
+- Chrome: toggled the generated declaration off/on and verified the local/generated badge changed; restored generated source and damped fit. Model switching retained the expected 55 held-out points and 8.40 s boundary. Evidence source label updated.
+- Chrome report export succeeded. Independently read the downloaded Markdown: generated/AI footage boundary, 126 training / 55 later validation observations, and selected damped model all retained. Download event observation timed out, but the actual downloaded file was verified.
+- Screenshot: assets/twinlab-generated-source.png. The workbench still shows the existing generated pendulum fixture; no mount clip has been supplied.
+- The in-app browser still could not bind; Chrome could. Importing the saved live SAM project failed because Chrome extension file-URL access is not enabled. Required user setting was communicated; no permission workaround attempted. That live-results GUI check remains pending.
+- Local server stays running, configured=true / enabled=false. The usage ledger remains four requests totaling $0.161266. No paid requests were made in this resumed turn.

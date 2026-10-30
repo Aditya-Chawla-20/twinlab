@@ -16,7 +16,7 @@ Meta is optional for assistance, essential to the intended final hackathon model
 One process, one browser project, JSON exports. Local files are not uploaded except after the user confirms a paid provider action. No application-owned server persistence. The user can save/reopen a project and relink its original video.
 
 ## Numerical contract
-Train on the first 70% of time-ordered observations by default. Fit coefficients using training data only. Rank candidate models by training BIC, not validation error. Report validation RMSE separately; repeated inspection makes this a validation set, not a pristine final test. Fit an independent recording separately; cross-recording transfer is not claimed.
+Train on the first 70% of time-ordered observations by default. Fit coefficients using training data only. Frequency search bounds use training timestamps only. Fits carry their actual training count; charts, evidence and exports use it rather than independently rounding the requested fraction. At least eight training and three validation observations are retained, so small datasets may differ from the requested percentage. Rank candidate models by training BIC, not validation error. Report validation RMSE separately; repeated inspection makes this a validation set, not a pristine final test. Fit an independent recording separately; cross-recording transfer is not claimed.
 
 Frequency/damping search is bounded with refinement; coefficients are solved by least squares. It is not an arbitrary physical simulator. Counterfactual frequency/damping controls are phenomenological and are labeled exploratory, not verified interventions.
 
@@ -29,3 +29,6 @@ Frequency/damping search is bounded with refinement; coefficients are solved by 
 
 ## Authorized live test harness
 The user later authorized agent testing up to $10 total. scripts/meta-live-test.ts invokes the same provider integration through a constrained transport with a durable, conservative reservation ledger and a single-runner lock. This applies to the authorized test runner, not to unrelated account activity or the normal manual UI endpoint. Only metadata/usage is durable on the server; projects and videos still require explicit export/relinking. Completed live results are recorded in AGENT-TESTING.md; no additional paid tests are planned.
+
+## Footage provenance
+The existing Project.synthetic flag is an explicit generated/AI-footage declaration, separate from Point.source (manual, SAM or generated coordinates). Importing a manual CSV does not clear the video-origin declaration. Generated footage remains labeled in the workspace, evidence and reports. User-provided unmarked footage is not independently authenticated as physical camera evidence.

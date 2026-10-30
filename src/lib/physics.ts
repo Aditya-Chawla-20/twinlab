@@ -17,6 +17,7 @@ export type Fit = {
   frequency: number;
   damping: number;
   origin: number;
+  trainCount: number;
   trainRmse: number;
   validationRmse: number;
   bic: number;
@@ -120,9 +121,10 @@ export function fitModels(
     trainY = ys.slice(0, split),
     span = trainT.at(-1)!;
   if (span < 0.1) return [];
-  const medianDt = [...ts.slice(1).map((t, i) => t - ts[i])].sort(
-    (a, b) => a - b,
-  )[Math.floor((ts.length - 1) / 2)];
+  const medianDt = trainT
+    .slice(1)
+    .map((t, i) => t - trainT[i])
+    .sort((a, b) => a - b)[Math.floor((trainT.length - 1) / 2)];
   return (["linear", "quadratic", "oscillation", "damped"] as ModelKind[])
     .flatMap((kind) => {
       let f = 0,
@@ -172,6 +174,7 @@ export function fitModels(
           frequency: f,
           damping: d,
           origin,
+          trainCount: split,
           trainRmse: Math.sqrt(best.sse / split),
           validationRmse,
           bic:

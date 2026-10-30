@@ -1,18 +1,18 @@
 # TwinLab completion roadmap
 
-Status checked: 2026-10-30. Baseline source commit: 33401b0. This is the plan for a credible hackathon submission; proposed work below is not already implemented or authorized for new paid execution merely by appearing here.
+Status checked: 2026-10-30. Baseline source commit for the resumed work: fa6b2db. This is the plan for a credible hackathon submission; proposed work below is not already implemented or authorized for new paid execution merely by appearing here.
 
 ## Intended finished product
 A maker or experimenter imports a fixed-camera recording, states a question, reviews a Muse plan, confirms the tracked object and scale, inspects SAM observations, fits an explicit motion model, checks predictions on data not used for fitting, and exports reproducible evidence. A judge can reproduce a representative example and understand the actual role of each Meta model.
 
-Finish one well-validated physical workflow first: a simple pendulum. Other mechanisms can use the existing generic fit families, but no universal digital-twin or arbitrary-physics claim is justified.
+Finish one well-validated practical workflow first. The proposed main example is a flexible phone/camera mount settling after a disturbance; the pendulum remains a controlled numerical fixture. See USE-CASE.md for the clip brief. AI-generated footage can demonstrate the workflow but cannot satisfy the real-experiment validation gate. Other mechanisms can use the existing generic fit families, but no universal digital-twin or arbitrary-physics claim is justified.
 
 ## What is complete
 
 | Area | Verified status | Evidence / boundary |
 | --- | --- | --- |
 | Original application and public source | Complete | React/TypeScript workbench, Node API, public GitHub repository; clean tree at baseline |
-| Local observation workflow | Implemented; sample browser flow exercised | Video import, scale calibration, pointer/keyboard point entry, CSV import, review/removal, JSON save/reopen and source relinking |
+| Local observation workflow | Implemented; sample browser flow exercised | Video import, scale calibration, pointer/keyboard point entry, CSV import, review/removal, JSON save/reopen and source relinking; explicit generated/AI footage declaration |
 | Numerical analysis | Implemented and offline tested | Four explicit 1D model families; coefficients fitted to earlier observations; ranking uses training BIC; later validation RMSE/residuals |
 | Exploratory simulation | Implemented with limits | Frequency/damping sliders create mathematical scenarios; no physical intervention validation |
 | Muse Spark 1.3 | Live API verified on generated footage | Two schema-valid plans. Short target wording fixed. AI warnings can still be wrong; human review remains necessary |
@@ -20,7 +20,7 @@ Finish one well-validated physical workflow first: a simple pendulum. Other mech
 | Generated-reference comparison | Complete for fixture only | Position RMSE 0.52525 px; later-point model validation RMSE 0.00081327 m in synthetic scale; not camera accuracy |
 | Credentials and accounting | Implemented | Server-only ignored key, explicit paid actions, no automatic retries, local run ledger |
 | Agent test spending guard | Implemented and checked | Persistent conservative reservations, $10 cumulative ceiling for the scoped test runner; not a general account/UI spending limit |
-| Engineering checks | Last run passed | 16 offline tests, strict typecheck and production build |
+| Engineering checks | Last run passed | 19 offline tests, strict typecheck and production build |
 | Documentation and reproduction | Implemented | Sources, architecture, decisions, walkthrough, cost scenarios, live test evidence and generated sample |
 
 Live testing total from reported usage: $0.161266 across four inference requests. Test reservations retained: $3.80, which is not actual spend. No further paid requests were started to prepare this roadmap.
@@ -41,12 +41,14 @@ Done when: actual saved live results travel through the UI and exports correctly
 ### 2. Acquire real experiment recordings and independent references
 Owner: user supplies recordings or authorizes suitable source footage; agent prepares fixtures and measurements.
 
-Minimum capture set:
-- A: 10–20 seconds of a pendulum, fixed camera, visible known-length reference in the motion plane, plain background and one identifiable bob.
-- B: a separate recording of the same setup with another release position; keep the support/length/camera unchanged for the first transfer test.
+The user plans to supply an AI-generated practical-use-case clip first. Use that as generated workflow footage, not a replacement for the physical evidence below.
+
+Minimum physical capture set:
+- A: 10–20 seconds of a slowly wobbling flexible phone/camera holder after release, fixed camera, visible known-length reference in the motion plane, plain background and one identifiable moving assembly. A pendulum remains an optional controlled baseline.
+- B: a separate recording of the same setup with another release position; keep the mass, support, mount and camera unchanged for the first transfer test.
 - One less ideal clip: partial occlusion, lower contrast or a shifted camera, so the app's limits are visible.
 
-Record the pivot-to-bob-center length, reference length, confirmed constant frame rate and any deliberate changes. Preserve original files and rights/consent for demo publication. Inspect timestamps rather than assuming browser metadata proves frame rate.
+Record the setup dimensions, reference length, confirmed constant frame rate and any deliberate changes. Preserve original files and rights/consent for demo publication. Inspect timestamps rather than assuming browser metadata proves frame rate.
 
 Independently mark representative visible landmarks (proposed: at least 20 timestamps per clean clip, spanning early and late motion). Keep these separate from SAM output so they are a meaningful comparison.
 

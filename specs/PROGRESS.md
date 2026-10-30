@@ -102,3 +102,14 @@
 - Corrected stale summary statements in PRODUCT.md and VERIFICATION.md that still described live access as unverified or the test count as 13; the detailed evidence already recorded 4 live requests and 16 offline tests.
 - Rechecked the official deadline: Nov 4, 2026 9 PM Eastern / Nov 5 7:30 AM IST. Proposed milestones reserve Nov 4 for final verification/submission issues.
 - No new paid requests, application changes, deployment or submission were performed for roadmap preparation.
+
+
+## Resume after storage cleanup — 2026-10-30
+- Confirmed clean baseline fa6b2db and running local server; key configured, live mode off. Applied TwinLab, Ponytail and end-to-end verification guidance; reviewed React changes. Kept existing native-control styling; no design-generation spend or new dependencies.
+- The user questioned the pendulum as the main demo and offered an AI-generated practical-use-case clip. Wrote USE-CASE.md with one proposed maker workflow (phone/camera mount settling), a generation prompt and a separate real-validation plan. Updated the roadmap/product scope accordingly.
+- Chrome control restored access to the local app. Saved live project import hit missing extension file-URL access, communicated the exact required setting, and left that verification gate open.
+- Traced every training split caller and found two correctness issues: frequency-search bounds depended on held-out timestamps; small-dataset partition labels differed from the fitter's minimum sample allocation. Fixed them by deriving the sampling bound from training times and carrying trainCount on the fit.
+- Added three regression/integration checks, including rendered chart/model/evidence output and exports. Unfitted data no longer claims a completed validation partition.
+- Added explicit generated/AI input declaration using Project.synthetic; CSV observation import no longer changes video origin. Updated workspace/report wording for imported generated clips, preserving manual/SAM point sources.
+- Verified declaration toggling, model selection, evidence and actual Markdown download in Chrome. Saved an updated screenshot. Restored generated source and damped baseline; left the app open.
+- 19 offline tests, strict typecheck and production build passed. No new paid calls; four-request ledger still totals $0.161266. Real footage, frozen-model transfer, public judge access and submission remain outstanding.

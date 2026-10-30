@@ -26,7 +26,7 @@ export function ModelPanel({
 }) {
   const scale = metersPerPixel(project.calibration),
     units = project.calibration ? "m" : "px",
-    split = Math.floor(project.points.length * project.trainFraction);
+    split = fit?.trainCount ?? 0;
   return (
     <aside className="panel model-panel" id="model-panel">
       <div className="panel-header">
@@ -44,6 +44,20 @@ export function ModelPanel({
           value={project.question}
           onChange={(e) => update({ question: e.target.value })}
         />
+        <label className="field-label">
+          <input
+            type="checkbox"
+            checked={project.synthetic}
+            disabled={busy}
+            aria-describedby="footage-source-help"
+            onChange={(e) => update({ synthetic: e.target.checked })}
+          />{" "}
+          Generated / AI footage
+        </label>
+        <p className="small-muted" id="footage-source-help">
+          Mark rendered or AI-generated clips. Their motion can demonstrate the
+          workflow; it does not validate a physical prototype.
+        </p>
         <div className="model-controls">
           <label>
             Axis{" "}
