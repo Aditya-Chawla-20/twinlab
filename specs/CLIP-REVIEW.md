@@ -29,12 +29,14 @@ An eight-frame contact sheet and browser playback show the phone and upper mount
 - Saved through the app into Downloads, reopened that download and confirmed phone / 24 fps / generated source survive; relinked the original MP4 successfully. This confirms the actual browser roundtrip, not just JSON serialization.
 - Artifacts and screenshot are private ignored files under artifacts/camera-mount. The original video remains in Downloads; no media file or frame image is published in this repository.
 
-The ready project currently contains **zero observations and zero Meta runs**. It is prepared for tracking, not a completed motion analysis.
+At intake the prepared project contained zero observations and no Meta runs. The subsequent bounded demonstration now has 240 SAM observations and two Meta runs; see [CAMERA-MOUNT-RESULTS.md](CAMERA-MOUNT-RESULTS.md).
 
-## Next authorized implementation step
-The current capped live-test runner accepts only the bundled pendulum. Before testing this clip with Meta, add explicit selected-file support with decoded frame-time checks and the same size/duration/frame/output limits. Preserve the existing non-refundable reservations and cumulative $10 ceiling. Do not substitute this clip under the bundled filename or use the unbudgeted UI endpoint for agent testing. Then run a bounded plan/track test and inspect the phone observations before fitting.
+## Test-runner extension (subsequently completed)
+At intake the capped live-test runner accepted only the bundled pendulum. Selected-file support has since been implemented and checked with decoded frame-time checks and the same size/duration/frame/output limits. Preserve the existing non-refundable reservations and cumulative $10 ceiling. Do not substitute this clip under the bundled filename or use the unbudgeted UI endpoint for agent testing. The bounded pair and visual review have now completed; results and limitations are recorded separately.
 
 The normal app remains live-off. No additional paid calls were made during intake; the local usage ledger remains four requests / $0.161266.
 
 ## Browser access boundary
 Chrome successfully read the original video and projects downloaded by the app from Downloads. Reading a project under Documents still returned a file-permission error. The user was shown the extension's documented file-URL access setting; no protected file was moved to work around that denial. The older saved SAM project's GUI review remains pending that access.
+
+The later native Open workflow successfully selected the reviewed project under Documents. Automated file-chooser selection and native picker access are distinct; no extension setting change is claimed. The analyzed-results GUI gate is now verified for the camera-mount clip.

@@ -61,3 +61,7 @@ Sources:
 - https://dev.meta.ai/docs/token-counting
 - https://dev.meta.ai/docs/pricing-rate-limits
 - Local implementation: server/meta.ts and src/lib/meta.ts
+
+
+## Measured camera-mount example — 2026-10-30
+The user-provided AI clip is 10 s at 24 fps / 240 frames. One Standard Muse Spark 1.3 call reported 3015 input and 637 output tokens ($0.006476); one SAM 3.1 call reported 240 billed frames ($0.048). Combined reported-usage estimate: **$0.054476**. All six session inference requests now total **$0.215742**. This is measured usage arithmetic, not an invoice guarantee or a price promise for another clip. Conservative test reservations total $5.70 and must not be confused with spending. See CAMERA-MOUNT-RESULTS.md.

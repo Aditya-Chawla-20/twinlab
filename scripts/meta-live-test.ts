@@ -7,57 +7,51 @@ import {
   unlink,
   appendFile,
 } from "node:fs/promises";
-import { execFileSync } from "node:child_process";
-import { createHash } from "node:crypto";
+import { basename } from "node:path";
+import { parseArgs } from "node:util";
 import { runMeta, type MetaInput } from "../server/meta";
 import { budgetedFetch, validateBudget, type TestBudget } from "./meta-budget";
+import { readTestFixture } from "./meta-fixture";
 
 async function main() {
-  if (!process.argv.includes("--live")) {
+  const { values } = parseArgs({ options: {
+    live: { type: "boolean" },
+    video: { type: "string" },
+    sha256: { type: "string" },
+    target: { type: "string" },
+    question: { type: "string" },
+    "track-only": { type: "boolean" },
+    "plan-only": { type: "boolean" },
+  } });
+  if (values["track-only"] && values["plan-only"])
+    throw new Error("Choose either --track-only or --plan-only, not both.");
+  if (!values.live && !values.video) {
     console.log(
       "No provider calls. Use --live only under the user-authorized cumulative $10 test budget.",
     );
+    return;
+  }
+  const target = values.target ?? (values.video ? "" : "blue ball"),
+    question = values.question ?? (values.video ? "" :
+      "Does a damped oscillator explain the horizontal motion in this synthetic pendulum clip? Suggest a reviewable plan without inventing numerical measurements.");
+  if (!target.trim() || target.length > 120 || !question.trim() || question.length > 2000)
+    throw new Error("Provide an explicit short --target and --question for the selected clip.");
+  const fixture = await readTestFixture(
+    values.video ?? "public/pendulum-synthetic.mp4",
+    values.sha256 ?? (values.video ? "" : "c0bbb9dbc6c43468e42832e74b909164cdc0a5249b50490d3c9a8f9e6c2ece78"),
+  );
+  const { bytes, fps, duration, frames, width, height, sha256 } = fixture;
+  const stages: MetaInput["stage"][] = values["track-only"]
+    ? ["track"] : values["plan-only"] ? ["plan"] : ["plan", "track"];
+  const manifest = { clip: fixture.path, sha256, frames, fps, duration, width, height, target, question, stages };
+  if (!values.live) {
+    console.log(JSON.stringify({ ...manifest, live: false, providerCalls: 0 }));
     return;
   }
   process.loadEnvFile(".env.local");
   const apiKey = process.env.MODEL_API_KEY?.trim();
   if (!apiKey)
     throw new Error("Add MODEL_API_KEY to the ignored .env.local file.");
-  const filename = "public/pendulum-synthetic.mp4";
-  const bytes = await readFile(filename);
-  const probe = JSON.parse(
-    execFileSync(
-      "ffprobe",
-      [
-        "-v",
-        "error",
-        "-select_streams",
-        "v:0",
-        "-show_entries",
-        "stream=r_frame_rate,avg_frame_rate,duration,nb_frames",
-        "-of",
-        "json",
-        filename,
-      ],
-      { encoding: "utf8" },
-    ),
-  ).streams[0];
-  const [num, den] = probe.r_frame_rate.split("/").map(Number),
-    fps = num / den,
-    duration = Number(probe.duration),
-    frames = Number(probe.nb_frames);
-  if (
-    probe.r_frame_rate !== probe.avg_frame_rate ||
-    !Number.isFinite(fps) ||
-    !Number.isFinite(duration) ||
-    !Number.isInteger(frames) ||
-    frames > 1800 ||
-    fps > 60 ||
-    duration > 30 ||
-    Math.abs(frames - fps * duration) > 1 ||
-    bytes.length > 30 * 1024 * 1024
-  )
-    throw new Error("Bundled clip exceeds the validated test bounds.");
   await mkdir(".twinlab", { recursive: true });
   await mkdir("artifacts/meta-live", { recursive: true });
   const lock = await open(".twinlab/live-test.lock", "wx");
@@ -86,10 +80,9 @@ async function main() {
     const transport = budgetedFetch(budget, persist);
     const input: MetaInput = {
       stage: "plan",
-      file: new File([bytes], "pendulum-synthetic.mp4", { type: "video/mp4" }),
-      question:
-        "Does a damped oscillator explain the horizontal motion in this synthetic pendulum clip? Suggest a reviewable plan without inventing numerical measurements.",
-      target: "blue ball",
+      file: new File([bytes], basename(fixture.path), { type: "video/mp4" }),
+      question,
+      target,
       fps,
       duration,
       cfrConfirmed: true,
@@ -98,33 +91,18 @@ async function main() {
     await appendFile(".twinlab/usage.jsonl", "");
     console.log(
       JSON.stringify({
-        clip: filename,
-        sha256: createHash("sha256").update(bytes).digest("hex"),
-        frames,
-        fps,
-        duration,
+        ...manifest,
         reservedUsd: budget.reservedCents / 100,
         ceilingUsd: 10,
       }),
     );
-    const targetFlag = process.argv.indexOf("--target");
-    if (targetFlag !== -1) {
-      const target = process.argv[targetFlag + 1];
-      if (!target || target.length > 120)
-        throw new Error("Provide a short tracking target.");
-      input.target = target;
-    }
-    const stages: MetaInput["stage"][] = process.argv.includes("--track-only")
-      ? ["track"]
-      : process.argv.includes("--plan-only")
-        ? ["plan"]
-        : ["plan", "track"];
     for (const stage of stages) {
       const result = await runMeta(
         { ...input, stage },
         { apiKey, fetch: transport },
       );
       const path = `artifacts/meta-live/${result.run.id}.json`;
+      await writeFile(`artifacts/meta-live/${result.run.id}.input.json`, JSON.stringify(manifest, null, 2), { mode: 0o600 });
       await writeFile(path, JSON.stringify(result, null, 2), { mode: 0o600 });
       await appendFile(
         ".twinlab/usage.jsonl",

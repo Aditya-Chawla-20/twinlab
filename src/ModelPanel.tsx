@@ -179,8 +179,8 @@ export function ModelPanel({
             : "Meta is off · configure it in API usage when ready."}
         </p>
         {project.plan && (
-          <div className="plan-review">
-            <strong>Muse proposal · review required</strong>
+          <details className="plan-review">
+            <summary>Muse proposal · review required</summary>
             <p>{project.plan.summary}</p>
             <p>
               Suggested: {MODEL_NAMES[project.plan.suggestedModel]},{" "}
@@ -196,7 +196,7 @@ export function ModelPanel({
             <button className="button secondary" onClick={onApplyPlan}>
               Apply proposal
             </button>
-          </div>
+          </details>
         )}
       </div>
     </aside>

@@ -121,3 +121,15 @@
 - Discovered that the tracking target was not saved with a project. Moved it into the existing portable contract, with safe legacy defaults and bounded input. Removed the duplicate App state; reviewed all target setters/callers.
 - Verified actual saved project reopening in Downloads retains phone / 24 fps / generated declaration, then relinked the MP4. Documents-based project import remains blocked and was not worked around.
 - 20 offline tests, strict typecheck and production build passed. No paid calls or fake observations. New clip remains ready for the next bounded Meta tracking step; it is not a completed analysis. See CLIP-REVIEW.md.
+
+
+## Bounded camera-mount Meta demonstration — 2026-10-30
+- User asked for next steps after clip intake. Continued under the existing explicit $10 Meta authorization; did not reset the ledger or enable the normal paid UI. Baseline 3598d7e was clean.
+- Added selected-file support to scripts/meta-live-test.ts using standard parseArgs and a testable fixture reader. Require explicit SHA-256, target/question; verify decoded zero-origin constant frame timing and original size/duration/rate/frame/output limits. Scope remains Muse Spark 1.3 and SAM 3.1 only.
+- Three fixture tests plus the existing suite passed (23 total), with typecheck/build. Actual selected-file dry run printed 240 / 24 fps / correct digest / providerCalls=0 without loading credentials or changing budget state.
+- Rechecked official prices, then made exactly one live planning/tracking pair. Muse $0.006476; SAM $0.048; pair $0.054476; session $0.215742 / six inference requests. Conservative allocations total $5.70. Both cleanup calls returned without warnings. Testing stopped after the pair.
+- Reviewed the unique 240-point phone track on eight representative frames before using it. Built a pixel-only generated-input project and local evidence exports; did not add synthetic points or infer physical scale.
+- Recorded all four deterministic fits. Damped wins training BIC, but quadratic has lower validation error on the quiet ending; documented the mismatch rather than claiming accurate physical prediction.
+- Resolved saved-results GUI access using Chrome's normal native picker. Relinked original video, checked source/usage/fit/residual displays, exported CSV/Markdown, saved/reopened the 240-point project from Downloads and relinked again. Browser console check was empty.
+- Corrected the pixel-only stage guide and made the long Muse proposal a native disclosure so the graph stays close to the video. Native disclosure review remains separate from applying the proposal. Final checks passed; no new dependencies or design-generation calls.
+- Results in CAMERA-MOUNT-RESULTS.md; raw responses, source manifests and screenshots remain ignored/private. App stays running, key server-side, paid UI off. Next: frozen-model separate-recording feature, real-camera validation, judge access and submission package.

@@ -28,10 +28,12 @@ Frequency/damping search is bounded with refinement; coefficients are solved by 
 - Uniform frame-rate confirmation is mandatory before mapping SAM indices to timestamps. Variable-frame-rate videos need transcoding or an actual frame timestamp table.
 
 ## Authorized live test harness
-The user later authorized agent testing up to $10 total. scripts/meta-live-test.ts invokes the same provider integration through a constrained transport with a durable, conservative reservation ledger and a single-runner lock. This applies to the authorized test runner, not to unrelated account activity or the normal manual UI endpoint. Only metadata/usage is durable on the server; projects and videos still require explicit export/relinking. Completed live results are recorded in AGENT-TESTING.md; no additional paid tests are planned.
+The user later authorized agent testing up to $10 total. scripts/meta-live-test.ts invokes the same provider integration through a constrained transport with a durable, conservative reservation ledger and a single-runner lock. This applies to the authorized test runner, not to unrelated account activity or the normal manual UI endpoint. Only metadata/usage is durable on the server; projects and videos still require explicit export/relinking. Completed live results are recorded in AGENT-TESTING.md. Selected-file tests require a reviewed SHA-256, explicit target/question and decoded zero-origin constant frame timing under the original limits. Dry runs do not read credentials or create budget state. Do not automatically consume unused budget.
 
 ## Footage provenance
 The existing Project.synthetic flag is an explicit generated/AI-footage declaration, separate from Point.source (manual, SAM or generated coordinates). Importing a manual CSV does not clear the video-origin declaration. Generated footage remains labeled in the workspace, evidence and reports. User-provided unmarked footage is not independently authenticated as physical camera evidence.
 
 ## Tracking target persistence
 The current tracking target is part of the portable project (trackingTarget), not separate App state. New videos start with a blank target. The bundled sample uses blue ball. Legacy project imports use those same safe defaults; importing a Muse proposal alone does not silently apply its target. A reviewed proposal updates axis and tracking target together. Targets are at most 120 characters.
+
+Pixel units are a complete analysis mode. The step guide advances to model validation when enough observations exist, without implying an uncalibrated clip has a meter reference. Muse proposals are in a native disclosure; opening the disclosure does not apply settings or call a model.

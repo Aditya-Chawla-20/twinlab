@@ -416,11 +416,9 @@ export default function App() {
   }
   const stageNumber = !project.media.name
     ? 1
-    : !project.calibration
-      ? 1
-      : project.points.length < 12
-        ? 2
-        : 3;
+    : project.points.length < 12
+      ? 2
+      : 3;
   return (
     <div className="app-shell">
       <header className="topbar">
@@ -571,7 +569,7 @@ export default function App() {
           <>
             <div className="workflow" aria-label="Experiment steps">
               {[
-                ["1", "Calibrate", "Set a real-world scale"],
+                ["1", "Scale", project.calibration ? "Calibrated in meters" : "Pixels · calibration optional"],
                 ["2", "Track", "Review the observations"],
                 ["3", "Model & validate", "Predict unseen motion"],
               ].map(([n, title, desc]) => (

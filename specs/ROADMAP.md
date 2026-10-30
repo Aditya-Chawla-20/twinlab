@@ -1,6 +1,6 @@
 # TwinLab completion roadmap
 
-Status checked: 2026-10-30. Baseline source commit for the latest resumed work: cf27395. This is the plan for a credible hackathon submission; proposed work below is not already implemented or authorized for new paid execution merely by appearing here.
+Status checked: 2026-10-30. Baseline source commit for the latest resumed work: 3598d7e. This is the plan for a credible hackathon submission; proposed work below is not already implemented or authorized for new paid execution merely by appearing here.
 
 ## Intended finished product
 A maker or experimenter imports a fixed-camera recording, states a question, reviews a Muse plan, confirms the tracked object and scale, inspects SAM observations, fits an explicit motion model, checks predictions on data not used for fitting, and exports reproducible evidence. A judge can reproduce a representative example and understand the actual role of each Meta model.
@@ -20,28 +20,27 @@ Finish one well-validated practical workflow first. The proposed main example is
 | Generated-reference comparison | Complete for fixture only | Position RMSE 0.52525 px; later-point model validation RMSE 0.00081327 m in synthetic scale; not camera accuracy |
 | Credentials and accounting | Implemented | Server-only ignored key, explicit paid actions, no automatic retries, local run ledger |
 | Agent test spending guard | Implemented and checked | Persistent conservative reservations, $10 cumulative ceiling for the scoped test runner; not a general account/UI spending limit |
-| Engineering checks | Last run passed | 20 offline tests, strict typecheck and production build |
+| Engineering checks | Last run passed | 23 offline tests, strict typecheck and production build |
 | Documentation and reproduction | Implemented | Sources, architecture, decisions, walkthrough, cost scenarios, live test evidence and generated sample |
 
-Live testing total from reported usage: $0.161266 across four inference requests. Test reservations retained: $3.80, which is not actual spend. No further paid requests were started to prepare this roadmap.
+Live testing total from reported usage: $0.215742 across six inference requests. Test reservations retained: $5.70, which is not actual spend. The latest camera-mount pair cost $0.054476. No retries or further calls followed it.
 
 ## What remains, in dependency order
 
-### 1. Close the browser verification gap on existing evidence
-Owner: implementation/QA (agent), with user browser access only if needed.
+### 1. Saved Meta results in the browser — completed for the camera-mount demo
+Owner: implementation/QA (agent).
 
-Work:
-- Open `artifacts/meta-live/verified-project.twinlab.json` in the running app. This reuses saved provider output and needs no inference.
-- Confirm all 360 SAM points align with the generated video and timing; inspect plan review, source labels, chart, report and local usage ledger.
-- Verify save/reopen retains the live run provenance and does not describe SAM output as preloaded mathematical ground truth.
-- Reconnect browser control or conduct a user-guided check if the previous `browser.user is unavailable` condition remains.
+- Loaded the reviewed 240-point SAM project via Chrome's native Open dialog and relinked the user's original video.
+- Checked source labels, Muse proposal, actual model errors, 168/72 partition, 7.00 s boundary, residuals and CSV/Markdown exports.
+- Saved/reopened the analyzed project through Downloads and relinked the original again.
+- Native selection resolved the Documents import issue without relocating protected files or changing security settings.
 
-Done when: actual saved live results travel through the UI and exports correctly. This closes a missing GUI check, not real-world accuracy.
+This closes the saved-results GUI check. Live calls used the capped runner; the normal paid browser endpoint remains untested live and off. Real-world accuracy is still unverified. See CAMERA-MOUNT-RESULTS.md.
 
 ### 2. Acquire real experiment recordings and independent references
 Owner: user supplies recordings or authorizes suitable source footage; agent prepares fixtures and measurements.
 
-The user supplied the first AI-generated practical-use-case clip. Its 10-second, 24 fps / 240-frame video was inspected and imported locally; see CLIP-REVIEW.md. It currently has no observations or Meta runs. Use that as generated workflow footage, not a replacement for the physical evidence below.
+The user supplied the first AI-generated practical-use-case clip. Its 10-second, 24 fps / 240-frame video was inspected and imported locally; see CLIP-REVIEW.md. It now has 240 SAM observations and two successful Meta runs; the model comparison and limits are in CAMERA-MOUNT-RESULTS.md. Use that as generated workflow footage, not a replacement for the physical evidence below.
 
 Minimum physical capture set:
 - A: 10–20 seconds of a slowly wobbling flexible phone/camera holder after release, fixed camera, visible known-length reference in the motion plane, plain background and one identifiable moving assembly. A pendulum remains an optional controlled baseline.
@@ -59,7 +58,7 @@ Owner: agent; user reviews capture/measurement assumptions and any paid-test all
 
 Work:
 - Exercise browser → local API → Meta → plan/track review → calibration → fitting → export on real clip A.
-- Extend the capped test runner to accept explicitly selected, bounded real fixtures; it currently only accepts the bundled generated clip. Preserve cumulative reservations and stop conditions.
+- Use the now-implemented selected-file runner with reviewed SHA-256 and decoded timing checks for real fixtures. Preserve cumulative reservations and stop conditions.
 - Reuse saved results for UI iteration. Reuse approved plans for repeated clips when appropriate; do not call models for chart/slider changes.
 - Compare SAM positions with manual landmarks, including visible-frame coverage and wrong-object errors. Do not fabricate missing observations or silently switch IDs.
 - Check frame-time alignment, bounding-box-center bias, calibration errors and perspective. Implement mask-centroid or point-seeded tracking only if the observed errors justify them.

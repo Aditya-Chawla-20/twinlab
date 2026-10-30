@@ -11,7 +11,7 @@ The user explicitly authorized agent testing of Meta with a total ceiling of $10
 - Explicit test authorization: $10 cumulative for this testing session.
 - Before every inference, the runner durably reserves $1.50 for Muse Spark or $0.40 for SAM. Reservations are not released after failure or cheap completion and survive restarts.
 - Muse reservation exceeds the published 1,048,576-token context × $1.25/M input plus 4,000 output tokens × $4.25/M, or $1.32772 at current rates. No tools, conversation continuation, background jobs, or automatic retries are allowed.
-- SAM input is validated with ffprobe: at most 1,800 constant-rate frames, costing at most $0.36 at the published $0.20/1,000-frame rate. The test currently uses 360 frames.
+- SAM input is validated with ffprobe: at most 1,800 constant-rate frames, costing at most $0.36 at the published $0.20/1,000-frame rate. The bundled fixture uses 360 frames; the subsequent camera-mount fixture uses 240.
 - Refuse a request if its reservation would cross $10. Malformed ledgers or inability to persist reservations prevent requests. Do not reset `.twinlab/test-budget.json` to continue testing.
 - A single local lock prevents concurrent test runners. If a process is interrupted, inspect the ledger and pending work before removing a stale lock.
 - This bounds the runner's inference spending under published rates; it is not an account-wide Meta billing limit and does not cover unrelated activity outside the runner. Leave the normal app paid controls off during agent testing.
@@ -20,7 +20,7 @@ Sources checked 2026-10-30:
 - https://dev.meta.ai/docs/pricing-rate-limits
 - https://dev.meta.ai/docs/models
 
-## Completed live results
+## Initial pendulum live results
 
 Four inference requests were made, with no automatic retries:
 
@@ -30,11 +30,11 @@ Four inference requests were made, with no automatic retries:
 | SAM, `blue pendulum bob` | 360 frames | $0.072000 | Completed, zero matching objects |
 | SAM, `blue ball` | 360 frames | $0.072000 | One track, all 360 observations, 360 masks |
 | Muse planning, clarified target instruction | 3,391 input / 993 output tokens | $0.008459 | Valid structured plan; target `blue ball` |
-| **All testing** | **4 requests** | **$0.161266** | **Paid testing stopped** |
+| **Initial testing** | **4 requests** | **$0.161266** | **Paid testing stopped** |
 
 The successful first-plan + useful-SAM pair cost $0.080807. Total testing also includes the zero-match SAM request and the final planner regression check. Costs are computed from actual reported API usage at verified rates, not a promise about the final provider invoice.
 
-The persistent reservation ledger retains $3.80 of conservative allocation, not $3.80 of actual spend. No further paid tests are planned. Do not reset the ledger or automatically consume the rest of the user's ceiling.
+The persistent reservation ledger retains $3.80 of conservative allocation, not $3.80 of actual spend. That was the initial test stop point. The subsequent user-requested camera-mount demonstration below added two bounded requests. Do not reset the ledger or automatically consume the rest of the user's ceiling.
 
 ## Observation checks
 - Compared the actual SAM box-center track against the original generated coordinates at every returned timestamp.
@@ -51,3 +51,25 @@ The persistent reservation ledger retains $3.80 of conservative allocation, not 
 The dev server was restarted with the saved server-side key and `META_LIVE_ENABLED=false`. Refresh API usage to read the local ledger. The browser control handle could list the existing local tab but failed to rebind/reload it (`browser.user is unavailable`); loading the verified project in the GUI is therefore a manual handoff, not a completed browser check. No alternative browser-control mechanism was used.
 
 This verifies live API compatibility and tracking against a generated reference; it does not validate physical-camera accuracy.
+
+
+## Selected-file testing and camera-mount result
+The user continued the project, supplied an AI-generated camera-mount video and requested next steps. The scoped runner now accepts an explicit --video, --sha256, --target and --question. It pins reviewed bytes, verifies all decoded frame timestamps and keeps the same 30 MB / 30 s / 60 fps / 1,800-frame limits. It never infers a constant frame rate from matching metadata alone. Frame origin must be zero for SAM frame-index mapping. FFprobe is required.
+
+A selected-file dry run (omit --live) reads only the local clip and sends nothing, without loading credentials or writing a budget ledger. Only --live dispatches requests. --track-only and --plan-only are mutually exclusive. Each actual result gets a private input manifest with digest, timing, target, question and stages. No transport or budget bypass was introduced.
+
+The camera-mount pair succeeded: Muse $0.006476, SAM $0.048000, new total $0.054476. All session testing is now six inference requests / **$0.215742** in reported-usage estimates; conservative reservations are **$5.70**. Testing stopped after that pair. Full results, model mismatch and browser evidence are in [CAMERA-MOUNT-RESULTS.md](CAMERA-MOUNT-RESULTS.md).
+
+Native Chrome Open selection successfully loaded the reviewed results under Documents, without moving files or changing security settings. The analyzed project was saved, reopened and relinked; this closes the saved-results GUI gap for the current demonstration. Live API calls still used the capped runner, not the ordinary paid browser endpoint.
+
+Reproduction example (dry run; replace paths and question with the reviewed fixture):
+
+```sh
+npm run test:meta -- \
+  --video /absolute/path/to/reviewed.mp4 \
+  --sha256 REVIEWED_SHA256 \
+  --target phone \
+  --question "Review generated horizontal motion in pixels; do not invent physical measurements."
+```
+
+Add --live only within explicit paid-test authorization and the existing ledger ceiling. Do not reset reservations.

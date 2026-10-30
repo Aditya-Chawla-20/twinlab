@@ -1,10 +1,10 @@
 # Verification — 2026-10-30
 
 ## Result
-Local application implemented. Live Muse/SAM calls are verified on generated footage; a real physical experiment and the complete live browser flow remain outstanding. Public repository created at https://github.com/Aditya-Chawla-20/twinlab; initial source push was verified against the remote main branch. No hosted application deployment exists.
+Local application implemented. Live Muse/SAM calls and saved-results GUI analysis are verified on generated footage; a real physical experiment and the normal paid browser-request path remain outstanding. Public repository created at https://github.com/Aditya-Chawla-20/twinlab; initial source push was verified against the remote main branch. No hosted application deployment exists.
 
 ## Automated checks
-Latest `npm run check` passed: 20 Node built-in tests, strict TypeScript (including unused-code checks), and Vite production build. The original build had 13 tests; 3 subsequent checks cover the capped test runner, and 3 more cover validation-timestamp leakage, actual partition propagation through rendered components/exports, and unfitted evidence. One additional check covers saved tracking targets, bounded input and legacy defaults.
+Latest `npm run check` passed: 23 Node built-in tests, strict TypeScript (including unused-code checks), and Vite production build. The original build had 13 tests; 3 subsequent checks cover the capped test runner, and 3 more cover validation-timestamp leakage, actual partition propagation through rendered components/exports, and unfitted evidence. One additional check covers saved tracking targets, bounded input and legacy defaults. Three selected-fixture checks cover decoded timing, byte/dimension/rate bounds and credential-free dry runs.
 
 Checks cover:
 - Recovery of known synthetic damping and later-sample prediction.
@@ -102,3 +102,15 @@ After changes, the offline suite has 16 tests including persistent-budget enforc
 - Actual Chrome Save → downloaded project → Open → verify phone/24 fps → relink original video passed. The new source remains marked generated and calibration remains null.
 - Downloads imports work; Documents project access still fails. The old saved-live-SAM project GUI check remains open. The new clip's model analysis is also pending: zero observations / no new Meta runs.
 - No video or frames published. Screenshot and project stay in ignored artifacts/camera-mount. No new paid calls; ledger still four requests / $0.161266.
+
+
+## Bounded camera-mount Meta run and GUI review — 2026-10-30
+- Extended only the capped runner to accept reviewed selected MP4s with explicit target/question and a SHA-256 pin. All decoded timestamps, frame counts, rate, duration and dimensions are checked before credentials/dispatch. Rechecked the digest after probe. Dry runs load no key and create no budget ledger.
+- Added three offline fixture tests, including false-CFR metadata, wrong digest, oversized sparse file and an actual CLI dry run from a credential-free temporary directory. Final npm run check: 23 tests, strict TypeScript and Vite build passed. No dependency was added; ffprobe is documented for fixture checks.
+- One live Muse/SAM pair completed through the persistent budget transport: Muse 3015 input / 637 output tokens = $0.006476; SAM 240 frames = $0.048. New cost $0.054476; session total $0.215742 across six requests. Conservative reservations now $5.70, not actual spend. No retries, further requests or cleanup warnings.
+- One SAM object, 240 positions; sampled frames 0/30/60/90/120/165/192/234 visually align the center with the phone. No independent positional accuracy metric is claimed.
+- Four fits use 168 training / 72 chronological validation points. Damped has lowest training BIC and validation RMSE 7.71367 px; quadratic has lower validation RMSE 3.58113 px on the nearly stationary ending. Both are shown; this is not proof of physical dynamics or cross-recording prediction.
+- Native Chrome Open dialog successfully selected the reviewed project in Documents. Relinking, 240 points, generated/live-source labels, model switching, residuals and 7.00 s boundary passed. A later Save → downloaded project → reopen → relink cycle also passed. No security setting or file relocation was used to fix access.
+- Actual browser CSV/Markdown exports were inspected: 240 SAM rows, 168 training / 72 validation, all model errors and two Meta run records. Header shows six-request server total $0.2157. Final browser warnings/errors list was empty.
+- Fixed the step guide so pixel analysis can advance without a false metric-calibration gate. Muse review uses native details/summary; expanding it does not apply a plan or invoke inference. Reviewed React changes retain existing controls and derived state, without effects or dependencies.
+- Saved private screenshot artifacts/camera-mount/verified-workbench.png and review/project/report files. No video or derived frame image published. Paid UI remains off; the full browser-triggered live request path and real footage remain unverified.

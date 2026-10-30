@@ -31,3 +31,5 @@ If a later iteration adds a rubber pad, treat it as a separate configuration. Do
 The generated-footage declaration is editable and saved in the existing project contract (`synthetic`). It remains independent of whether observations came from SAM or manual CSV entry. Reports and the evidence page retain the generated-input boundary. A supplied AI clip will be workflow evidence only; no physical prototype has been validated yet.
 
 The first user-supplied AI clip has now been inspected and imported locally. See [CLIP-REVIEW.md](CLIP-REVIEW.md) for verified timing, suitability and the untracked project state.
+
+The first bounded Muse/SAM demonstration has completed on the user clip. See CAMERA-MOUNT-RESULTS.md for 240 reviewed observations, actual costs and the visible late-segment model mismatch. Separate-recording prediction and real-camera evidence remain outstanding.

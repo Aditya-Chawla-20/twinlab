@@ -17,7 +17,9 @@ npm run build
 npm start
 ```
 
-For your own recording: import video → calibrate a reference length → mark a consistent landmark at 12+ times (or import `t,x,y` CSV) → inspect training/validation fits → export project, observations and report. Use Evidence to remove unreliable points. Reopen project JSON and relink its original video to reproduce it.
+For your own recording: import video → use pixels or calibrate a verified reference length for meters → mark a consistent landmark at 12+ times (or import `t,x,y` CSV) → inspect training/validation fits → export project, observations and report. Use Evidence to remove unreliable points. Reopen project JSON and relink its original video to reproduce it.
+
+The app needs Node 22.9+. The bounded Meta test runner and its fixture checks also require FFmpeg's `ffprobe` on PATH; those checks decode frame timestamps locally and make no provider calls.
 
 For user-run paid tests see [specs/META-SELF-TEST.md](specs/META-SELF-TEST.md). Credentials are server-only; live mode defaults off. Live Meta access was tested under a user-authorized cap on generated footage; real-video accuracy remains unverified. See [the test report](specs/AGENT-TESTING.md).
 
@@ -30,6 +32,7 @@ See [the guided demo](specs/WALKTHROUGH.md) for the sample workflow, model compa
 ## Documentation
 - [Completion roadmap](specs/ROADMAP.md)
 - [Practical use case and video brief](specs/USE-CASE.md)
+- [Camera-mount Meta results](specs/CAMERA-MOUNT-RESULTS.md)
 - [Progress and decisions](specs/PROGRESS.md)
 - [Architecture and scope](specs/ARCHITECTURE.md)
 - [Sources and originality](specs/SOURCES.md)
