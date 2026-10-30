@@ -71,3 +71,9 @@
 - Opened the evidence table, exported the synthetic sample's Markdown report, and inspected the disabled Meta setup and empty usage ledger. Returned to the sample experiment and retained the visible app tab.
 - Saved specs/assets/twinlab-demo.png. Added final publication/demo evidence to specs/VERIFICATION.md and marked the public-source hackathon checklist complete.
 - Dev server remains running for the user; paid Meta remains off. No hosted application deployment or hackathon submission was performed.
+
+## Model pricing and run-cost research — 2026-10-30
+- User requested current prices and the combined cost of a TwinLab run. Rechecked official Meta pricing/token-counting docs and inspected actual server request settings.
+- Current paid path: one Standard Muse Spark 1.3 planning call and one SAM 3.1 tracking call, with no automatic retries. Planning output cap is 4,000 tokens including reasoning.
+- Wrote specs/COSTING.md with exact rate arithmetic, explicit token scenarios, video-length sensitivity and optional Contributor-mode tradeoff. A 12 s / 30 fps sample plus assumed 10k uncached Spark input and 1k output totals $0.08875; token usage is illustrative, not measured or guaranteed.
+- No Meta requests, credential reads, token-count calls or credit spending performed. No application code or pricing mode changed.
