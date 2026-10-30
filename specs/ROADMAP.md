@@ -1,6 +1,6 @@
 # TwinLab completion roadmap
 
-Status checked: 2026-10-30. Baseline source commit for the latest resumed work: 3598d7e. This is the plan for a credible hackathon submission; proposed work below is not already implemented or authorized for new paid execution merely by appearing here.
+Status checked: 2026-10-31. Baseline source commit for the latest resumed work: 6b4b9e7. This is the plan for a credible hackathon submission; proposed work below is not already implemented or authorized for new paid execution merely by appearing here.
 
 ## Intended finished product
 A maker or experimenter imports a fixed-camera recording, states a question, reviews a Muse plan, confirms the tracked object and scale, inspects SAM observations, fits an explicit motion model, checks predictions on data not used for fitting, and exports reproducible evidence. A judge can reproduce a representative example and understand the actual role of each Meta model.
@@ -20,7 +20,8 @@ Finish one well-validated practical workflow first. The proposed main example is
 | Generated-reference comparison | Complete for fixture only | Position RMSE 0.52525 px; later-point model validation RMSE 0.00081327 m in synthetic scale; not camera accuracy |
 | Credentials and accounting | Implemented | Server-only ignored key, explicit paid actions, no automatic retries, local run ledger |
 | Agent test spending guard | Implemented and checked | Persistent conservative reservations, $10 cumulative ceiling for the scoped test runner; not a general account/UI spending limit |
-| Engineering checks | Last run passed | 23 offline tests, strict typecheck and production build |
+| Engineering checks | Last run passed | 28 offline tests, strict typecheck and production build |
+| Frozen-model transfer | Engine and CLI implemented | Reproducible source snapshot/hash, prefix-only alignment, later errors and baselines; generated regression only; browser/real-recording check pending |
 | Documentation and reproduction | Implemented | Sources, architecture, decisions, walkthrough, cost scenarios, live test evidence and generated sample |
 
 Live testing total from reported usage: $0.215742 across six inference requests. Test reservations retained: $5.70, which is not actual spend. The latest camera-mount pair cost $0.054476. No retries or further calls followed it.
@@ -73,7 +74,7 @@ Done when: a full real recording can be processed reproducibly and its errors ar
 ### 4. Deliver the prediction claim on a separate recording
 Owner: agent implementation; user supplies the second recording and setup measurements.
 
-Current gap: fitting and validating later points in one clip already works. Freezing a fitted model and validating it on recording B is not implemented. Re-fitting B independently is not this feature.
+Implemented: a frozen model contract, SHA-256 integrity/source-fit checks, initial-state-only alignment on B and later evaluation against persistence/constant-velocity baselines. The credential-free CLI exports a model, target project, CSV and report. See PREDICTION-WALKTHROUGH.md. Generated release tests prove numerical behavior, not physical transfer. Remaining: browser screen (required 12ui CLI is awaiting sign-in), independent real recording B and measurement/calibration validation. Re-fitting B independently is not this feature.
 
 Work:
 - Persist a portable fitted model with parameters, units, calibration/reference frame, training interval, assumptions and input provenance.

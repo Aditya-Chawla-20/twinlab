@@ -15,6 +15,7 @@ A local-first experimental workbench for makers and prototype engineers. Import 
 - Supported fits: constant velocity, constant acceleration, sinusoidal motion and exponentially damped sinusoidal motion. These are phenomenological 1D fits, not discovery of arbitrary laws or proof of causes.
 - A stationary camera and motion in a calibrated plane are required for metric interpretation. Bounding-box centers are not centers of mass. Occlusions remain missing observations.
 - Live model access is verified on generated footage. Demand and real-video accuracy remain unverified.
+- Frozen-model transfer is implemented as a CLI with source verification, prefix-only initial-state alignment and later-only baseline scores. Browser integration and independent physical validation remain pending.
 
 ## Proposed first practical use case
 A maker evaluates how a flexible phone/camera mount settles after a disturbance, then checks a frozen model on another release. The pendulum is a numerical regression fixture. Generated footage supports a labeled workflow demo; real recordings are required for physical validation. Details: specs/USE-CASE.md.

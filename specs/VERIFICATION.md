@@ -1,10 +1,10 @@
-# Verification — 2026-10-30
+# Verification — 2026-10-31
 
 ## Result
 Local application implemented. Live Muse/SAM calls and saved-results GUI analysis are verified on generated footage; a real physical experiment and the normal paid browser-request path remain outstanding. Public repository created at https://github.com/Aditya-Chawla-20/twinlab; initial source push was verified against the remote main branch. No hosted application deployment exists.
 
 ## Automated checks
-Latest `npm run check` passed: 23 Node built-in tests, strict TypeScript (including unused-code checks), and Vite production build. The original build had 13 tests; 3 subsequent checks cover the capped test runner, and 3 more cover validation-timestamp leakage, actual partition propagation through rendered components/exports, and unfitted evidence. One additional check covers saved tracking targets, bounded input and legacy defaults. Three selected-fixture checks cover decoded timing, byte/dimension/rate bounds and credential-free dry runs.
+Latest `npm run check` passed: 28 Node built-in tests, strict TypeScript (including unused-code checks), and Vite production build. The original build had 13 tests; 3 subsequent checks cover the capped test runner, and 3 more cover validation-timestamp leakage, actual partition propagation through rendered components/exports, and unfitted evidence. One additional check covers saved tracking targets, bounded input and legacy defaults. Three selected-fixture checks cover decoded timing, byte/dimension/rate bounds and credential-free dry runs. Five frozen-transfer/CLI checks cover portable integrity and source reproduction, initial-state separation, invalid inputs, frozen acceleration and actual reproducible evidence generation without credentials.
 
 Checks cover:
 - Recovery of known synthetic damping and later-sample prediction.
@@ -114,3 +114,11 @@ After changes, the offline suite has 16 tests including persistent-budget enforc
 - Actual browser CSV/Markdown exports were inspected: 240 SAM rows, 168 training / 72 validation, all model errors and two Meta run records. Header shows six-request server total $0.2157. Final browser warnings/errors list was empty.
 - Fixed the step guide so pixel analysis can advance without a false metric-calibration gate. Muse review uses native details/summary; expanding it does not apply a plan or invoke inference. Reviewed React changes retain existing controls and derived state, without effects or dependencies.
 - Saved private screenshot artifacts/camera-mount/verified-workbench.png and review/project/report files. No video or derived frame image published. Paid UI remains off; the full browser-triggered live request path and real footage remain unverified.
+
+## Frozen-model engine/CLI — 2026-10-31
+- Verified generated transfer on original public/examples/transfer-A.json and transfer-B.json via the documented command. No B recording exists; these are synthetic point arrays. The 2 s initial-state window uses 31 points, excludes them from scoring, then evaluates 150 points. Generated-scale RMSE 0.0004024061155809695 m; persistence RMSE 0.10639475287844054 m; constant-velocity RMSE 0.5515467252711352 m. These values are not measurements of a physical device.
+- Source frequency/decay remain frozen. Poisoning every later target position leaves all aligned parameters and predictions unchanged. Changed target frequency increases error. Quadratic transfer preserves acceleration while aligning a different release velocity.
+- Model snapshot is independent of later source edits. Digest tampering, insufficient source data/window, source reuse, matching video hashes, units/axis mismatch and missing setup declaration fail clearly. Embedded comparison survives project parse/reopen; the CLI re-evaluation reproduces exported error and refuses overwrite.
+- SHA-256 identifies normalized model/source data; observation hashes identify timestamp/coordinate arrays. Hash differences and setup declarations do not prove recording independence or experiment conditions. Source-fit reproduction allows tiny floating-point differences across runtimes.
+- Existing Chrome camera-mount project reopened/relinked with 240 observations and expected errors/partition; no warning/error logs. Screenshot artifacts/camera-mount/post-transfer-engine.png remains private. New prediction UI is pending the required design-tool sign-in and is not claimed browser-verified.
+- No new paid requests. Physical measurement, independent real-recording transfer, recovery, judge access and final demo/submission remain open in READINESS-AUDIT.md.

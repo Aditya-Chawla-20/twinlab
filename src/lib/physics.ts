@@ -11,6 +11,9 @@ export type Calibration = {
   meters: number;
 };
 export type ModelKind = "linear" | "quadratic" | "oscillation" | "damped";
+export type ModelParameters = Pick<Fit,
+  "kind" | "coefficients" | "frequency" | "damping" | "origin" | "trainCount"
+>;
 export type Fit = {
   kind: ModelKind;
   coefficients: number[];
@@ -199,4 +202,28 @@ export function evaluateFit(
     predicted: fit.predict(p.t),
     residual: (p[axis] - base) * scale - fit.predict(p.t),
   }));
+}
+
+// Only initial state is estimated here. Dynamics always come from recording A.
+export function alignInitialState(
+  model: ModelParameters,
+  points: Point[],
+  calibration: Calibration | null,
+  axis: "x" | "y",
+) {
+  const origin = points[0].t, scale = metersPerPixel(calibration);
+  const ts = points.map((p) => p.t - origin);
+  const ys = points.map((p) => (p[axis] - points[0][axis]) * scale);
+  const acceleration = model.kind === "quadratic" ? model.coefficients[2] : 0;
+  const aligned = regress(ts, ys.map((y, i) => y - acceleration * ts[i] ** 2),
+    model.kind === "quadratic" ? "linear" : model.kind,
+    model.frequency, model.damping);
+  const velocity = regress(ts, ys, "linear", 0, 0);
+  if (!aligned || !velocity) throw new Error("Initial-state window is ill-conditioned. Use a longer visible interval.");
+  const coefficients = model.kind === "quadratic" ? [...aligned.c, acceleration] : aligned.c;
+  return {
+    coefficients,
+    predict: (t: number) => dot(basis(t - origin, model.kind, model.frequency, model.damping), coefficients),
+    constantVelocity: (t: number) => dot([1, t - origin], velocity.c),
+  };
 }

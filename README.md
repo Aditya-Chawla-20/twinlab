@@ -19,6 +19,8 @@ npm start
 
 For your own recording: import video → use pixels or calibrate a verified reference length for meters → mark a consistent landmark at 12+ times (or import `t,x,y` CSV) → inspect training/validation fits → export project, observations and report. Use Evidence to remove unreliable points. Reopen project JSON and relink its original video to reproduce it.
 
+For a separate recording: [freeze a model from A and evaluate B](specs/PREDICTION-WALKTHROUGH.md). The implemented CLI keeps frequency/decay or acceleration fixed, aligns only B's initial state, and exports later-only errors against simple baselines with input hashes. The browser prediction screen is pending; real-camera transfer has not been validated.
+
 The app needs Node 22.9+. The bounded Meta test runner and its fixture checks also require FFmpeg's `ffprobe` on PATH; those checks decode frame timestamps locally and make no provider calls.
 
 For user-run paid tests see [specs/META-SELF-TEST.md](specs/META-SELF-TEST.md). Credentials are server-only; live mode defaults off. Live Meta access was tested under a user-authorized cap on generated footage; real-video accuracy remains unverified. See [the test report](specs/AGENT-TESTING.md).
@@ -41,4 +43,4 @@ See [the guided demo](specs/WALKTHROUGH.md) for the sample workflow, model compa
 
 The sample is procedurally generated, not footage of a real experiment or live Meta output. Fits are one-dimensional mathematical approximations; this app does not discover arbitrary physical laws or establish causation. Metric results require fixed-camera planar motion and correct calibration. SAM timestamps require confirmed constant frame rate. Numerical checks do not establish real-world measurement accuracy.
 
-Application code is independently authored. Referenced projects are credited in SOURCES.md; no upstream application code is copied. Dependencies retain their own licenses.
+Application code and the original procedural sample are independently authored and [MIT licensed](LICENSE). Referenced projects are credited in SOURCES.md; no upstream application code is copied. Dependencies retain their own licenses in `public/notices/` and their installed packages. Imported videos and third-party datasets retain their owners' rights; this license does not relicense them.
