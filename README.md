@@ -28,6 +28,7 @@ See [the guided demo](specs/WALKTHROUGH.md) for the sample workflow, model compa
 ![TwinLab workbench](specs/assets/twinlab-desktop.png)
 
 ## Documentation
+- [Completion roadmap](specs/ROADMAP.md)
 - [Progress and decisions](specs/PROGRESS.md)
 - [Architecture and scope](specs/ARCHITECTURE.md)
 - [Sources and originality](specs/SOURCES.md)

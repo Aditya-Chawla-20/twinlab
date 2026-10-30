@@ -1,10 +1,10 @@
 # Verification — 2026-10-30
 
 ## Result
-Local application implemented and verified without live Meta calls. User-run provider validation and a real physical experiment remain outstanding. Public repository created at https://github.com/Aditya-Chawla-20/twinlab; initial source push was verified against the remote main branch. No hosted application deployment exists.
+Local application implemented. Live Muse/SAM calls are verified on generated footage; a real physical experiment and the complete live browser flow remain outstanding. Public repository created at https://github.com/Aditya-Chawla-20/twinlab; initial source push was verified against the remote main branch. No hosted application deployment exists.
 
 ## Automated checks
-`npm run check` passed: 13 Node built-in tests, strict TypeScript (including unused-code checks), and Vite production build.
+Latest `npm run check` passed: 16 Node built-in tests, strict TypeScript (including unused-code checks), and Vite production build. The original build had 13 tests; 3 subsequent checks cover the capped test runner.
 
 Checks cover:
 - Recovery of known synthetic damping and later-sample prediction.
@@ -25,7 +25,7 @@ Checks cover:
 Skill Creator `quick_validate.py .agents/skills/twinlab`: passed.
 Impeccable mechanical detector on changed interface targets: `[]` (no reported findings). This is not a comprehensive accessibility certification.
 
-## Browser workflow (local IAB)
+## Initial browser workflow (before live provider tests)
 - Sample loads, plays/seeks, compares all four models, and exposes validation/residual charts.
 - Switching from damped to ideal oscillator changes validation RMSE from about 0.0010 m to 0.0650 m on the synthetic sample.
 - Exploratory parameter controls appear; no inference is invoked.
@@ -53,8 +53,8 @@ Screenshot: [verified desktop workbench](assets/twinlab-desktop.png).
 These numbers verify the known synthetic calculation, not camera calibration quality, Meta tracking accuracy, demand or superiority over Tracker.
 
 ## Remaining boundaries
-- User must test real Muse/SAM access, actual billing, streamed response compatibility and real-video tracking quality.
-- Synthetic sample is not live Meta output. No independent real recording supplied.
+- Muse/SAM access and streaming were verified on a generated fixture. The live browser path, actual provider billing reconciliation and real-video tracking quality remain to be completed.
+- Default sample points are synthetic. Separate actual SAM outputs exist for generated input. No independent real recording has been supplied.
 - Files/projects are session-local until explicitly saved; always save before replacing a recording or refreshing. The durable server ledger retains run accounting, not videos or projects.
 - Video stepping is approximate. SAM frame index mapping requires verified constant fps. Pixel centers are approximate landmarks, not centers of mass.
 - The later portion of one recording is validation; no cross-recording model transfer is implemented or claimed.

@@ -95,3 +95,10 @@
 - Conservative test reservations total $3.80; these reservations are not the actual $0.161266 usage cost. Saved raw outputs and a reopenable project only in ignored local artifacts.
 - User reported a rounded billing drop consistent with the first three requests. The final planning check completed afterward and is included in the four-request total. No private account balances or billing identifiers are published.
 - Restarted the dev server with the configured key and application live mode off. Browser handle reconnection failed after API verification; manual opening of the saved evidence project is not claimed as completed.
+
+## Completion roadmap — 2026-10-30
+- Audited the current source and latest verification evidence for the user's complete roadmap request. Baseline commit 33401b0 was clean.
+- Wrote specs/ROADMAP.md separating completed work from unverified real footage, incomplete live browser validation, missing frozen-model cross-recording prediction, judge access and actual submission. Each phase records dependencies, ownership and acceptance criteria.
+- Corrected stale summary statements in PRODUCT.md and VERIFICATION.md that still described live access as unverified or the test count as 13; the detailed evidence already recorded 4 live requests and 16 offline tests.
+- Rechecked the official deadline: Nov 4, 2026 9 PM Eastern / Nov 5 7:30 AM IST. Proposed milestones reserve Nov 4 for final verification/submission issues.
+- No new paid requests, application changes, deployment or submission were performed for roadmap preparation.

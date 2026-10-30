@@ -11,10 +11,10 @@ A local-first experimental workbench for makers and prototype engineers. Import 
 
 ## Product truth
 - First release is a single-user local web application, not a hosted multi-tenant product.
-- Synthetic sample demonstrates mathematics and UI; it is not a real experiment or a Meta run.
+- Default sample observations demonstrate mathematics and UI without live inference. Separate live Muse/SAM tests now exist on the generated clip; neither is a physical experiment.
 - Supported fits: constant velocity, constant acceleration, sinusoidal motion and exponentially damped sinusoidal motion. These are phenomenological 1D fits, not discovery of arbitrary laws or proof of causes.
 - A stationary camera and motion in a calibrated plane are required for metric interpretation. Bounding-box centers are not centers of mass. Occlusions remain missing observations.
-- Demand, live model access and real-video accuracy are unverified.
+- Live model access is verified on generated footage. Demand and real-video accuracy remain unverified.
 
 ## Interface assumptions
 Operate mode: video and observations lead; compact controls and plots support the task. Desktop workbench with responsive stacked layout on small screens. No marketing landing page needed.
