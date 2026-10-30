@@ -56,3 +56,8 @@ When you are ready, follow META-SELF-TEST.md:
 4. Each paid stage requires confirmation. There are no automatic inference retries. Reported tokens/frames and estimated cost appear in the ledger; verify actual billing with Meta.
 
 Real provider access, billing and tracking accuracy remain unverified until you run these stages yourself. A missing usage value is Unknown, not zero.
+
+## Demonstrated in this session
+Playback, ideal/damped comparison, residuals, exploratory frequency changes, evidence review and report download were exercised in the visible local app. The sample was left on the damped fit with exploratory changes reset. The API usage view confirmed no requests and no configured key.
+
+![TwinLab walkthrough state](assets/twinlab-demo.png)

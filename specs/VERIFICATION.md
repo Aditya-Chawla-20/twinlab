@@ -1,7 +1,7 @@
 # Verification — 2026-10-30
 
 ## Result
-Local application implemented and verified without live Meta calls. User-run provider validation and a real physical experiment remain outstanding. Public repository created at https://github.com/Aditya-Chawla-20/twinlab; initial source push is being verified in the publication log below. No hosted application deployment exists.
+Local application implemented and verified without live Meta calls. User-run provider validation and a real physical experiment remain outstanding. Public repository created at https://github.com/Aditya-Chawla-20/twinlab; initial source push was verified against the remote main branch. No hosted application deployment exists.
 
 ## Automated checks
 `npm run check` passed: 13 Node built-in tests, strict TypeScript (including unused-code checks), and Vite production build.
@@ -60,3 +60,13 @@ These numbers verify the known synthetic calculation, not camera calibration qua
 - The later portion of one recording is validation; no cross-recording model transfer is implemented or claimed.
 - Local loopback server has no multi-user authentication, quotas or cloud storage. Do not publicly expose the paid API without those controls.
 - GitHub publication status is recorded in the publication log below; public source hosting does not expose the local application server.
+
+## Public source and live walkthrough
+- Repository https://github.com/Aditya-Chawla-20/twinlab confirmed PUBLIC with default branch main.
+- Initial source commit dabf88918b88ed05da431828d5b19b6f8838d181 pushed; git ls-remote matched local HEAD.
+- Re-ran npm run check immediately before publication: all 13 checks and build passed.
+- User-requested npm run dev is running on http://127.0.0.1:5173 with Meta explicitly disabled. Local /api/status confirms configured=false and enabled=false.
+- Demonstrated playback, ideal versus damped fit, residuals, exploratory frequency change to 1.02x, evidence provenance and Markdown report download. Returned the sample to the fitted baseline.
+- API usage visibly showed zero requests / $0 and no configured credential. No live Meta requests made.
+- Kept the user-facing app tab open. This is a running local development app, not a public web deployment.
+- Walkthrough screenshot: [current demo](assets/twinlab-demo.png).

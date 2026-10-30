@@ -16,7 +16,7 @@ Original TwinLab application, generated sample video/data, numerical fitting/val
 - [ ] Real fixed-camera experiment with known scale, confirmed timing and independent manually marked landmarks.
 - [ ] Record tracking error and comparison against Tracker / manual baseline; no superiority claim without results.
 - [ ] Verify a different recording; current chronological validation does not establish cross-experiment generalization.
-- [ ] Public repository created: https://github.com/Aditya-Chawla-20/twinlab. Verify the pushed main branch before submission.
+- [x] Public repository created and main branch pushed: https://github.com/Aditya-Chawla-20/twinlab.
 - [ ] Working product access for judges: localhost is not a public demo. Add hosted auth/budget isolation before any public paid backend, or provide a clearly documented local reproduction path and suitable demo artifact.
 - [ ] Three-minute accessible demo video, contributor list and CV submission.
 

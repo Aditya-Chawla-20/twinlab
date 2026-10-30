@@ -64,3 +64,10 @@
 - Re-ran npm run check: 13 tests plus strict typecheck and production build passed.
 - Started npm run dev with META_LIVE_ENABLED=false; /api/status confirms configured=false and enabled=false. Dev server is intended to remain running for the user's walkthrough.
 - Added specs/WALKTHROUGH.md and linked it from README. Initial source commit/push and browser demonstration follow.
+
+## Publication confirmed and demo completed
+- Initial source commit dabf88918b88ed05da431828d5b19b6f8838d181 pushed to origin/main; remote SHA matched local HEAD and visibility was PUBLIC.
+- Browser demo: played/paused the generated recording; compared ideal 0.0650 m versus damped 0.0010 m validation RMSE; enabled residuals; changed exploratory frequency to 1.02x and reset it.
+- Opened the evidence table, exported the synthetic sample's Markdown report, and inspected the disabled Meta setup and empty usage ledger. Returned to the sample experiment and retained the visible app tab.
+- Saved specs/assets/twinlab-demo.png. Added final publication/demo evidence to specs/VERIFICATION.md and marked the public-source hackathon checklist complete.
+- Dev server remains running for the user; paid Meta remains off. No hosted application deployment or hackathon submission was performed.
