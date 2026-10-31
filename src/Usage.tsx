@@ -3,6 +3,7 @@ import { download } from "./lib/project";
 import { usd, type Run } from "./lib/meta";
 import { Icon } from "./ui";
 export function Usage({
+  staticDemo = false,
   project,
   update,
   status,
@@ -10,6 +11,7 @@ export function Usage({
   target,
   setTarget,
 }: {
+  staticDemo?: boolean;
   project: Project;
   update: (p: Partial<Project>) => void;
   status: { enabled: boolean; configured: boolean };
@@ -29,11 +31,15 @@ export function Usage({
           </span>
         </div>
         <div className="settings-body">
-          <h2>You control every paid run.</h2>
+          <h2>
+            {staticDemo
+              ? "This demo has no paid backend."
+              : "You control every paid run."}
+          </h2>
           <p>
-            Keys stay on the local server. Planning and tracking run separately,
-            only after your confirmation. No automatic retries or background
-            inference.
+            {staticDemo
+              ? "Analysis runs in your browser. To use Muse or SAM on your own footage, run the public repository locally using the steps below. Reopened Meta run records are historical; this demo makes no inference requests."
+              : "Keys stay on the local server. Planning and tracking run separately, only after your confirmation. No automatic retries or background inference."}
           </p>
           <ol>
             <li>
@@ -116,7 +122,9 @@ export function Usage({
       <section className="panel">
         <div className="panel-header">
           <span className="section-title">Usage ledger</span>
-          <span className="badge neutral">This local server</span>
+          <span className="badge neutral">
+            {staticDemo ? "No server ledger" : "This local server"}
+          </span>
         </div>
         <div className="ledger-total">
           <span>Recorded estimated cost</span>

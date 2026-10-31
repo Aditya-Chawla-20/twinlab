@@ -25,3 +25,11 @@ Report later-only RMSE, MAE and maximum error alongside persistence and constant
 - Browser freeze/import/evaluate/export/reopen flow; stale async results cannot attach to a replacement project.
 
 Real-camera accuracy and independent physical transfer remain separate evidence gates. Generated fixtures do not satisfy them.
+
+## Implemented browser workflow — 2026-10-31
+
+Predict freezes the selected model, imports standalone models/target projects, preserves its source when importing another video, requires an explicit same-setup assumption and evaluates only after an action. The ordinary fitter does not run on B while Predict is open. Refresh restores comparison projects into Predict; it does not automatically evaluate. Input edits hide stale results immediately. Exports retain units, partitions, landmarks, source/target identities and assumptions.
+
+Added recorded real A/B and generated numerical presets. Presets are labeled; loading them never calls Meta. The generated B fixture has no corresponding recorded video. The real example uses pixel units and includes explicit capture/accuracy limits and attribution.
+
+12ui generated the reference screen in .12ui/prediction-v2/branch/screens/a.png. Its local conversion was stopped by the separate Codex CLI usage limit; the saved receipt remains needs-reconciliation and was not force-retried or switched to another paid API. Integrated the reference layout using original React code and existing controls. Browser desktop/mobile checks cover both generated and recorded cases; remaining presentation/deployment work is tracked separately.

@@ -1,23 +1,22 @@
-# Hackathon readiness audit — 2026-10-31
+# MVP readiness audit — 2026-10-31
 
-This audit preserves the full objective. An implemented engine or a passing generated fixture is not completion of the submission.
-
-| Requirement | Current evidence | Remaining work |
+| Requirement | Evidence / status | Limit |
 | --- | --- | --- |
-| Original, maintainable application | Existing workbench; no new dependencies in transfer change; MIT license and dependency notices | Final source/attribution review |
-| Meta used meaningfully | Actual Muse/SAM outputs and 240-point phone clip; $0.215742 reported usage | Full paid browser path on real footage remains unverified |
-| Video → observations → calibration → model → evidence | Existing browser save/reopen/exports checked on generated input | Real reference scale, independent landmarks and error table |
-| Independent prediction | Frozen-model engine/CLI and generated release/poisoning tests | Browser integration and separate physical release test |
-| Honest limitations | Generated flags and source provenance; baselines and failures retained | Carry these distinctions into final demo and copy |
-| Recovery and first use | Portable project and video relinking | Refresh/replacement recovery or clear save warnings |
-| Judge access | Public repository; local npm reproduction | Reviewable static build or properly isolated hosted service, with verified URL |
-| Presentation | Submission draft and actual evidence exist | Final actual-UI recording, narration/captions and accessible three-minute video |
-| Submission | No submission made | Verify portal, participant details, links and visible success |
+| Original maintainable code | React/TypeScript, native controls, no runtime dependencies added in prediction/recovery phase | References and standard dependencies credited separately |
+| Meaningful Meta use | Actual Muse proposal and SAM trajectories on generated and filmed input | Real calls through capped runner; normal successful HTTP path checked offline |
+| Inspectable analysis | Video, landmark/source, calibration editor, four models, chronological partitions, exports | Included real clips are pixels, not calibrated metric evidence |
+| Independent prediction | Browser/CLI source verification; A420 / B121 prefix / B479 evaluation; 2.98810 px result | Same-setup is assumed; result is against SAM observations |
+| Recovery | One validated bounded browser draft, relinking/hash check, portable JSON | Not history/cloud sync; native replacement cancellation not fully automated |
+| Tracking quality honesty | Approximate references before SAM, A10.373/B8.386 px vertical centroid agreement | Tight metrology gate not met; annotations are agent estimates |
+| First use / responsive | Real and generated presets, visible disabled paid controls, no horizontal overflow at tested narrow widths | No independent human usability/demand study |
+| Judge build | Static relative-path package tested under nested URL; no /api references/calls | Public URL verified only after successful Pages deploy |
+| Demo | Actual product captures, filmed excerpt, narrated evidence/limits and captions | Replays saved output, not fresh live inference or continuous screen recording |
+| Submission | Draft copy and technical materials prepared | Team/track/eligibility and accepted portal submission still need user action |
 
-## Current dependency
+## Scope decision
 
-The required design skill for a non-trivial prediction screen is `12ui-design`. Its installed CLI is signed out and returns a user sign-in link. The user has been asked to connect it (or explicitly direct continuation without new design). Independent engine, CLI, regression and documentation work proceeds without that connection. No design service purchase/upgrade or Meta call was made for this change.
+The completed prototype demonstrates reviewable 1D modeling and conditional separate-recording trajectory prediction. It does not claim a calibrated general digital twin or phone-mount hardware validation. Preserve failed/uncertain measurements rather than forcing a broader research gate to pass. These narrower claims define the MVP being presented.
 
-## Physical evidence research
+## Design evidence
 
-Inspected primary sources for real experiment footage. ARTS-Laboratory's [cantilever beam dataset](https://github.com/ARTS-Laboratory/dataset-free-vibration-of-cantilever-beam) declares CC BY-SA 4.0, but its linked binary video returned HTTP 403 and the experiment deliberately changes mass; it is not an unchanged-setup A/B release pair. No dataset files were imported or redistributed. ComPADRE's [rolling-sphere example](https://www.compadre.org/OSP/items/detail.cfm?ID=15805) is CC BY-NC-SA 4.0 and is a different apparatus; it was not bundled as validation for the phone mount. These sources do not close the real-camera gate.
+User connected 12ui after an expired request. The updated official CLI generated a Predict reference. Conversion reached the local Codex quota and its execution remains needs-reconciliation; no purchase, account switch, force-receipt edit or API fallback was used. Original React code implements the approved reference with existing components. Actual desktop/mobile rendering was checked. No automated conversion/alignment success is claimed.

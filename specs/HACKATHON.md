@@ -1,25 +1,22 @@
-# Hackathon narrative and gates
+# Hackathon presentation
 
-## What is new here
-Original TwinLab application, generated sample video/data, numerical fitting/validation, video observation editor, evidence exports and manually gated Meta integrations built during the hackathon. Referenced applications were studied, not copied. Standard React/Vite/OpenAI SDK/SAM parser/font dependencies are not original contributions.
+The MVP presents an inspectable video → observation → model → separate prediction workflow, with meaningful Muse/SAM use and deterministic numerical evidence. It is a bounded 1D experimental tool, not universal law discovery.
 
-## Three-minute demo outline
-1. 0:00–0:25 — State the actual experiment question; show the recording and reference scale. Do not invent user interviews or customer outcomes.
-2. 0:25–1:00 — Demonstrate the user's live Muse proposal and SAM track only after access/accuracy testing; show the model name and a reviewed object track. If no live evidence exists, say so rather than presenting sample points as SAM.
-3. 1:00–1:40 — Calibrate, inspect/remove a bad point, fit candidate models on earlier samples. Reveal later validation observations and report numerical error.
-4. 1:40–2:15 — Compare ideal/damped models and show their predicted traces. Explore one parameter with the explicit limitation that this is not a validated intervention.
-5. 2:15–2:45 — Open the evidence table, usage ledger and reproducible exports.
-6. 2:45–3:00 — Explain what was built, limits and next independent experiment.
+Use the final MP4/captions/transcript in public/demo. Scene manifest and exact narration are in specs/demo/storyboard.json; frames are actual captured application views, with an original licensed filmed excerpt. The presentation replays historical Meta outputs and does not pretend to make a fresh inference request.
 
-## Required before submission
-- [x] Actual Muse Spark and SAM access tested on generated footage under explicit user authorization. Reported-usage costs recorded; final billing remains provider-authoritative.
-- [ ] Real fixed-camera experiment with known scale, confirmed timing and independent manually marked landmarks.
-- [ ] Record tracking error and comparison against Tracker / manual baseline; no superiority claim without results.
-- [ ] Verify a different recording; current chronological validation does not establish cross-experiment generalization.
-- [x] Public repository created and main branch pushed: https://github.com/Aditya-Chawla-20/twinlab.
-- [ ] Working product access for judges: localhost is not a public demo. Add hosted auth/budget isolation before any public paid backend, or provide a clearly documented local reproduction path and suitable demo artifact.
-- [ ] Three-minute accessible demo video, contributor list and CV submission.
+## Demonstration
 
-Deadline in supplied guide: November 4, 2026 9:00 PM EST / November 5 7:30 AM IST. Recheck official platform before submission.
+1. Practical maker question and real spring source, pixels only.
+2. Actual saved Muse proposal and SAM landmark review; box-center bias and explicit centroid alternative.
+3. A’s420 earlier fitting points, 180 later validation points, 2.16843px validation error.
+4. Frozen A dynamics, independent B, predeclared4s prefix, same-setup assumption.
+5. B’s479 later observations, 2.98810px error vs prefix-trained baselines.
+6. Portable evidence, one-draft recovery, no paid public backend.
+7. Approximate reference disagreement, missing metrology/user evidence and actual costs.
+8. Original work, public source and reproducible browser example.
 
-This implementation is not a submitted hackathon entry. Public repository creation is authorized and recorded in the progress log; paid inference is now verified on a generated fixture; real-world accuracy remains unverified.
+## Final submission actions
+
+Technical package/deployment evidence is recorded in VERIFICATION.md. User still needs to confirm track, eligibility, team/contributors and actual portal details. No submission or social post has been made. Retain visible success confirmation when the entry is eventually submitted.
+
+Supplied deadline Nov4,2026 9PM EST / Nov5 7:30AM IST. Recheck the official portal; public source and a demo artifact alone do not establish accepted entry status.

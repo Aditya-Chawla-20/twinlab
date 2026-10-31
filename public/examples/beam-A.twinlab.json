@@ -1,0 +1,4902 @@
+{
+  "version": 1,
+  "name": "Morpheus spring release A",
+  "question": "Does a frozen damped model predict another release under the same-setup assumption? Evaluate y displacement in pixels; metric scale and hidden setup constants are not verified.",
+  "trackingTarget": "metal cylinder",
+  "media": {
+    "name": "beam-A-20s.mp4",
+    "width": 1280,
+    "height": 1024,
+    "duration": 20,
+    "fps": 30,
+    "cfrConfirmed": true,
+    "sha256": "9ccdf8e57f74e13bbc18a5391c4af0086677f92ff7055d82811656efb5434b2b"
+  },
+  "points": [
+    {
+      "t": 0,
+      "x": 639.5975508077123,
+      "y": 587.987545596665,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 0.03333333333333333,
+      "x": 639.2591832546686,
+      "y": 588.9182228606608,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 0.06666666666666667,
+      "x": 639.3436798039615,
+      "y": 590.2350418623647,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 0.1,
+      "x": 639.0547393123151,
+      "y": 591.98750127538,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 0.13333333333333333,
+      "x": 638.7905170651952,
+      "y": 594.4897813202534,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 0.16666666666666666,
+      "x": 638.7806085979781,
+      "y": 594.481211069131,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 0.2,
+      "x": 638.363973954624,
+      "y": 600.1508291789602,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 0.23333333333333334,
+      "x": 638.1512524084778,
+      "y": 603.0574485346314,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 0.26666666666666666,
+      "x": 638.0372876182724,
+      "y": 605.8691118119849,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 0.3,
+      "x": 637.7121956210354,
+      "y": 609.6758747697975,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 0.3333333333333333,
+      "x": 637.6562946337482,
+      "y": 613.2062844317486,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 0.36666666666666664,
+      "x": 637.4518341631948,
+      "y": 617.2297022660299,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 0.4,
+      "x": 637.1698065430974,
+      "y": 621.229869340626,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 0.43333333333333335,
+      "x": 636.9858184764992,
+      "y": 625.1257090761751,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 0.4666666666666667,
+      "x": 636.6879439821392,
+      "y": 629.2902374670184,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 0.5,
+      "x": 636.6876016260162,
+      "y": 633.4215447154471,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 0.5333333333333333,
+      "x": 636.3918781725888,
+      "y": 637.163654822335,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 0.5666666666666667,
+      "x": 636.2595115551519,
+      "y": 640.9054899586234,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 0.6,
+      "x": 636.0363443895554,
+      "y": 644.9812985179958,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 0.6333333333333333,
+      "x": 635.8478260869565,
+      "y": 648.8339049732674,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 0.6666666666666666,
+      "x": 635.6532876159741,
+      "y": 652.6124445340863,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 0.7,
+      "x": 635.6587909319899,
+      "y": 652.6003526448362,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 0.7333333333333333,
+      "x": 635.033915312061,
+      "y": 659.3571141882401,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 0.7666666666666667,
+      "x": 634.9703104591581,
+      "y": 662.3275896714558,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 0.8,
+      "x": 634.9541440899056,
+      "y": 662.3395544852499,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 0.8333333333333334,
+      "x": 634.4827224608009,
+      "y": 667.4971037651054,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 0.8666666666666667,
+      "x": 634.1148689213528,
+      "y": 669.9806884130478,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 0.9,
+      "x": 633.8835411471322,
+      "y": 671.8520199501247,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 0.9333333333333333,
+      "x": 633.6416907298616,
+      "y": 673.5049785920542,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 0.9666666666666667,
+      "x": 633.314312767866,
+      "y": 674.8216385926443,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 1,
+      "x": 633.2218142119889,
+      "y": 675.7546645494244,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 1.0333333333333334,
+      "x": 632.9174882979783,
+      "y": 676.2134747535106,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 1.0666666666666667,
+      "x": 632.6801972307999,
+      "y": 676.6025002490288,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 1.1,
+      "x": 632.3929591334318,
+      "y": 676.4186607582471,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 1.1333333333333333,
+      "x": 632.3245284881998,
+      "y": 676.2276587340772,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 1.1666666666666667,
+      "x": 632.0478980013784,
+      "y": 675.6201142069509,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 1.2,
+      "x": 631.6681259222823,
+      "y": 674.5299065420561,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 1.2333333333333334,
+      "x": 631.4400885391047,
+      "y": 672.8591736350221,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 1.2666666666666666,
+      "x": 631.4985268120212,
+      "y": 672.8672166568454,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 1.3,
+      "x": 631.2613104524181,
+      "y": 668.7490249609984,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 1.3333333333333333,
+      "x": 631.1804275348107,
+      "y": 666.4588154540106,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 1.3666666666666667,
+      "x": 631.0227963525836,
+      "y": 663.8573879792136,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 1.4,
+      "x": 630.9593511823334,
+      "y": 661.1361149110808,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 1.4333333333333333,
+      "x": 630.8251850409038,
+      "y": 657.8280093494351,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 1.4666666666666666,
+      "x": 630.7274270196878,
+      "y": 654.2079817670449,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 1.5,
+      "x": 630.5382779779877,
+      "y": 650.9589461381124,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 1.5333333333333334,
+      "x": 630.374101418302,
+      "y": 647.3809986399845,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 1.5666666666666667,
+      "x": 630.1558755315036,
+      "y": 643.3464437572478,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 1.6,
+      "x": 630.0929203539823,
+      "y": 639.62029563357,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 1.6333333333333333,
+      "x": 629.828575534055,
+      "y": 635.7453300124533,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 1.6666666666666667,
+      "x": 629.6099741799751,
+      "y": 632.0333269580185,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 1.7,
+      "x": 629.2577983401698,
+      "y": 628.1653629686159,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 1.7333333333333334,
+      "x": 629.2830143768447,
+      "y": 628.1786632390746,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 1.7666666666666666,
+      "x": 629.1735780863611,
+      "y": 620.3630397565151,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 1.8,
+      "x": 629.1001332571864,
+      "y": 616.4554540262707,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 1.8333333333333333,
+      "x": 629.2407690105906,
+      "y": 612.6396813281176,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 1.8666666666666667,
+      "x": 629.1830778021141,
+      "y": 609.4752404532902,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 1.9,
+      "x": 629.2112212794356,
+      "y": 606.0362760987701,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 1.9333333333333333,
+      "x": 629.1713020287647,
+      "y": 602.9633774645205,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 1.9666666666666666,
+      "x": 629.2902124430956,
+      "y": 600.0511191198786,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 2,
+      "x": 629.3883205456095,
+      "y": 597.1678980771053,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 2.033333333333333,
+      "x": 629.6015448379804,
+      "y": 595.0778070836474,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 2.066666666666667,
+      "x": 629.6835812464695,
+      "y": 592.842590849181,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 2.1,
+      "x": 629.7908197031294,
+      "y": 591.0326652169803,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 2.1333333333333333,
+      "x": 629.350374569751,
+      "y": 594.7216035634744,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 2.1666666666666665,
+      "x": 630.0063569448428,
+      "y": 588.7306662842941,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 2.2,
+      "x": 630.1418392551776,
+      "y": 587.849990499715,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 2.2333333333333334,
+      "x": 630.1568803864002,
+      "y": 587.7903684060991,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 2.2666666666666666,
+      "x": 630.535585841378,
+      "y": 586.9836267272383,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 2.3,
+      "x": 630.5382105362717,
+      "y": 587.0319209306724,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 2.3333333333333335,
+      "x": 630.8511610201751,
+      "y": 587.4434716406547,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 2.3666666666666667,
+      "x": 631.0729812184193,
+      "y": 588.4521403374964,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 2.4,
+      "x": 631.1443378119002,
+      "y": 589.7080614203455,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 2.433333333333333,
+      "x": 631.3046351273703,
+      "y": 591.1998659260678,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 2.466666666666667,
+      "x": 631.4713351288957,
+      "y": 592.927375913813,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 2.5,
+      "x": 631.6880505553428,
+      "y": 595.2271160474913,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 2.533333333333333,
+      "x": 631.8963618956438,
+      "y": 597.5131163235998,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 2.566666666666667,
+      "x": 631.9933346120648,
+      "y": 599.9993766183945,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 2.6,
+      "x": 631.9591225357557,
+      "y": 603.0609779667568,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 2.6333333333333333,
+      "x": 632.1810311284047,
+      "y": 606.1576848249027,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 2.6666666666666665,
+      "x": 632.4563026838484,
+      "y": 609.683412460033,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 2.7,
+      "x": 632.4967168791039,
+      "y": 612.7996330629587,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 2.7333333333333334,
+      "x": 632.9181026137463,
+      "y": 616.5351403678607,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 2.7666666666666666,
+      "x": 632.8824697336562,
+      "y": 616.4400484261502,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 2.8,
+      "x": 633.3421717171717,
+      "y": 624.0958624708625,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 2.8333333333333335,
+      "x": 633.4587357330992,
+      "y": 628.1438396254024,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 2.8666666666666667,
+      "x": 633.8072247818841,
+      "y": 631.914861288109,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 2.9,
+      "x": 634.0605345911949,
+      "y": 635.5764544025158,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 2.933333333333333,
+      "x": 634.4641414638952,
+      "y": 639.3044527632745,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 2.966666666666667,
+      "x": 634.6513268225314,
+      "y": 643.6639538324948,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 3,
+      "x": 635.0333201698095,
+      "y": 647.2425214729983,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 3.033333333333333,
+      "x": 635.1879012345679,
+      "y": 650.8508148148148,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 3.066666666666667,
+      "x": 635.3401188707281,
+      "y": 654.6347201584942,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 3.1,
+      "x": 635.4778502917037,
+      "y": 657.9593097992682,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 3.1333333333333333,
+      "x": 635.8484757919905,
+      "y": 660.8342299262802,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 3.1666666666666665,
+      "x": 636.0094283148758,
+      "y": 663.455701885663,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 3.2,
+      "x": 636.1092069554729,
+      "y": 666.6301638355613,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 3.2333333333333334,
+      "x": 636.3161676646706,
+      "y": 668.8554890219561,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 3.2666666666666666,
+      "x": 636.5369965191447,
+      "y": 670.9070611636002,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 3.3,
+      "x": 636.4917462211615,
+      "y": 670.9508750994431,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 3.3333333333333335,
+      "x": 636.8195545299488,
+      "y": 673.9365405839269,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 3.3666666666666667,
+      "x": 636.8465088282504,
+      "y": 675.0952046548957,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 3.4,
+      "x": 636.9288573143887,
+      "y": 675.7471482889733,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 3.433333333333333,
+      "x": 637.016312481293,
+      "y": 676.235508330839,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 3.466666666666667,
+      "x": 637.0658775347118,
+      "y": 676.2082209569473,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 3.5,
+      "x": 637.1642642642643,
+      "y": 676.0266266266266,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 3.533333333333333,
+      "x": 637.2412,
+      "y": 675.386,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 3.566666666666667,
+      "x": 637.3941598564879,
+      "y": 674.6447079928244,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 3.6,
+      "x": 637.5706738437002,
+      "y": 673.0786483253588,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 3.6333333333333333,
+      "x": 637.5356607731495,
+      "y": 671.5775147337928,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 3.6666666666666665,
+      "x": 637.6350080064051,
+      "y": 669.7678142514011,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 3.7,
+      "x": 637.7795173514161,
+      "y": 667.1153769445552,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 3.7333333333333334,
+      "x": 637.9190172430978,
+      "y": 664.626582278481,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 3.7666666666666666,
+      "x": 637.9424638542285,
+      "y": 664.4144385026738,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 3.8,
+      "x": 637.949985040391,
+      "y": 658.6445098234766,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 3.8333333333333335,
+      "x": 638.1183526589364,
+      "y": 655.6389444222311,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 3.8666666666666667,
+      "x": 638.0101530459137,
+      "y": 652.0611683505051,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 3.9,
+      "x": 638.0492269326684,
+      "y": 648.3064837905237,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 3.933333333333333,
+      "x": 637.8873063468266,
+      "y": 644.8751124437781,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 3.966666666666667,
+      "x": 637.8557884231537,
+      "y": 641.013872255489,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 4,
+      "x": 637.694005994006,
+      "y": 636.9287712287712,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 4.033333333333333,
+      "x": 637.5651,
+      "y": 633.3029,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 4.066666666666666,
+      "x": 637.3710956866634,
+      "y": 629.1007932573128,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 4.1,
+      "x": 637.2957,
+      "y": 625.5345,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 4.133333333333334,
+      "x": 637.272333432925,
+      "y": 621.4726122896126,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 4.166666666666667,
+      "x": 637.130597387055,
+      "y": 617.70464745188,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 4.2,
+      "x": 637.081541218638,
+      "y": 613.689167662286,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 4.233333333333333,
+      "x": 637.0608808290156,
+      "y": 613.7164208848146,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 4.266666666666667,
+      "x": 636.6472868217054,
+      "y": 606.5814456860968,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 4.3,
+      "x": 636.5155388471178,
+      "y": 603.4694235588972,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 4.333333333333333,
+      "x": 636.5565130260521,
+      "y": 603.439378757515,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 4.366666666666666,
+      "x": 636.3512107264359,
+      "y": 597.8262957774665,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 4.4,
+      "x": 636.2544,
+      "y": 595.5014,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 4.433333333333334,
+      "x": 636.2528258477544,
+      "y": 592.9865459637891,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 4.466666666666667,
+      "x": 636.0488428013225,
+      "y": 591.1826971245366,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 4.5,
+      "x": 636.0407733921058,
+      "y": 589.6436585854539,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 4.533333333333333,
+      "x": 636.0234912718205,
+      "y": 588.2147132169576,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 4.566666666666666,
+      "x": 635.8075846907165,
+      "y": 587.4938043369641,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 4.6,
+      "x": 635.624676359291,
+      "y": 586.8430591515635,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 4.633333333333334,
+      "x": 635.5622761639474,
+      "y": 586.7045364106646,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 4.666666666666667,
+      "x": 635.4244871667822,
+      "y": 586.7288177583986,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 4.7,
+      "x": 635.3373200992556,
+      "y": 587.1674937965261,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 4.733333333333333,
+      "x": 635.1971177819886,
+      "y": 587.8102622918121,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 4.766666666666667,
+      "x": 635.154106184132,
+      "y": 587.7462716245775,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 4.8,
+      "x": 634.8143946998595,
+      "y": 590.623067657097,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 4.833333333333333,
+      "x": 634.6599881270406,
+      "y": 591.9568121104185,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 4.866666666666666,
+      "x": 634.4501480750247,
+      "y": 594.1192497532084,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 4.9,
+      "x": 634.1026132233029,
+      "y": 596.572993417821,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 4.933333333333334,
+      "x": 633.8447970914808,
+      "y": 599.2515967377419,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 4.966666666666667,
+      "x": 633.5679304897315,
+      "y": 602.2635268562401,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 5,
+      "x": 633.5060867857844,
+      "y": 605.3194580797173,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 5.033333333333333,
+      "x": 633.2448579823703,
+      "y": 608.6040156709108,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 5.066666666666666,
+      "x": 633.1110517626494,
+      "y": 611.8517529377489,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 5.1,
+      "x": 632.8803627145086,
+      "y": 615.5610374414977,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 5.133333333333334,
+      "x": 632.7766415500538,
+      "y": 619.1301007926412,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 5.166666666666667,
+      "x": 632.8564801250122,
+      "y": 623.0389198163883,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 5.2,
+      "x": 632.6034952779671,
+      "y": 626.8190536461883,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 5.233333333333333,
+      "x": 632.6322403298645,
+      "y": 630.7009621048499,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 5.266666666666667,
+      "x": 632.6132019994119,
+      "y": 630.7132706066843,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 5.3,
+      "x": 632.5933829287392,
+      "y": 638.2635082223962,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 5.333333333333333,
+      "x": 632.5758998435055,
+      "y": 642.2900039123631,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 5.366666666666666,
+      "x": 632.4280667320903,
+      "y": 646.045142296369,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 5.4,
+      "x": 632.3691212567501,
+      "y": 649.3226804123711,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 5.433333333333334,
+      "x": 632.2758114978491,
+      "y": 652.9951114587407,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 5.466666666666667,
+      "x": 632.256727664155,
+      "y": 656.3641745767687,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 5.5,
+      "x": 632.0916420845624,
+      "y": 659.5727630285153,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 5.533333333333333,
+      "x": 632.1421125098348,
+      "y": 662.3787372147915,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 5.566666666666666,
+      "x": 632.1484497645212,
+      "y": 664.8862833594976,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 5.6,
+      "x": 632.0261976778222,
+      "y": 667.0559566787003,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 5.633333333333334,
+      "x": 631.9183286311898,
+      "y": 669.1733145247592,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 5.666666666666667,
+      "x": 631.8126472898665,
+      "y": 670.9798703849175,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 5.7,
+      "x": 631.8359145265634,
+      "y": 672.2431876102725,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 5.733333333333333,
+      "x": 631.7189314178884,
+      "y": 673.5845222867264,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 5.766666666666667,
+      "x": 631.7345581716087,
+      "y": 673.5683676485075,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 5.8,
+      "x": 631.7890349156532,
+      "y": 674.7838367987446,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 5.833333333333333,
+      "x": 631.7330708661417,
+      "y": 674.7645669291338,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 5.866666666666666,
+      "x": 631.7473575027166,
+      "y": 674.829744146992,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 5.9,
+      "x": 631.7755503144654,
+      "y": 674.1773781446541,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 5.933333333333334,
+      "x": 631.8244701726844,
+      "y": 673.3967817896389,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 5.966666666666667,
+      "x": 631.9206558981889,
+      "y": 672.0852178169359,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 6,
+      "x": 631.9879075687849,
+      "y": 670.4567218251249,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 6.033333333333333,
+      "x": 631.9921691464369,
+      "y": 668.3013899765074,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 6.066666666666666,
+      "x": 632.0664841611264,
+      "y": 666.2697497066875,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 6.1,
+      "x": 632.1455275004894,
+      "y": 663.7202975141906,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 6.133333333333334,
+      "x": 632.2615309126595,
+      "y": 661.3465161923455,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 6.166666666666667,
+      "x": 632.344140625,
+      "y": 658.26884765625,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 6.2,
+      "x": 632.4794647201946,
+      "y": 655.1540145985401,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 6.233333333333333,
+      "x": 632.65261358085,
+      "y": 651.7413287738153,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 6.266666666666667,
+      "x": 632.675791943684,
+      "y": 648.479468126711,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 6.3,
+      "x": 632.705675146771,
+      "y": 648.4960861056752,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 6.333333333333333,
+      "x": 632.96693933197,
+      "y": 640.8382997370727,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 6.366666666666666,
+      "x": 632.9834940111014,
+      "y": 637.1435874963482,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 6.4,
+      "x": 632.9460103022645,
+      "y": 633.5169112644572,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 6.433333333333334,
+      "x": 632.9359197907585,
+      "y": 629.6291291291291,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 6.466666666666667,
+      "x": 633.0411309811503,
+      "y": 625.7177863702271,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 6.5,
+      "x": 633.1247821878026,
+      "y": 622.0945788964182,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 6.533333333333333,
+      "x": 633.2075700300475,
+      "y": 618.363235436658,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 6.566666666666666,
+      "x": 633.3098408104197,
+      "y": 614.6169319826339,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 6.6,
+      "x": 633.5281581485053,
+      "y": 611.3962391513983,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 6.633333333333334,
+      "x": 633.5141651304939,
+      "y": 607.9467837392064,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 6.666666666666667,
+      "x": 633.6712428446687,
+      "y": 604.8517997477443,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 6.7,
+      "x": 633.8708430007734,
+      "y": 602.1267401392112,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 6.733333333333333,
+      "x": 634.0749395258829,
+      "y": 599.2896468311562,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 6.766666666666667,
+      "x": 634.2498790049366,
+      "y": 596.7844835930694,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 6.8,
+      "x": 634.3628726813635,
+      "y": 594.8551519860154,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 6.833333333333333,
+      "x": 634.3370262390671,
+      "y": 594.808260447036,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 6.866666666666666,
+      "x": 634.7692681977423,
+      "y": 591.1821720513818,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 6.9,
+      "x": 634.9432017117292,
+      "y": 589.9162614277378,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 6.933333333333334,
+      "x": 635.2015201715066,
+      "y": 589.084681348665,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 6.966666666666667,
+      "x": 635.2456088992974,
+      "y": 588.2319476971117,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 7,
+      "x": 635.4963849535907,
+      "y": 588.0559355153883,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 7.033333333333333,
+      "x": 635.6611825950299,
+      "y": 587.9630193497692,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 7.066666666666666,
+      "x": 635.8770749435223,
+      "y": 588.2056281308319,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 7.1,
+      "x": 636.0103992114342,
+      "y": 588.7962050271069,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 7.133333333333334,
+      "x": 636.1798267204883,
+      "y": 589.5869351186374,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 7.166666666666667,
+      "x": 636.2692307692307,
+      "y": 591.3433084772371,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 7.2,
+      "x": 636.4001575423395,
+      "y": 592.8882434029146,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 7.233333333333333,
+      "x": 636.6303452334249,
+      "y": 594.735876814437,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 7.266666666666667,
+      "x": 636.6890172278778,
+      "y": 597.2022317932655,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 7.3,
+      "x": 636.7250784929356,
+      "y": 597.2190934065934,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 7.333333333333333,
+      "x": 636.8167474527648,
+      "y": 602.2912751013948,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 7.366666666666666,
+      "x": 636.868253968254,
+      "y": 604.9565476190476,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 7.4,
+      "x": 636.8765230312035,
+      "y": 605.0323427439326,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 7.433333333333334,
+      "x": 637.1465415019763,
+      "y": 611.4973320158102,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 7.466666666666667,
+      "x": 637.1301068824293,
+      "y": 615.0074418140046,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 7.5,
+      "x": 637.3703132769766,
+      "y": 618.8563401292889,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 7.533333333333333,
+      "x": 637.2993072736269,
+      "y": 622.3241464621475,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 7.566666666666666,
+      "x": 637.405230708035,
+      "y": 626.1393198090692,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 7.6,
+      "x": 637.5731049635474,
+      "y": 629.8475481873564,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 7.633333333333334,
+      "x": 637.6527221777421,
+      "y": 633.773318654924,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 7.666666666666667,
+      "x": 637.5903380197427,
+      "y": 637.4611127729584,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 7.7,
+      "x": 637.8180778032037,
+      "y": 641.3227042085365,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 7.733333333333333,
+      "x": 638.005917454003,
+      "y": 644.9295375435107,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 7.766666666666667,
+      "x": 638.0397045702389,
+      "y": 648.4765044116189,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 7.8,
+      "x": 637.9143794749403,
+      "y": 652.0560859188545,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 7.833333333333333,
+      "x": 638.0625248114331,
+      "y": 655.2315402937674,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 7.866666666666666,
+      "x": 638.0514844603316,
+      "y": 655.3007149240393,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 7.9,
+      "x": 638.0769154818325,
+      "y": 660.702804107425,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 7.933333333333334,
+      "x": 638.0764239722635,
+      "y": 663.3597325408618,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 7.966666666666667,
+      "x": 637.9372212862947,
+      "y": 665.7943216727778,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 8,
+      "x": 637.8818019625335,
+      "y": 667.8270889087124,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 8.033333333333333,
+      "x": 637.6719555731852,
+      "y": 669.5973819912733,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 8.066666666666666,
+      "x": 637.5911706349207,
+      "y": 670.8886904761905,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 8.1,
+      "x": 637.481450252951,
+      "y": 672.0113580001984,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 8.133333333333333,
+      "x": 637.4190452511189,
+      "y": 672.9933863749378,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 8.166666666666666,
+      "x": 637.4153433902342,
+      "y": 673.3383287018659,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 8.2,
+      "x": 637.2490051730999,
+      "y": 673.4807003581377,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 8.233333333333333,
+      "x": 637.1818272292994,
+      "y": 673.5044785031847,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 8.266666666666667,
+      "x": 636.9759773202029,
+      "y": 673.150154182831,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 8.3,
+      "x": 636.9093666103212,
+      "y": 672.2106492989957,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 8.333333333333334,
+      "x": 636.718387384707,
+      "y": 670.9962808687891,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 8.366666666666667,
+      "x": 636.7274980174465,
+      "y": 670.9943497224425,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 8.4,
+      "x": 636.437357064731,
+      "y": 668.2416724669384,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 8.433333333333334,
+      "x": 636.1768019140663,
+      "y": 665.9224902801316,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 8.466666666666667,
+      "x": 636.1044501837688,
+      "y": 663.4237111353929,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 8.5,
+      "x": 635.9064798250845,
+      "y": 661.1608030212682,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 8.533333333333333,
+      "x": 635.6420743249976,
+      "y": 658.2855933047723,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 8.566666666666666,
+      "x": 635.3391781092562,
+      "y": 655.3790872271065,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 8.6,
+      "x": 635.4030602171767,
+      "y": 652.285982230997,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 8.633333333333333,
+      "x": 635.1584737363727,
+      "y": 648.6602576808722,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 8.666666666666666,
+      "x": 634.785161674271,
+      "y": 645.1709978178933,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 8.7,
+      "x": 634.594877593157,
+      "y": 641.6454134303411,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 8.733333333333333,
+      "x": 634.4054760730143,
+      "y": 637.827972372965,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 8.766666666666667,
+      "x": 634.172711058264,
+      "y": 634.0512286959968,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 8.8,
+      "x": 633.6337140606538,
+      "y": 630.1107719574636,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 8.833333333333334,
+      "x": 633.4294553249537,
+      "y": 626.5940270875963,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 8.866666666666667,
+      "x": 633.4366965329178,
+      "y": 626.6901051811453,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 8.9,
+      "x": 633.1575570574983,
+      "y": 619.3763835831129,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 8.933333333333334,
+      "x": 633.1583145737496,
+      "y": 619.3916511696193,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 8.966666666666667,
+      "x": 632.5184162062615,
+      "y": 612.7713967238539,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 9,
+      "x": 632.2481034818129,
+      "y": 609.5245088504182,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 9.033333333333333,
+      "x": 632.0075499269362,
+      "y": 606.5770579639552,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 9.066666666666666,
+      "x": 631.9303540336622,
+      "y": 603.5901528342039,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 9.1,
+      "x": 631.7849685838569,
+      "y": 601.0368777187047,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 9.133333333333333,
+      "x": 631.4828549412445,
+      "y": 598.7484107108457,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 9.166666666666666,
+      "x": 631.4026055187002,
+      "y": 596.4950966253245,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 9.2,
+      "x": 631.2588133307648,
+      "y": 594.7287613176652,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 9.233333333333333,
+      "x": 631.1725297962322,
+      "y": 593.1766628219916,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 9.266666666666667,
+      "x": 631.071852561034,
+      "y": 591.8552896122546,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 9.3,
+      "x": 630.9850224901904,
+      "y": 591.1455163173509,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 9.333333333333334,
+      "x": 630.8702465125167,
+      "y": 590.3400535065928,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 9.366666666666667,
+      "x": 630.7822256272744,
+      "y": 590.1064930090021,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 9.4,
+      "x": 630.670145538108,
+      "y": 589.9692646495596,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 9.433333333333334,
+      "x": 630.6751293351217,
+      "y": 589.8702816631538,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 9.466666666666667,
+      "x": 630.4292348941875,
+      "y": 590.6997510293977,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 9.5,
+      "x": 630.2672471215149,
+      "y": 591.7268531734703,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 9.533333333333333,
+      "x": 630.132079961923,
+      "y": 592.7866254164684,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 9.566666666666666,
+      "x": 630.0651637399146,
+      "y": 594.5431893687708,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 9.6,
+      "x": 629.0460905349794,
+      "y": 602.0941358024692,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 9.633333333333333,
+      "x": 629.6295902589873,
+      "y": 598.7647854657905,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 9.666666666666666,
+      "x": 629.4866436052657,
+      "y": 601.0047564139521,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 9.7,
+      "x": 629.4919385796545,
+      "y": 603.703838771593,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 9.733333333333333,
+      "x": 629.4612946600076,
+      "y": 606.3190549366116,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 9.766666666666667,
+      "x": 629.3536094334196,
+      "y": 609.5995110727639,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 9.8,
+      "x": 629.3215449492045,
+      "y": 612.3928502971056,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 9.833333333333334,
+      "x": 629.2430675081278,
+      "y": 615.716771849302,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 9.866666666666667,
+      "x": 629.3737145603076,
+      "y": 619.4946179721288,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 9.9,
+      "x": 629.3923121498938,
+      "y": 622.7824029360634,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 9.933333333333334,
+      "x": 629.3676825151895,
+      "y": 622.8314688012345,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 9.966666666666667,
+      "x": 629.4916578770735,
+      "y": 629.913270687506,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 10,
+      "x": 629.5192661438667,
+      "y": 633.1212605286088,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 10.033333333333333,
+      "x": 629.8431096435855,
+      "y": 636.8088278139264,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 10.066666666666666,
+      "x": 629.980520742252,
+      "y": 640.2124259205285,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 10.1,
+      "x": 630.1190568600815,
+      "y": 643.617310304677,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 10.133333333333333,
+      "x": 630.2540535260794,
+      "y": 647.0639773393241,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 10.166666666666666,
+      "x": 630.4717569146864,
+      "y": 650.5198675496689,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 10.2,
+      "x": 630.7035424209805,
+      "y": 653.3629024366377,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 10.233333333333333,
+      "x": 630.8211593067659,
+      "y": 656.3353079408597,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 10.266666666666667,
+      "x": 630.872564378733,
+      "y": 659.1913737393518,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 10.3,
+      "x": 631.1763808211086,
+      "y": 661.5713793442945,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 10.333333333333334,
+      "x": 631.2237617924528,
+      "y": 663.9261988993711,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 10.366666666666667,
+      "x": 631.2345376006283,
+      "y": 663.9307873551934,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 10.4,
+      "x": 631.7449339207049,
+      "y": 667.8515418502202,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 10.433333333333334,
+      "x": 631.7074916650323,
+      "y": 667.8472249460679,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 10.466666666666667,
+      "x": 631.8505053478559,
+      "y": 670.4107055244824,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 10.5,
+      "x": 632.010953924747,
+      "y": 671.3652126927989,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 10.533333333333333,
+      "x": 632.3869889937107,
+      "y": 672.0353773584906,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 10.566666666666666,
+      "x": 632.5678497891951,
+      "y": 672.1385920188254,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 10.6,
+      "x": 632.6670585929845,
+      "y": 672.2777777777778,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 10.633333333333333,
+      "x": 632.9334641805692,
+      "y": 671.9210009813543,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 10.666666666666666,
+      "x": 633.1617137196632,
+      "y": 671.3882615156018,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 10.7,
+      "x": 633.2966252220249,
+      "y": 670.4193803039274,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 10.733333333333333,
+      "x": 633.5159028052153,
+      "y": 669.1760173844331,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 10.766666666666667,
+      "x": 633.8253669178897,
+      "y": 667.5763585878619,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 10.8,
+      "x": 634.1817415451751,
+      "y": 665.5771595755232,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 10.833333333333334,
+      "x": 634.6186793575253,
+      "y": 663.2745389649018,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 10.866666666666667,
+      "x": 634.8160147307653,
+      "y": 661.2133472678412,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 10.9,
+      "x": 635.0096001583531,
+      "y": 658.410827395091,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 10.933333333333334,
+      "x": 634.9756435643565,
+      "y": 658.3957425742574,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 10.966666666666667,
+      "x": 635.5968255547816,
+      "y": 652.8808339138222,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 11,
+      "x": 635.8306195393169,
+      "y": 649.4993050039714,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 11.033333333333333,
+      "x": 636.163290636481,
+      "y": 645.9149538278225,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 11.066666666666666,
+      "x": 636.2597260817785,
+      "y": 642.6460897181421,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 11.1,
+      "x": 636.4961232604373,
+      "y": 638.9815109343937,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 11.133333333333333,
+      "x": 636.7068725099601,
+      "y": 635.4030876494024,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 11.166666666666666,
+      "x": 636.9427093694052,
+      "y": 631.6597374179431,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 11.2,
+      "x": 637.1690042075736,
+      "y": 627.9534161490683,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 11.233333333333333,
+      "x": 637.352007189934,
+      "y": 624.4037347713202,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 11.266666666666667,
+      "x": 637.542741855136,
+      "y": 620.9251270299891,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 11.3,
+      "x": 637.6686075445407,
+      "y": 617.6237185229422,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 11.333333333333334,
+      "x": 637.84981483335,
+      "y": 614.3870983885497,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 11.366666666666667,
+      "x": 637.99037111334,
+      "y": 611.2669007021063,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 11.4,
+      "x": 637.9774413475035,
+      "y": 611.2315019049529,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 11.433333333333334,
+      "x": 638.3584008806164,
+      "y": 605.1847793455419,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 11.466666666666667,
+      "x": 638.5347382120333,
+      "y": 602.6735909500451,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 11.5,
+      "x": 638.6093515084694,
+      "y": 600.381727974341,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 11.533333333333333,
+      "x": 638.6833684421707,
+      "y": 598.3088073026381,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 11.566666666666666,
+      "x": 638.8544596223383,
+      "y": 596.3573724387304,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 11.6,
+      "x": 638.9003810287777,
+      "y": 594.5048129950867,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 11.633333333333333,
+      "x": 639.1011410269242,
+      "y": 593.1013412070864,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 11.666666666666666,
+      "x": 639.2092276830491,
+      "y": 592.2795386158475,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 11.7,
+      "x": 639.3036036036036,
+      "y": 591.5951951951952,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 11.733333333333333,
+      "x": 639.481027906043,
+      "y": 591.2993374824332,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 11.766666666666667,
+      "x": 639.5230845771144,
+      "y": 590.8837810945274,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 11.8,
+      "x": 639.527132169576,
+      "y": 590.9260349127183,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 11.833333333333334,
+      "x": 639.5928185637127,
+      "y": 591.2801560312063,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 11.866666666666667,
+      "x": 639.6370959671771,
+      "y": 592.1028219753828,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 11.9,
+      "x": 639.6557804047285,
+      "y": 592.0394710478862,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 11.933333333333334,
+      "x": 639.5820394670941,
+      "y": 594.7245817890414,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 11.966666666666667,
+      "x": 639.572321696509,
+      "y": 594.7354706411924,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 12,
+      "x": 639.5738738738738,
+      "y": 594.707007007007,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 12.033333333333333,
+      "x": 639.7163350994701,
+      "y": 598.4049285214436,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 12.066666666666666,
+      "x": 639.6167766446711,
+      "y": 600.6157768446311,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 12.1,
+      "x": 639.6311180062056,
+      "y": 602.8791412271044,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 12.133333333333333,
+      "x": 639.5789236771031,
+      "y": 605.3287486245874,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 12.166666666666666,
+      "x": 639.5227931620514,
+      "y": 607.8906827951614,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 12.2,
+      "x": 639.4951792708647,
+      "y": 611.1454755448428,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 12.233333333333333,
+      "x": 639.534228120946,
+      "y": 614.2784652230316,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 12.266666666666667,
+      "x": 639.4911336919705,
+      "y": 617.7779438135087,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 12.3,
+      "x": 639.2460600654177,
+      "y": 620.9848845277035,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 12.333333333333334,
+      "x": 639.0625932186537,
+      "y": 624.5584667395843,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 12.366666666666667,
+      "x": 639.1108786610879,
+      "y": 627.8726838015541,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 12.4,
+      "x": 639.0803419658034,
+      "y": 631.4636036396361,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 12.433333333333334,
+      "x": 639.0831753318032,
+      "y": 635.0010477996208,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 12.466666666666667,
+      "x": 638.8423576423577,
+      "y": 638.5024975024975,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 12.5,
+      "x": 638.7317121785928,
+      "y": 641.89665138529,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 12.533333333333333,
+      "x": 638.7665470494418,
+      "y": 641.9422846889952,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 12.566666666666666,
+      "x": 638.6346536624204,
+      "y": 648.5136345541401,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 12.6,
+      "x": 638.4593034825871,
+      "y": 651.448855721393,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 12.633333333333333,
+      "x": 638.2684252518201,
+      "y": 654.7549117383065,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 12.666666666666666,
+      "x": 638.0092647937836,
+      "y": 657.4785813907152,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 12.7,
+      "x": 637.8451160011948,
+      "y": 659.9609180523748,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 12.733333333333333,
+      "x": 637.6883783514403,
+      "y": 662.0687232133957,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 12.766666666666667,
+      "x": 637.3960174793922,
+      "y": 664.0948952229616,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 12.8,
+      "x": 637.0106297633373,
+      "y": 665.8901925391095,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 12.833333333333334,
+      "x": 636.767988837951,
+      "y": 667.5090691648395,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 12.866666666666667,
+      "x": 636.4621567648527,
+      "y": 668.6659510733899,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 12.9,
+      "x": 636.1317685917326,
+      "y": 669.7392152937643,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 12.933333333333334,
+      "x": 635.9506605284228,
+      "y": 670.4039231385108,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 12.966666666666667,
+      "x": 635.9403761504602,
+      "y": 670.4073629451781,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 13,
+      "x": 635.2927487015581,
+      "y": 670.6679984019177,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 13.033333333333333,
+      "x": 635.0221660220172,
+      "y": 670.6762372309829,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 13.066666666666666,
+      "x": 635.0030248933849,
+      "y": 670.7292968362591,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 13.1,
+      "x": 634.2154318541997,
+      "y": 669.0929080824088,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 13.133333333333333,
+      "x": 634.1078645007924,
+      "y": 667.9855388272583,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 13.166666666666666,
+      "x": 633.7130872483222,
+      "y": 666.493584682195,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 13.2,
+      "x": 633.4334124863956,
+      "y": 664.6014148609875,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 13.233333333333333,
+      "x": 633.0668902920285,
+      "y": 662.5156866614049,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 13.266666666666667,
+      "x": 632.8376777251185,
+      "y": 660.5996248025276,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 13.3,
+      "x": 632.4649330181245,
+      "y": 657.9123325453113,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 13.333333333333334,
+      "x": 632.2190569744597,
+      "y": 655.3840864440078,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 13.366666666666667,
+      "x": 632.0905303401628,
+      "y": 652.2213998627585,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 13.4,
+      "x": 631.5735380402895,
+      "y": 649.3828476432623,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 13.433333333333334,
+      "x": 631.2476269693708,
+      "y": 646.248996966435,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 13.466666666666667,
+      "x": 630.95126953125,
+      "y": 643.14892578125,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 13.5,
+      "x": 630.773715894747,
+      "y": 639.5613651810855,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 13.533333333333333,
+      "x": 630.7816560015513,
+      "y": 639.521815008726,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 13.566666666666666,
+      "x": 629.9831309041836,
+      "y": 633.2773279352227,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 13.6,
+      "x": 629.6297023068823,
+      "y": 629.7856322389202,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 13.633333333333333,
+      "x": 629.6338055130168,
+      "y": 629.8390122511486,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 13.666666666666666,
+      "x": 629.0291484092209,
+      "y": 623.1523147266146,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 13.7,
+      "x": 628.751497005988,
+      "y": 620.0814086113487,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 13.733333333333333,
+      "x": 628.5733276563535,
+      "y": 616.7697511590501,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 13.766666666666667,
+      "x": 628.5236658495191,
+      "y": 613.6124834999057,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 13.8,
+      "x": 628.2704948998867,
+      "y": 610.6644314318096,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 13.833333333333334,
+      "x": 628.1722237920317,
+      "y": 608.0104078364886,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 13.866666666666667,
+      "x": 627.2374228160745,
+      "y": 610.6332118635489,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 13.9,
+      "x": 627.6931285290458,
+      "y": 602.987989281271,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 13.933333333333334,
+      "x": 627.7011581545472,
+      "y": 600.7792861211316,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 13.966666666666667,
+      "x": 627.7475106685633,
+      "y": 598.9175438596492,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 14,
+      "x": 627.7564004949081,
+      "y": 597.281954887218,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 14.033333333333333,
+      "x": 627.7480083459787,
+      "y": 595.7749430955994,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 14.066666666666666,
+      "x": 627.8449220595182,
+      "y": 594.7404345772319,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 14.1,
+      "x": 627.8228742060859,
+      "y": 594.8269504218409,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 14.133333333333333,
+      "x": 627.9031190926275,
+      "y": 593.3550094517958,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 14.166666666666666,
+      "x": 627.9299206649036,
+      "y": 593.1833207404609,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 14.2,
+      "x": 627.9069076153628,
+      "y": 593.1783051807115,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 14.233333333333333,
+      "x": 627.9168955393503,
+      "y": 593.2671180983048,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 14.266666666666667,
+      "x": 627.8552031902773,
+      "y": 593.908374477782,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 14.3,
+      "x": 627.8523060895918,
+      "y": 594.9007955298797,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 14.333333333333334,
+      "x": 627.9480303749407,
+      "y": 595.9839107736118,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 14.366666666666667,
+      "x": 627.9669523809524,
+      "y": 597.4542857142857,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 14.4,
+      "x": 627.2741640410611,
+      "y": 604.4808923671105,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 14.433333333333334,
+      "x": 627.2379048790488,
+      "y": 606.5182451824518,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 14.466666666666667,
+      "x": 627.3395907928389,
+      "y": 608.8060869565218,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 14.5,
+      "x": 627.4815251975778,
+      "y": 611.1619111156728,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 14.533333333333333,
+      "x": 627.5752523707556,
+      "y": 614.0551136943,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 14.566666666666666,
+      "x": 627.5843520782396,
+      "y": 614.0145680521598,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 14.6,
+      "x": 627.9015206000206,
+      "y": 619.8969998972568,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 14.633333333333333,
+      "x": 627.92258296517,
+      "y": 623.0366279667112,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 14.666666666666666,
+      "x": 628.2078558893362,
+      "y": 626.3822132755239,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 14.7,
+      "x": 628.2743509865005,
+      "y": 629.6406022845275,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 14.733333333333333,
+      "x": 628.5398087516891,
+      "y": 632.7972663964244,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 14.766666666666667,
+      "x": 628.7365815528922,
+      "y": 636.3526315789474,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 14.8,
+      "x": 629.1044463087248,
+      "y": 639.6923238255033,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 14.833333333333334,
+      "x": 630.0283442287052,
+      "y": 637.2189969753147,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 14.866666666666667,
+      "x": 630.2727051494209,
+      "y": 640.1001168110581,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 14.9,
+      "x": 630.7449457954879,
+      "y": 643.4078034964352,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 14.933333333333334,
+      "x": 630.9607689289918,
+      "y": 646.8971165162809,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 14.966666666666667,
+      "x": 631.3948717948718,
+      "y": 649.8295857988165,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 15,
+      "x": 631.8788281634663,
+      "y": 652.5293451501723,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 15.033333333333333,
+      "x": 631.8598936274992,
+      "y": 652.6131685216192,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 15.066666666666666,
+      "x": 632.3624144430116,
+      "y": 657.6820255926991,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 15.1,
+      "x": 632.3574119980169,
+      "y": 657.7671294000992,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 15.133333333333333,
+      "x": 632.8163,
+      "y": 662.3996999999999,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 15.166666666666666,
+      "x": 633.1884267091253,
+      "y": 664.2217633595383,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 15.2,
+      "x": 633.523392394983,
+      "y": 665.8254031455306,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 15.233333333333333,
+      "x": 633.635982428115,
+      "y": 667.2134584664536,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 15.266666666666667,
+      "x": 633.9471950489119,
+      "y": 668.3963865042923,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 15.3,
+      "x": 634.332268370607,
+      "y": 669.050519169329,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 15.333333333333334,
+      "x": 634.6103427540589,
+      "y": 669.6130487071557,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 15.366666666666667,
+      "x": 634.9088359046283,
+      "y": 669.8012422360248,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 15.4,
+      "x": 635.2643706887934,
+      "y": 669.8531940417874,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 15.433333333333334,
+      "x": 635.5962137189916,
+      "y": 669.5207893943959,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 15.466666666666667,
+      "x": 635.8375956504228,
+      "y": 668.8390052356021,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 15.5,
+      "x": 636.1815305815005,
+      "y": 668.023551270463,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 15.533333333333333,
+      "x": 636.4562770127651,
+      "y": 666.7213287767615,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 15.566666666666666,
+      "x": 636.7754292599659,
+      "y": 665.127573049503,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 15.6,
+      "x": 636.8085427135678,
+      "y": 665.170552763819,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 15.633333333333333,
+      "x": 637.4832598235765,
+      "y": 661.307437850842,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 15.666666666666666,
+      "x": 637.7090032154341,
+      "y": 659.073151125402,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 15.7,
+      "x": 637.9581275823843,
+      "y": 656.6191172024589,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 15.733333333333333,
+      "x": 638.1432589913602,
+      "y": 653.9538878842676,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 15.766666666666667,
+      "x": 638.4762455963764,
+      "y": 650.9397584297936,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 15.8,
+      "x": 638.6677892832009,
+      "y": 648.0571529104252,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 15.833333333333334,
+      "x": 638.8486755967368,
+      "y": 644.8150367610032,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 15.866666666666667,
+      "x": 639.0652524438174,
+      "y": 641.607326413383,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 15.9,
+      "x": 639.138712281764,
+      "y": 638.2903925724089,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 15.933333333333334,
+      "x": 639.2866261398176,
+      "y": 635.0956433637284,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 15.966666666666667,
+      "x": 639.3603210077205,
+      "y": 631.6915887850467,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 16,
+      "x": 639.347370021283,
+      "y": 628.5029390898956,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 16.033333333333335,
+      "x": 639.5153566377046,
+      "y": 624.9320064659528,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 16.066666666666666,
+      "x": 639.4682507583418,
+      "y": 624.9787664307381,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 16.1,
+      "x": 639.7094628896334,
+      "y": 618.9162859173521,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 16.133333333333333,
+      "x": 639.6475973697521,
+      "y": 615.8204855842185,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 16.166666666666668,
+      "x": 639.5856737301024,
+      "y": 612.5745209368347,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 16.2,
+      "x": 639.8513977192451,
+      "y": 610.0484912705621,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 16.233333333333334,
+      "x": 640.0808683445302,
+      "y": 607.2206457435075,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 16.266666666666666,
+      "x": 639.8460490463215,
+      "y": 604.5508628519527,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 16.3,
+      "x": 639.7625088446376,
+      "y": 602.6295865763672,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 16.333333333333332,
+      "x": 639.8150781643974,
+      "y": 600.673474533535,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 16.366666666666667,
+      "x": 639.6500756429652,
+      "y": 598.891830559758,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 16.4,
+      "x": 639.6860394537177,
+      "y": 597.4718765806778,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 16.433333333333334,
+      "x": 639.7654527061204,
+      "y": 595.9882144663632,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 16.466666666666665,
+      "x": 639.6706036745406,
+      "y": 594.8216232586311,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 16.5,
+      "x": 639.6206426189755,
+      "y": 594.3123673840557,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 16.533333333333335,
+      "x": 639.6442619626927,
+      "y": 593.7331711273317,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 16.566666666666666,
+      "x": 639.5640948362468,
+      "y": 593.6779184247539,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 16.6,
+      "x": 639.4933721630849,
+      "y": 593.6634866439044,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 16.633333333333333,
+      "x": 639.4693344057913,
+      "y": 593.697365775186,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 16.666666666666668,
+      "x": 639.2777219766974,
+      "y": 594.7060064282845,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 16.7,
+      "x": 639.231655762456,
+      "y": 595.9001006542526,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 16.733333333333334,
+      "x": 639.1270570418981,
+      "y": 597.2590106007067,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 16.766666666666666,
+      "x": 638.9901921335882,
+      "y": 598.8431244341616,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 16.8,
+      "x": 638.9555388471179,
+      "y": 600.5408020050126,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 16.833333333333332,
+      "x": 638.7661581694099,
+      "y": 602.5141509433962,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 16.866666666666667,
+      "x": 638.6149252233263,
+      "y": 604.6752484191509,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 16.9,
+      "x": 638.3967112541486,
+      "y": 606.9471487478628,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 16.933333333333334,
+      "x": 638.2122598813236,
+      "y": 609.762898521573,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 16.966666666666665,
+      "x": 638.0985029940119,
+      "y": 613.0239520958083,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 17,
+      "x": 638.0937094358462,
+      "y": 615.86295556665,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 17.033333333333335,
+      "x": 637.7947463044347,
+      "y": 619.1300439472633,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 17.066666666666666,
+      "x": 637.5068095333467,
+      "y": 622.2819947927098,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 17.1,
+      "x": 637.3135813581358,
+      "y": 625.5850085008501,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 17.133333333333333,
+      "x": 637.3563712742548,
+      "y": 625.5580116023204,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 17.166666666666668,
+      "x": 636.9894150697301,
+      "y": 631.9095515200161,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 17.2,
+      "x": 636.8411411411412,
+      "y": 635.2182182182182,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 17.233333333333334,
+      "x": 636.5899179835967,
+      "y": 638.5482096419283,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 17.266666666666666,
+      "x": 636.4385702907208,
+      "y": 641.7840501792115,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 17.3,
+      "x": 636.2241482070131,
+      "y": 645.0813052547929,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 17.333333333333332,
+      "x": 636.0821876867902,
+      "y": 648.1179517832237,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 17.366666666666667,
+      "x": 635.7609644770788,
+      "y": 651.252827942052,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 17.4,
+      "x": 635.5194425156235,
+      "y": 654.3349370102172,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 17.433333333333334,
+      "x": 635.2471481003869,
+      "y": 656.594335879377,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 17.466666666666665,
+      "x": 634.9590163934427,
+      "y": 658.9840536512668,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 17.5,
+      "x": 634.8974600654827,
+      "y": 661.3669510864173,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 17.533333333333335,
+      "x": 634.73720051695,
+      "y": 663.0090963316433,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 17.566666666666666,
+      "x": 634.3060438475212,
+      "y": 664.7957732569623,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 17.6,
+      "x": 634.246993987976,
+      "y": 665.4624248496995,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 17.633333333333333,
+      "x": 633.6759222530742,
+      "y": 667.7127132090441,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 17.666666666666668,
+      "x": 633.3800633851639,
+      "y": 668.5650688323265,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 17.7,
+      "x": 633.0288356909684,
+      "y": 668.8908398456821,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 17.733333333333334,
+      "x": 632.6916945483173,
+      "y": 669.1893328085023,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 17.766666666666666,
+      "x": 632.3853333333334,
+      "y": 669.0682962962962,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 17.8,
+      "x": 632.1583003952569,
+      "y": 668.670652173913,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 17.833333333333332,
+      "x": 631.8312678272844,
+      "y": 668.2838103668732,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 17.866666666666667,
+      "x": 631.6181102362204,
+      "y": 667.2887795275591,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 17.9,
+      "x": 631.3846607669617,
+      "y": 666.2183874139627,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 17.933333333333334,
+      "x": 631.1436442345533,
+      "y": 664.7458677685951,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 17.966666666666665,
+      "x": 630.9473994111875,
+      "y": 663.1364082433759,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 18,
+      "x": 630.5818667193988,
+      "y": 661.2431283369586,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 18.033333333333335,
+      "x": 630.444011828487,
+      "y": 658.9119270576639,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 18.066666666666666,
+      "x": 630.3869368927275,
+      "y": 656.4868485621749,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 18.1,
+      "x": 630.1726079717952,
+      "y": 653.838262657918,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 18.133333333333333,
+      "x": 630.2307578594658,
+      "y": 654.0161131368877,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 18.166666666666668,
+      "x": 629.6254652301665,
+      "y": 648.2407443682664,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 18.2,
+      "x": 629.5484341567789,
+      "y": 645.3828049017701,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 18.233333333333334,
+      "x": 629.3785652131877,
+      "y": 641.7843469012859,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 18.266666666666666,
+      "x": 629.2460687245195,
+      "y": 638.6334692292759,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 18.3,
+      "x": 628.9431851206044,
+      "y": 635.7034292356873,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 18.333333333333332,
+      "x": 628.8222007722007,
+      "y": 632.5908301158302,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 18.366666666666667,
+      "x": 628.5307854608228,
+      "y": 629.2552507912151,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 18.4,
+      "x": 628.5574021012417,
+      "y": 625.7650429799427,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 18.433333333333334,
+      "x": 628.4933339681935,
+      "y": 622.5844681458909,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 18.466666666666665,
+      "x": 628.3525964745116,
+      "y": 619.628727965698,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 18.5,
+      "x": 628.3506855791962,
+      "y": 616.4586761229315,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 18.533333333333335,
+      "x": 628.3057403535449,
+      "y": 613.4605588291199,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 18.566666666666666,
+      "x": 628.3372357569438,
+      "y": 610.7073182292161,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 18.6,
+      "x": 628.4481333713309,
+      "y": 608.0041322314049,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 18.633333333333333,
+      "x": 628.4375593993537,
+      "y": 608.0788823417602,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 18.666666666666668,
+      "x": 627.7405938580436,
+      "y": 608.54240390482,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 18.7,
+      "x": 628.3023923444975,
+      "y": 601.2523444976076,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 18.733333333333334,
+      "x": 628.4230254989973,
+      "y": 599.1221946327953,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 18.766666666666666,
+      "x": 628.652603572786,
+      "y": 597.5479855568225,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 18.8,
+      "x": 628.7339471424482,
+      "y": 596.3381833794485,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 18.833333333333332,
+      "x": 628.9398399542727,
+      "y": 595.2726016957226,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 18.866666666666667,
+      "x": 629.2657061880019,
+      "y": 594.4025980160604,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 18.9,
+      "x": 629.2996009122007,
+      "y": 593.9188521474724,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 18.933333333333334,
+      "x": 629.4143754162307,
+      "y": 593.6864713157645,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 18.966666666666665,
+      "x": 629.5522850873008,
+      "y": 593.7679133670451,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 19,
+      "x": 629.6872250908395,
+      "y": 593.9473130617708,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 19.033333333333335,
+      "x": 629.7961938376419,
+      "y": 594.667604693313,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 19.066666666666666,
+      "x": 629.8401924359341,
+      "y": 595.5042869391254,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 19.1,
+      "x": 629.9420559854782,
+      "y": 596.7024457819815,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 19.133333333333333,
+      "x": 629.9422508345255,
+      "y": 596.7195517405818,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 19.166666666666668,
+      "x": 630.2076746191434,
+      "y": 599.8175241927757,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 19.2,
+      "x": 629.78871364195,
+      "y": 606.7068824252356,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 19.233333333333334,
+      "x": 629.8266493506494,
+      "y": 609.296051948052,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 19.266666666666666,
+      "x": 630.0403384902918,
+      "y": 611.8044335998338,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 19.3,
+      "x": 630.2761147489866,
+      "y": 614.7275231264941,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 19.333333333333332,
+      "x": 631.0750288572528,
+      "y": 611.730377068103,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 19.366666666666667,
+      "x": 631.1565334877437,
+      "y": 614.4403590040533,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 19.4,
+      "x": 631.2383512544803,
+      "y": 617.5709096192967,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 19.433333333333334,
+      "x": 631.634598540146,
+      "y": 620.6908515815085,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 19.466666666666665,
+      "x": 631.2858570977586,
+      "y": 629.8518888771966,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 19.5,
+      "x": 632.0969293557478,
+      "y": 627.0384316392965,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 19.533333333333335,
+      "x": 632.2396669931439,
+      "y": 630.3276199804113,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 19.566666666666666,
+      "x": 632.501179245283,
+      "y": 633.6034787735849,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 19.6,
+      "x": 632.4789224859647,
+      "y": 633.5781049935979,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 19.633333333333333,
+      "x": 633.2233874938454,
+      "y": 639.720580994584,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 19.666666666666668,
+      "x": 633.4576472922039,
+      "y": 643.2233683792898,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 19.7,
+      "x": 633.4322555048601,
+      "y": 643.2038286054354,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 19.733333333333334,
+      "x": 634.0248347686761,
+      "y": 648.9891848588023,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 19.766666666666666,
+      "x": 634.1758936572737,
+      "y": 651.8888280394305,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 19.8,
+      "x": 634.4624862815524,
+      "y": 654.6484585453456,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 19.833333333333332,
+      "x": 634.6045240244758,
+      "y": 656.947487210352,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 19.866666666666667,
+      "x": 634.7188410163703,
+      "y": 659.0240534297479,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 19.9,
+      "x": 635.0160282258064,
+      "y": 661.2549395161291,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 19.933333333333334,
+      "x": 635.2583946758092,
+      "y": 662.7957547645458,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    },
+    {
+      "t": 19.966666666666665,
+      "x": 635.5553821367436,
+      "y": 664.3559057496727,
+      "source": "sam",
+      "objectId": "0",
+      "measurement": "mask-centroid"
+    }
+  ],
+  "calibration": null,
+  "axis": "y",
+  "trainFraction": 0.7,
+  "synthetic": false,
+  "runs": [
+    {
+      "id": "ff88549c-28fc-423a-9654-cf158a4e464a",
+      "at": "2026-10-30T19:40:34.290Z",
+      "stage": "plan",
+      "model": "muse-spark-1.3",
+      "usage": {
+        "input_tokens": 5507,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 583,
+        "output_tokens_details": {
+          "reasoning_tokens": 362
+        },
+        "total_tokens": 6090
+      },
+      "estimatedUsd": 0.0093615,
+      "status": "completed"
+    },
+    {
+      "id": "b9656753-dc86-4c2d-9273-85ddbc370463",
+      "at": "2026-10-30T19:41:01.306Z",
+      "stage": "track",
+      "model": "sam-3.1",
+      "usage": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 0,
+        "video_frames_processed": 600
+      },
+      "estimatedUsd": 0.12,
+      "status": "completed"
+    },
+    {
+      "id": "31fc8857-04d1-4b72-9b3f-0a059df3f9cc",
+      "at": "2026-10-30T19:49:55.390Z",
+      "stage": "track",
+      "model": "sam-3.1",
+      "usage": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 0,
+        "video_frames_processed": 600
+      },
+      "estimatedUsd": 0.12,
+      "status": "completed"
+    }
+  ],
+  "plan": {
+    "assumptions": [
+      "Camera is assumed fixed and motion is assumed planar and parallel to the image plane for review.",
+      "Tracking is limited to the metal cylinder body in pixels, excluding hook and spring.",
+      "Vertical pixel position is the analysis signal along axis y.",
+      "Candidate motion is reviewed as oscillation with possible amplitude decay, without asserting cause."
+    ],
+    "axis": "y",
+    "suggestedModel": "damped",
+    "summary": "Track vertical pixel position of the metal cylinder over time from this fixed-camera footage and review for y-axis oscillation versus damped oscillation in pixels only.",
+    "target": "metal cylinder",
+    "warnings": [
+      "No physical scale is verified; use pixels only and do not infer dimensions.",
+      "Capture conditions are not authenticated; do not claim causes or precision.",
+      "Reflective surface and small image size may add tracking noise.",
+      "Hook and spring are excluded; connection point may occlude top of target.",
+      "Any lateral sway or rotation would be model mismatch for pure y model.",
+      "Camera motion and perspective have not been verified."
+    ]
+  }
+}

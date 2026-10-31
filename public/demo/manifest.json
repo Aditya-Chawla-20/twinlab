@@ -1,0 +1,61 @@
+{
+  "durationSeconds": 174.387354,
+  "chapters": [
+    {
+      "id": "01-purpose",
+      "title": "A model you can put to the test",
+      "start": 0.0
+    },
+    {
+      "id": "02-meta",
+      "title": "Meta proposes and tracks. You review.",
+      "start": 18.4
+    },
+    {
+      "id": "03-fit",
+      "title": "Fit earlier observations. Check later ones.",
+      "start": 40.36666666666666
+    },
+    {
+      "id": "04-freeze",
+      "title": "Freeze A. Align only B\u2019s initial state.",
+      "start": 62.89999999999999
+    },
+    {
+      "id": "05-predict",
+      "title": "Reveal the independent prediction",
+      "start": 86.23333333333333
+    },
+    {
+      "id": "06-evidence",
+      "title": "Keep the evidence, not just the chart",
+      "start": 108.53333333333333
+    },
+    {
+      "id": "07-limits",
+      "title": "Useful evidence has visible limits",
+      "start": 131.76666666666668
+    },
+    {
+      "id": "08-close",
+      "title": "From a recording to a reproducible test",
+      "start": 155.0
+    }
+  ],
+  "sha256": "3d92f5fdfbca6b3c0f88de11ac73a8f95e09e289cb3a5ce26ecedcf97527740d",
+  "bytes": 7452004,
+  "storyboardSha256": "f1d44c693868b43ce210f27e0de630e59f4329ebcd47643aa079647fc0f38577",
+  "voice": "Samantha",
+  "wordsPerMinute": 174,
+  "frameSha256": {
+    "01-purpose": "f152610e286f84bba83b217ea623e4432f047738093667313a4cdace1a4426a0",
+    "02-meta": "82505fd8d0998f890f9321a69909be1eec60b24bcab5325ae44906a2f06f1f4c",
+    "03-fit": "a1e0bc3315ae264d42edaafc6803d29fb6f241a4b11a15a300b162227627662a",
+    "04-freeze": "9da6e29ec563cb9119d5bf72a84044ccab7147c6d762d121fede5314c1ca3e55",
+    "05-predict": "29ceec519ff3afc668936e91151725e95196644771dd246b3ef0c05b0140f703",
+    "06-evidence": "12012bd228f28a07c4623e33978f1199d81d4ae85b45afdf2ed7a9750d0bb49b",
+    "07-limits": "73da2f9f9c4ced4449c601144bb7368014dfc29e8116cf63dd6d8f0fe91e22f6",
+    "08-close": "8572ae5aa988c7571aafac7d89a0b368b62dde98495600e85b835f510e3ef7ef"
+  },
+  "footageSha256": "9ccdf8e57f74e13bbc18a5391c4af0086677f92ff7055d82811656efb5434b2b"
+}

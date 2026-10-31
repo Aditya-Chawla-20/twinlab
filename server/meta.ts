@@ -6,6 +6,7 @@ import {
 } from "@meta-sam/parser";
 import { cost, type Plan, type Run, type Usage } from "../src/lib/meta";
 import type { Point } from "../src/lib/physics";
+import { maskCentroid } from "./landmarks";
 
 export type MetaInput = {
   stage: "plan" | "track";
@@ -234,8 +235,27 @@ export async function runMeta(
         y: (b.top + b.bottom) / 2,
         source: "sam",
         objectId: b.objectId,
+        measurement: "box-center",
       });
       groups.set(b.objectId, points);
+    }
+    const centroids = new Map<string, Point[]>();
+    for (const mask of recordsOfKind(result.records, "mask")) {
+      const frame = mask.frame?.frameIndex;
+      if (frame === undefined || frame / i.fps > i.duration + 0.05) continue;
+      const point = maskCentroid(mask);
+      if (!point) continue;
+      const points = centroids.get(mask.objectId) ?? [];
+      if (points.length >= 2000)
+        throw new Error("Track exceeds the observation limit.");
+      points.push({
+        t: frame / i.fps,
+        ...point,
+        source: "sam",
+        objectId: mask.objectId,
+        measurement: "mask-centroid",
+      });
+      centroids.set(mask.objectId, points);
     }
     run.status = "completed";
     if (result.diagnostics.length)
@@ -244,12 +264,16 @@ export async function runMeta(
       tracks: [...groups].map(([objectId, points]) => ({
         objectId,
         points: points.sort((a, b) => a.t - b.t),
+        centroidPoints: (centroids.get(objectId) ?? []).sort(
+          (a, b) => a.t - b.t,
+        ),
       })),
       segmentation: {
         recordCount: result.records.length,
         boxCount: recordsOfKind(result.records, "box").length,
         maskCount: recordsOfKind(result.records, "mask").length,
         rawOutputCharacters: result.rawOutput.length,
+        rawOutput: result.rawOutput,
       },
       diagnostics: result.diagnostics.map((d) => ({
         code: d.code,

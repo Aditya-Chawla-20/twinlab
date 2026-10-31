@@ -4,6 +4,7 @@ export type Point = {
   y: number;
   source: "manual" | "sam" | "synthetic";
   objectId?: string;
+  measurement?: "box-center" | "mask-centroid";
 };
 export type Calibration = {
   a: [number, number];

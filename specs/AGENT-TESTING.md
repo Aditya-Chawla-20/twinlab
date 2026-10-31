@@ -73,3 +73,7 @@ npm run test:meta -- \
 ```
 
 Add --live only within explicit paid-test authorization and the existing ledger ceiling. Do not reset reservations.
+
+## Filmed A/B evaluation — 2026-10-31
+
+Four further requests used the licensed real spring excerpts: A Muse $0.0093615, A initial SAM $0.12, A deliberate centroid review SAM $0.12 and B SAM $0.12. New subtotal $0.3693615; cumulative **ten requests / $0.5851035 reported-usage estimate**, with **$8.40 conservative reservations** retained under the $10 ceiling. No ledger reset or normal-browser paid call occurred. Testing stopped. Billing is authoritative. Full source/landmark/transfer results and limits are in REAL-FOOTAGE-VALIDATION.md.

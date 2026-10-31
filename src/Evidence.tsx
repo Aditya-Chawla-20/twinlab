@@ -50,7 +50,11 @@ export function Evidence({
         <dl>
           <div>
             <dt>Source</dt>
-            <dd>{project.synthetic ? "Generated footage" : "User-provided"}</dd>
+            <dd>
+              {project.synthetic
+                ? "Generated footage"
+                : "Recording / observations"}
+            </dd>
           </div>
           <div>
             <dt>Observations</dt>
@@ -98,6 +102,9 @@ export function Evidence({
                 <td>{fmt(p.y, 2)}</td>
                 <td>
                   <span className="badge neutral">{p.source}</span>
+                  {p.source === "sam" && (
+                    <small>{p.measurement ?? "box-center"}</small>
+                  )}
                 </td>
                 <td>
                   {!fit
@@ -157,11 +164,11 @@ export function Evidence({
         <h3>What this experiment can establish</h3>
         <p>
           Fits describe one-dimensional motion under a fixed camera. Metric
-          results require a reference in the motion plane. Bounding-box centers
-          may drift as an object rotates. Missing observations stay missing;
-          frame stepping is approximate. Chronological validation tests
-          extrapolation within a recording, not transfer to a different
-          experiment.
+          results require a reference in the motion plane. Box centers and mask
+          centroids may drift with rotation or segmentation changes; neither is
+          a center of mass. Missing observations stay missing; frame stepping is
+          approximate. This table's fits validate later motion in the same
+          recording. Use Predict for a separate frozen-model A/B evaluation.
         </p>
       </div>
     </section>

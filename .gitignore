@@ -1,5 +1,6 @@
 node_modules/
 dist/
+dist-demo/
 .env
 .env.*
 !.env.example
@@ -7,3 +8,4 @@ dist/
 .12ui/
 artifacts/
 .twinlab/
+__pycache__/

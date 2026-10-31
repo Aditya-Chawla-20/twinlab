@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "node --import tsx server/index.ts",
     "build": "tsc --noEmit && vite build",
+    "build:demo": "tsc --noEmit && vite build --mode demo",
+    "preview:demo": "vite preview --outDir dist-demo --host 127.0.0.1 --port 4173 --strictPort",
     "start": "node --import tsx server/index.ts --production",
     "test": "node --import tsx --test tests/*.test.ts",
     "check": "npm test && npm run build",

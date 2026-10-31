@@ -1,7 +1,12 @@
 # Verification — 2026-10-31
 
-## Result
-Local application implemented. Live Muse/SAM calls and saved-results GUI analysis are verified on generated footage; a real physical experiment and the normal paid browser-request path remain outstanding. Public repository created at https://github.com/Aditya-Chawla-20/twinlab; initial source push was verified against the remote main branch. No hosted application deployment exists.
+## Current result
+
+The MVP now supports browser/CLI frozen A/B prediction, licensed filmed examples, explicit centroid landmarks, source-byte integrity, draft recovery and a credential-free static build. Latest `npm run check`: **33 offline tests, strict typecheck and production build passed**. Static build also passed. Browser and Node reproduce the real conditional2.988099px later prediction error over479 points, excluding121 initial-state observations.
+
+Provider evidence comes from ten capped-runner inference requests on generated and filmed footage, $0.5851035 reported usage / $8.40 reservations. The normal successful multipart HTTP route is tested through real SDK/parser code with an injected fake transport; it has not made an actual provider request from a browser. No further paid tests are planned.
+
+Current source/deployment/demo verification is appended below. Older sections are a historical sequence; their counts and earlier gaps are superseded by the current result and final entries. Do not infer physical accuracy, calibrated scale, verified capture conditions or user demand from these checks.
 
 ## Automated checks
 Latest `npm run check` passed: 28 Node built-in tests, strict TypeScript (including unused-code checks), and Vite production build. The original build had 13 tests; 3 subsequent checks cover the capped test runner, and 3 more cover validation-timestamp leakage, actual partition propagation through rendered components/exports, and unfitted evidence. One additional check covers saved tracking targets, bounded input and legacy defaults. Three selected-fixture checks cover decoded timing, byte/dimension/rate bounds and credential-free dry runs. Five frozen-transfer/CLI checks cover portable integrity and source reproduction, initial-state separation, invalid inputs, frozen acceleration and actual reproducible evidence generation without credentials.
@@ -122,3 +127,21 @@ After changes, the offline suite has 16 tests including persistent-budget enforc
 - SHA-256 identifies normalized model/source data; observation hashes identify timestamp/coordinate arrays. Hash differences and setup declarations do not prove recording independence or experiment conditions. Source-fit reproduction allows tiny floating-point differences across runtimes.
 - Existing Chrome camera-mount project reopened/relinked with 240 observations and expected errors/partition; no warning/error logs. Screenshot artifacts/camera-mount/post-transfer-engine.png remains private. New prediction UI is pending the required design-tool sign-in and is not claimed browser-verified.
 - No new paid requests. Physical measurement, independent real-recording transfer, recovery, judge access and final demo/submission remain open in READINESS-AUDIT.md.
+
+## Browser prediction, recovery and filmed A/B — final MVP check
+
+- `npm run check`:33 tests passed, strict TypeScript and Vite production build. `npm run build:demo`: passed. `npm audit --omit=dev`:0 vulnerabilities reported at check time. No runtime dependency added in this phase.
+- New checks cover bounded validated recovery/full-storage handling; asymmetric official-parser mask centroids in native/scaled source bounds; shipped video SHA-256, all600 decoded timestamps per clip and source-model reproduction; actual successful manual HTTP multipart route through real SDK/parser with injected fake transport and an isolated temporary ledger. The latter is offline, not a paid browser call.
+- Chrome normal app and nested static `/judge/twinlab/`: real A/B preset loads, accepts explicit setup assumption, evaluates121 excluded /479 scored points and reproduces2.988099px RMSE. Residuals and model identity visible. Actual browser project/CSV/Markdown downloads inspected; exported model re-verifies and reproduces the score in Node.
+- Static reload retains B, frozen A,4s prefix and setup declaration; scores remain hidden until evaluation again. Licensed source video links automatically. Static HTTP logs contain no /api requests. Compiled static JS contains no /api/status, /api/usage or /api/meta references. Private key search across publication files/static assets found no matching credential.
+- Camera project title/split and manual point/calibration edits survived browser refresh; personal source hash is preserved and wrong known source bytes reject. Native replacement confirmation exists; focus-sensitive cancellation automation was not fully verified and is not claimed passed.
+- Responsive settled layouts at actual CSS widths433 and355 had document widths424 and346, no horizontal overflow. Temporary viewport override reset. Latest app console warning/error list was empty. Desktop source/result screenshots are saved in specs/assets/.
+- React review: native labeled forms, existing components/CSS, derived immutable-input scores, no B fitting in Predict, no new fetch effect or shared-state abstraction. Paid duplicate-click ref and epoch ownership preserved. Independent sample fetches run in parallel; CPU fitting stays bounded.
+- Source landmarks are not physical truth: approximate agent references and exact agreement rows are published in specs/evidence/. A10.373/B8.386px vertical disagreement remains visible. No known metric scale, hidden-condition verification, human usability or Tracker-superiority claim.
+- Required12ui reference generated; conversion hit Codex quota, preserved needs-reconciliation. Original React code implemented the reference; actual render checked. Automated converter/alignment success is not claimed.
+
+## Presentation package
+
+Actual application captures and licensed filmed excerpt are composed into a narrated walkthrough, with burned-in captions, SRT/VTT and transcript. Synthetic system voice, not a human recording. Eight scene frames/narration manifest and an optional stdlib/Pillow/FFmpeg renderer are committed. Exact final duration/hash and public deployment evidence follow after final render/deploy verification. It is an edited presentation of actual screens, not a continuous screen recording or fresh live inference.
+
+Final presentation:1920×1080 H.264/AAC, **174.387s (2:54)**,33 caption cues; final SHA-256 `3d92f5fdfbca6b3c0f88de11ac73a8f95e09e289cb3a5ce26ecedcf97527740d`. Full FFmpeg video/audio decode passed, visual keyframes inspected across all eight scenes. Audio mean -17.6dB / maximum -0.1dB after attenuation; signal presence/levels checked, not a claim of independent human listening QA. Frame/source/storyboard hash checks passed. Static package is20,281,245bytes, SHA-256 `bdbe35c4c7687d91c392d1353c560a018e32e24649bda6307ef1104925e58aee`, including app/Morpheus/dependency notices and accessible player/transcript/captions.

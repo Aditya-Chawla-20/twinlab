@@ -3,6 +3,7 @@ import { csv } from "./lib/export";
 import { Evidence } from "./Evidence";
 import { Usage } from "./Usage";
 import { ModelPanel } from "./ModelPanel";
+import { Predict } from "./Predict";
 import {
   useEffect,
   useMemo,
@@ -21,13 +22,42 @@ import {
   type Project,
 } from "./lib/project";
 import { usd, type Plan, type Run } from "./lib/meta";
+import { loadDraft, saveDraft } from "./lib/draft";
+import { sha256, freezeTwin, verifyTwin } from "./lib/twin";
+
+const STATIC_DEMO = import.meta.env.MODE === "demo";
+const SAMPLE_VIDEO = `${import.meta.env.BASE_URL}pendulum-synthetic.mp4`;
+const recordedExamples: Record<string, string> = {
+  "beam-A-20s.mp4":
+    "9ccdf8e57f74e13bbc18a5391c4af0086677f92ff7055d82811656efb5434b2b",
+  "beam-B-20s.mp4":
+    "7cef956d5758cccd8033e8148e04d97919607f9fc26629a85e0dc20abfc5f4a5",
+};
+const sampleUrl = (p: Project) => {
+  if (
+    p.synthetic &&
+    p.media.name === "pendulum-synthetic.mp4" &&
+    (!p.media.sha256 ||
+      p.media.sha256 ===
+        "c0bbb9dbc6c43468e42832e74b909164cdc0a5249b50490d3c9a8f9e6c2ece78")
+  )
+    return SAMPLE_VIDEO;
+  return p.media.sha256 && recordedExamples[p.media.name] === p.media.sha256
+    ? `${import.meta.env.BASE_URL}examples/${p.media.name}`
+    : "";
+};
 
 const errorText = (e: unknown) =>
   e instanceof Error ? e.message : "Something went wrong.";
 export default function App() {
-  const [project, setProject] = useState<Project>(sampleProject),
-    [view, setView] = useState("Experiment");
-  const [videoUrl, setVideoUrl] = useState("/pendulum-synthetic.mp4"),
+  const [initial] = useState(() => loadDraft());
+  const [project, setProject] = useState<Project>(
+      () => initial.project ?? sampleProject(),
+    ),
+    [view, setView] = useState(
+      initial.project?.comparison ? "Predict" : "Experiment",
+    );
+  const [videoUrl, setVideoUrl] = useState(() => sampleUrl(project)),
     [file, setFile] = useState<File | null>(null),
     [time, setTime] = useState(0),
     [playing, setPlaying] = useState(false);
@@ -39,8 +69,12 @@ export default function App() {
     [explore, setExplore] = useState(false),
     [frequencyFactor, setFrequencyFactor] = useState(1),
     [dampingDelta, setDampingDelta] = useState(0);
-  const [notice, setNotice] = useState(""),
-    [error, setError] = useState(""),
+  const [notice, setNotice] = useState(
+      initial.project
+        ? "Recovered this browser’s draft. Relink your original video if needed; save project JSON for a portable backup."
+        : "",
+    ),
+    [error, setError] = useState(initial.error),
     [status, setStatus] = useState({ configured: false, enabled: false }),
     [runs, setRuns] = useState<Run[]>([]);
   const [dialog, setDialog] = useState<"plan" | "track" | null>(null),
@@ -48,18 +82,47 @@ export default function App() {
     [busy, setBusy] = useState(false);
   const [keyboardX, setKeyboardX] = useState("480"),
     [keyboardY, setKeyboardY] = useState("300");
-  const [tracks, setTracks] = useState<{ objectId: string; points: Point[] }[]>(
-      [],
-    ),
-    [trackId, setTrackId] = useState("");
+  const [tracks, setTracks] = useState<
+      { objectId: string; points: Point[]; centroidPoints?: Point[] }[]
+    >([]),
+    [trackId, setTrackId] = useState(""),
+    [landmark, setLandmark] = useState<"box-center" | "mask-centroid">(
+      "box-center",
+    );
   const video = useRef<HTMLVideoElement>(null),
     videoInput = useRef<HTMLInputElement>(null),
     projectInput = useRef<HTMLInputElement>(null),
+    targetInput = useRef<HTMLInputElement>(null),
+    modelInput = useRef<HTMLInputElement>(null),
     csvInput = useRef<HTMLInputElement>(null),
     epoch = useRef(0),
     busyRef = useRef(false),
+    draftProtected = useRef(initial.protected),
+    draftSaved = useRef(false),
+    lastExport = useRef(initial.project ? "" : JSON.stringify(project)),
     dialogRef = useRef<HTMLDialogElement>(null);
   useEffect(() => {
+    draftSaved.current = false;
+    if (draftProtected.current) return;
+    try {
+      saveDraft(project);
+      draftSaved.current = true;
+    } catch (e) {
+      setError(errorText(e));
+    }
+  }, [project]);
+  useEffect(() => {
+    const warn = (e: BeforeUnloadEvent) => {
+      if (busyRef.current || !draftSaved.current) {
+        e.preventDefault();
+        e.returnValue = "";
+      }
+    };
+    window.addEventListener("beforeunload", warn);
+    return () => window.removeEventListener("beforeunload", warn);
+  }, []);
+  useEffect(() => {
+    if (STATIC_DEMO) return;
     void Promise.all([
       fetch("/api/status").then((r) => r.json()),
       fetch("/api/usage").then((r) => r.json()),
@@ -86,6 +149,7 @@ export default function App() {
     else dialogRef.current?.close();
   }, [dialog]);
   const fits = useMemo(() => {
+    if (view === "Predict") return [];
     try {
       return fitModels(
         project.points,
@@ -101,6 +165,7 @@ export default function App() {
     project.calibration,
     project.axis,
     project.trainFraction,
+    view,
   ]);
   const fit = fits.find((f) => f.kind === selected) ?? fits[0] ?? null,
     units = project.calibration ? "m" : "px",
@@ -127,6 +192,7 @@ export default function App() {
     : null;
   function update(p: Partial<Project>) {
     if (busyRef.current) return;
+    epoch.current++;
     setProject((current) => ({ ...current, ...p }));
   }
   function seek(t: number) {
@@ -137,8 +203,30 @@ export default function App() {
       );
     setTime(t);
   }
-  function replace(next: Project, url = "", nextFile: File | null = null) {
+  function replace(
+    next: Project,
+    url = "",
+    nextFile: File | null = null,
+    relink = false,
+  ) {
+    if (busyRef.current) return false;
+    if (
+      !relink &&
+      next !== project &&
+      (draftProtected.current ||
+        JSON.stringify(project) !== lastExport.current) &&
+      !window.confirm(
+        draftProtected.current
+          ? "The existing browser draft is unreadable. Replacing it will overwrite its recovery copy. Cancel to preserve it."
+          : "Replace this experiment? Save project JSON first if you want to keep it. The browser keeps only one draft.",
+      )
+    )
+      return false;
     epoch.current++;
+    if (!relink && next !== project) {
+      draftProtected.current = false;
+      lastExport.current = JSON.stringify(next);
+    }
     setProject(next);
     setVideoUrl(url);
     setFile(nextFile);
@@ -147,10 +235,13 @@ export default function App() {
     setMode("view");
     setCalPoints([]);
     setTracks([]);
+    setLandmark("box-center");
     setSelected("auto");
     setExplore(false);
     setError("");
     setNotice("");
+    if (!relink) setView(next.comparison ? "Predict" : "Experiment");
+    return true;
   }
   async function importVideo(e: ChangeEvent<HTMLInputElement>) {
     const f = e.target.files?.[0];
@@ -210,10 +301,26 @@ export default function App() {
         project.media.width === probe.videoWidth &&
         project.media.height === probe.videoHeight &&
         Math.abs(project.media.duration - probe.duration) < 0.1;
+      const digest = await sha256(await f.arrayBuffer());
+      if (id !== epoch.current) {
+        URL.revokeObjectURL(url);
+        return;
+      }
+      if (relink && project.media.sha256 && project.media.sha256 !== digest)
+        throw new Error(
+          "This video's SHA-256 differs from the saved source. Choose the original recording; observations were not changed.",
+        );
       const next = relink
-        ? project
+        ? { ...project, media: { ...project.media, sha256: digest } }
         : {
             ...emptyProject(),
+            ...(project.comparison
+              ? {
+                  comparison: { ...project.comparison, sameSetup: false },
+                  axis: project.comparison.twin.source.axis,
+                  trackingTarget: project.trackingTarget,
+                }
+              : {}),
             name: f.name.replace(/\.[^.]+$/, ""),
             media: {
               name: f.name,
@@ -222,9 +329,13 @@ export default function App() {
               duration: probe.duration,
               fps: 30,
               cfrConfirmed: false,
+              sha256: digest,
             },
           };
-      replace(next, url, f);
+      if (!replace(next, url, f, relink)) {
+        URL.revokeObjectURL(url);
+        return;
+      }
       setNotice(
         relink
           ? "Video relinked. Confirm this is the original source recording."
@@ -238,7 +349,10 @@ export default function App() {
       probe.load();
     }
   }
-  async function importProject(e: ChangeEvent<HTMLInputElement>) {
+  async function importProject(
+    e: ChangeEvent<HTMLInputElement>,
+    target = false,
+  ) {
     const f = e.target.files?.[0];
     e.target.value = "";
     if (!f || busyRef.current) return;
@@ -246,16 +360,118 @@ export default function App() {
     try {
       if (f.size > 3 * 1024 * 1024)
         throw new Error("Project file exceeds 3 MB.");
-      const p = parseProject(JSON.parse(await f.text()));
+      let p = parseProject(JSON.parse(await f.text()));
+      if (target) {
+        if (!project.comparison)
+          throw new Error("Freeze or import a source model first.");
+        p = { ...p, comparison: { ...project.comparison, sameSetup: false } };
+      }
+      if (p.comparison) await verifyTwin(p.comparison.twin);
       if (id !== epoch.current) return;
-      replace(
-        p,
-        p.synthetic && p.media.name === "pendulum-synthetic.mp4"
-          ? "/pendulum-synthetic.mp4"
-          : "",
-      );
+      if (!replace(p, sampleUrl(p))) return;
       setNotice(
         "Project opened. Relink the original video if it is not shown. Imported usage is historical; the API ledger shows this server’s runs.",
+      );
+    } catch (e) {
+      if (id === epoch.current) setError(errorText(e));
+    }
+  }
+  async function importModel(e: ChangeEvent<HTMLInputElement>) {
+    const f = e.target.files?.[0];
+    e.target.value = "";
+    if (!f || busyRef.current) return;
+    const id = ++epoch.current;
+    try {
+      if (f.size > 3 * 1024 * 1024) throw new Error("Model file exceeds 3 MB.");
+      const twin = await verifyTwin(JSON.parse(await f.text()));
+      if (id !== epoch.current) return;
+      update({ comparison: { twin, initialSeconds: 2, sameSetup: false } });
+      setView("Predict");
+      setNotice(
+        "Frozen model verified against its source. Open a separate target project and review setup assumptions.",
+      );
+    } catch (e) {
+      if (id === epoch.current) setError(errorText(e));
+    }
+  }
+  async function freezeCurrent() {
+    if (!fit || busyRef.current) return;
+    const id = epoch.current;
+    try {
+      const twin = await freezeTwin(project, fit);
+      if (id !== epoch.current) return;
+      update({ comparison: { twin, initialSeconds: 2, sameSetup: false } });
+      setView("Predict");
+      setNotice(
+        "Model A frozen. The current observations still belong to A; open independent B before evaluating.",
+      );
+    } catch (e) {
+      if (id === epoch.current) setError(errorText(e));
+    }
+  }
+  async function loadTransferExample(real = false) {
+    if (busyRef.current) return;
+    const id = ++epoch.current;
+    try {
+      const [a, b] = await Promise.all(
+        ["A", "B"].map(async (name) => {
+          const filename = real
+            ? `beam-${name}.twinlab.json`
+            : `transfer-${name}.json`;
+          const response = await fetch(
+            `${import.meta.env.BASE_URL}examples/${filename}`,
+          );
+          if (!response.ok)
+            throw new Error("Generated prediction example is unavailable.");
+          return parseProject(await response.json());
+        }),
+      );
+      const fitted = fitModels(
+        a.points,
+        a.calibration,
+        a.axis,
+        a.trainFraction,
+      )[0];
+      if (!fitted) throw new Error("Example source has no supported model.");
+      const twin = await freezeTwin(a, fitted);
+      if (id !== epoch.current) return;
+      if (
+        !replace(
+          {
+            ...b,
+            comparison: {
+              twin,
+              initialSeconds: real ? 4 : 2,
+              sameSetup: false,
+            },
+          },
+          sampleUrl(b),
+        )
+      )
+        return;
+      setView("Predict");
+      setNotice(
+        real
+          ? "Recorded Morpheus A/B results loaded. Review the same-setup assumption. Units are pixels; known scale and hidden capture conditions are not verified. No new inference ran."
+          : "Generated numerical A/B example loaded. B has no recorded video; this is not physical validation. Review the setup declaration, then evaluate.",
+      );
+    } catch (e) {
+      if (id === epoch.current) setError(errorText(e));
+    }
+  }
+  async function loadRealSample() {
+    if (busyRef.current) return;
+    const id = ++epoch.current;
+    try {
+      const response = await fetch(
+        `${import.meta.env.BASE_URL}examples/beam-A.twinlab.json`,
+      );
+      if (!response.ok)
+        throw new Error("Recorded experiment example is unavailable.");
+      const p = parseProject(await response.json());
+      if (id !== epoch.current || !replace(p, sampleUrl(p))) return;
+      setNotice(
+        "Licensed Morpheus source A loaded with recorded Muse/SAM results. Pixel units only; no new inference call. See Sources & licenses for attribution and capture limits.",
       );
     } catch (e) {
       if (id === epoch.current) setError(errorText(e));
@@ -345,11 +561,13 @@ export default function App() {
   }
 
   function openPaid(stage: "plan" | "track") {
+    if (STATIC_DEMO) return;
     setError("");
     setConsent(false);
     setDialog(stage);
   }
   async function executePaid() {
+    if (STATIC_DEMO) return;
     const stage = dialog;
     if (!stage || !consent || busyRef.current) return;
     busyRef.current = true;
@@ -359,9 +577,11 @@ export default function App() {
     const id = epoch.current;
     try {
       let f = file;
-      if (!f && videoUrl === "/pendulum-synthetic.mp4") {
+      const example = sampleUrl(project);
+      if (!f && example && videoUrl === example) {
         const response = await fetch(videoUrl);
-        f = new File([await response.blob()], "pendulum-synthetic.mp4", {
+        if (!response.ok) throw new Error("Example video is unavailable.");
+        f = new File([await response.blob()], project.media.name, {
           type: "video/mp4",
         });
       }
@@ -422,7 +642,11 @@ export default function App() {
   return (
     <div className="app-shell">
       <header className="topbar">
-        <a className="brand" href="/" aria-label="TwinLab home">
+        <a
+          className="brand"
+          href={import.meta.env.BASE_URL}
+          aria-label="TwinLab home"
+        >
           <span className="brand-mark">
             <Icon name="chart" size={22} />
           </span>
@@ -430,7 +654,7 @@ export default function App() {
         </a>
         <div className="top-right">
           <span className="local-status">
-            <i /> Local workspace
+            <i /> {STATIC_DEMO ? "Browser demo · Meta off" : "Local workspace"}
           </span>
           <button onClick={() => setView("API usage")} className="usage-chip">
             {usd(total)} <span>API usage</span>
@@ -439,7 +663,7 @@ export default function App() {
       </header>
       <div className="workspace-bar">
         <nav aria-label="Workspace">
-          {["Experiment", "Evidence", "API usage"].map((v) => (
+          {["Experiment", "Predict", "Evidence", "API usage"].map((v) => (
             <button
               key={v}
               className={view === v ? "nav-item active" : "nav-item"}
@@ -469,12 +693,13 @@ export default function App() {
           </button>
           <button
             className="quiet"
-            onClick={() =>
+            onClick={() => {
               download(
                 "experiment.twinlab.json",
                 JSON.stringify(project, null, 2),
-              )
-            }
+              );
+              lastExport.current = JSON.stringify(project);
+            }}
           >
             <Icon name="download" />
             Save project
@@ -492,6 +717,7 @@ export default function App() {
             <input
               className="project-title"
               aria-label="Experiment name"
+              title={project.name}
               maxLength={120}
               value={project.name}
               onChange={(e) => update({ name: e.target.value })}
@@ -502,9 +728,15 @@ export default function App() {
             <button
               className="button secondary"
               disabled={busy}
-              onClick={() =>
-                replace(sampleProject(), "/pendulum-synthetic.mp4")
-              }
+              onClick={() => void loadRealSample()}
+            >
+              <Icon name="folder" />
+              Real sample
+            </button>
+            <button
+              className="button secondary"
+              disabled={busy}
+              onClick={() => replace(sampleProject(), SAMPLE_VIDEO)}
             >
               <Icon name="reset" />
               Load sample
@@ -540,6 +772,20 @@ export default function App() {
           accept=".csv"
           onChange={importCsv}
         />
+        <input
+          ref={targetInput}
+          hidden
+          type="file"
+          accept=".json"
+          onChange={(e) => void importProject(e, true)}
+        />
+        <input
+          ref={modelInput}
+          hidden
+          type="file"
+          accept=".json"
+          onChange={importModel}
+        />
         {error && (
           <div className="message error" role="alert">
             <Icon name="info" />
@@ -569,7 +815,13 @@ export default function App() {
           <>
             <div className="workflow" aria-label="Experiment steps">
               {[
-                ["1", "Scale", project.calibration ? "Calibrated in meters" : "Pixels · calibration optional"],
+                [
+                  "1",
+                  "Scale",
+                  project.calibration
+                    ? "Calibrated in meters"
+                    : "Pixels · calibration optional",
+                ],
                 ["2", "Track", "Review the observations"],
                 ["3", "Model & validate", "Predict unseen motion"],
               ].map(([n, title, desc]) => (
@@ -784,7 +1036,9 @@ export default function App() {
                         ? project.runs.some((r) => r.status === "completed")
                           ? "Generated input · live Meta run recorded"
                           : "Generated footage · no recorded Meta run"
-                        : `${project.media.width} × ${project.media.height} · original recording`}
+                        : project.points.some((p) => p.source === "sam")
+                          ? "Recorded SAM observations · no new inference on load"
+                          : `${project.media.width} × ${project.media.height} · original recording`}
                     </div>
                   )}
                 </div>
@@ -1062,9 +1316,26 @@ export default function App() {
                         ))}
                       </select>
                     </label>
+                    <label>
+                      Landmark
+                      <select
+                        value={landmark}
+                        onChange={(e) =>
+                          setLandmark(e.target.value as typeof landmark)
+                        }
+                      >
+                        <option value="box-center">Box center</option>
+                        <option value="mask-centroid">
+                          Mask foreground centroid
+                        </option>
+                      </select>
+                    </label>
                     <p>
-                      Bounding-box centers are approximate landmarks, not
-                      centers of mass. Applying replaces current observations.
+                      Both are approximate geometric landmarks, not centers of
+                      mass. Mask centroids reduce the influence of thin
+                      hook/edge regions; inspect them against the video. Empty
+                      masks remain missing. Applying replaces current
+                      observations.
                     </p>
                     <button
                       className="button primary"
@@ -1074,8 +1345,15 @@ export default function App() {
                           try {
                             const p = parseProject({
                               ...project,
-                              points: t.points,
+                              points:
+                                landmark === "mask-centroid"
+                                  ? (t.centroidPoints ?? [])
+                                  : t.points,
                             });
+                            if (!p.points.length)
+                              throw new Error(
+                                "No observations exist for this landmark. Review another landmark or object.",
+                              );
                             update({ points: p.points });
                             setTracks([]);
                             setNotice(
@@ -1099,6 +1377,7 @@ export default function App() {
                 )}
               </section>
               <ModelPanel
+                onFreeze={() => void freezeCurrent()}
                 project={project}
                 fits={fits}
                 fit={fit}
@@ -1240,6 +1519,17 @@ export default function App() {
             )}
           </>
         )}
+        {view === "Predict" && (
+          <Predict
+            project={project}
+            update={update}
+            onExperiment={() => setView("Experiment")}
+            onImportModel={() => modelInput.current?.click()}
+            onTarget={() => targetInput.current?.click()}
+            onExample={() => void loadTransferExample()}
+            onRealExample={() => void loadTransferExample(true)}
+          />
+        )}
         {view === "Evidence" && (
           <Evidence
             project={project}
@@ -1256,6 +1546,7 @@ export default function App() {
         )}
         {view === "API usage" && (
           <Usage
+            staticDemo={STATIC_DEMO}
             project={project}
             update={update}
             status={status}
@@ -1268,13 +1559,20 @@ export default function App() {
           <span>
             <span className="mini-orbit" />
             Built to question. Designed to verify.
+            <a
+              href={`${import.meta.env.BASE_URL}notices/README.txt`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Sources & licenses
+            </a>
           </span>
           <span>
             {project.synthetic
               ? "Generated footage · not physical evidence"
               : "Local experiment"}
-            <span className="footer-dot">·</span>Numerical analysis runs on your
-            device
+            <span className="footer-dot">·</span>Analysis and one recovery draft
+            stay in this browser
           </span>
         </footer>
       </main>

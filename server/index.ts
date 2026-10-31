@@ -18,6 +18,7 @@ export function allowedRequest(req: IncomingMessage) {
 export async function startServer(
   port = Number(process.env.PORT ?? 5173),
   production = false,
+  perform = runMeta,
 ) {
   let vite: import("vite").ViteDevServer | null = null;
   let inFlight = false;
@@ -118,7 +119,7 @@ export async function startServer(
         };
         await mkdir(".twinlab", { recursive: true });
         await appendFile(".twinlab/usage.jsonl", ""); // Fail before any paid work if the local ledger cannot be written.
-        const result = await runMeta(input, {
+        const result = await perform(input, {
           apiKey: process.env.MODEL_API_KEY,
         });
         try {

@@ -1,0 +1,100 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:05.967
+TwinLab helps makers and prototype engineers turn motion recordings into models they can inspect and test.
+
+00:00:05.967 --> 00:00:10.767
+Think of a flexible camera mount: does the model learned from one release predict the next?
+
+00:00:10.767 --> 00:00:18.400
+This demonstration uses two openly licensed, filmed spring experiments, in pixels, with no verified physical scale.
+
+00:00:18.400 --> 00:00:24.167
+Muse Spark reviews the video and proposes the object, axis, candidate model and assumptions.
+
+00:00:24.167 --> 00:00:27.667
+SAM tracks the object through six hundred frames per recording.
+
+00:00:27.667 --> 00:00:32.167
+These are actual saved model results, replayed without another paid request.
+
+00:00:32.167 --> 00:00:40.367
+The first box track drifted toward the hook, so we added explicit foreground mask centroids, preserving the original boxes as an alternative.
+
+00:00:40.367 --> 00:00:44.433
+The numerical engine is local TypeScript, separate from model prose.
+
+00:00:44.433 --> 00:00:50.500
+It compares four explicit motion families, fitting only the earlier four hundred and twenty observations.
+
+00:00:50.500 --> 00:00:53.467
+Training information criteria select the damped model.
+
+00:00:53.467 --> 00:00:58.467
+Its error on one hundred and eighty later observations is about two point one seven pixels.
+
+00:00:58.467 --> 00:01:02.900
+That is agreement with the SAM trajectory, not a measurement of tracking accuracy.
+
+00:01:02.900 --> 00:01:08.167
+Freezing stores A's dynamics, source observations and a verifiable model identity.
+
+00:01:08.167 --> 00:01:11.900
+For the separate recording B, frequency and decay stay fixed.
+
+00:01:11.900 --> 00:01:16.367
+The declared four second prefix aligns only amplitude, phase and offset.
+
+00:01:16.367 --> 00:01:19.567
+Its one hundred and twenty one points are excluded from the score.
+
+00:01:19.567 --> 00:01:26.233
+The same setup assumption is explicit; matching hashes or similar images cannot verify hidden capture conditions.
+
+00:01:26.233 --> 00:01:30.100
+Now evaluate the remaining four hundred and seventy nine observations.
+
+00:01:30.100 --> 00:01:34.133
+The frozen model has about two point nine nine pixels root mean square error.
+
+00:01:34.133 --> 00:01:39.700
+Persistence scores eighteen point six four; constant velocity scores twenty two point seven one.
+
+00:01:39.700 --> 00:01:42.633
+Both baselines use only the same initial prefix.
+
+00:01:42.633 --> 00:01:48.533
+The overlay and residuals expose mismatch, and editing an input immediately invalidates the old score.
+
+00:01:48.533 --> 00:01:56.533
+Inspect individual observations and their landmark convention, then export the model, partitioned CSV and report with input identities.
+
+00:01:56.533 --> 00:02:02.000
+Project JSON preserves results and settings; one browser draft protects refresh recovery.
+
+00:02:02.000 --> 00:02:04.733
+Personal videos remain local and must be relinked.
+
+00:02:04.733 --> 00:02:11.767
+The public browser demo contains no paid backend, while optional local Meta requests require explicit confirmation.
+
+00:02:11.767 --> 00:02:17.933
+Our approximate body center annotations disagree with the centroids by about ten and eight pixels on A and B.
+
+00:02:17.933 --> 00:02:21.633
+They are agent visual references, not certified ground truth.
+
+00:02:21.633 --> 00:02:27.500
+We have not established calibrated accuracy, customer demand or a validated physical intervention.
+
+00:02:27.500 --> 00:02:35.000
+All ten authorized Meta test requests total about fifty nine cents from reported usage; fitting and replay add no inference cost.
+
+00:02:35.000 --> 00:02:42.400
+TwinLab's contribution is the reviewable path from video assistance to frozen dynamics, a separate prediction and portable evidence.
+
+00:02:42.400 --> 00:02:48.100
+The original code, licensed examples, evaluation protocol and runnable demo are public.
+
+00:02:48.100 --> 00:02:54.367
+Try the recorded A and B example, inspect the assumptions, and reproduce the result without an API key.

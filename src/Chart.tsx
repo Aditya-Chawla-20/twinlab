@@ -9,6 +9,7 @@ export function Chart({
   onSeek,
   residual = false,
   exploration,
+  partitionLabel = "Validation",
 }: {
   points: Point[];
   fit: Fit | null;
@@ -18,6 +19,7 @@ export function Chart({
   onSeek: (t: number) => void;
   residual?: boolean;
   exploration?: (t: number) => number;
+  partitionLabel?: string;
 }) {
   if (!fit || points.length < 12)
     return (
@@ -58,7 +60,7 @@ export function Chart({
       className="chart"
       viewBox={`0 0 ${width} ${height}`}
       role="img"
-      aria-label={`${residual ? "Prediction residual" : "Observed and predicted displacement"} over time. Validation begins at ${holdout.toFixed(2)} seconds.`}
+      aria-label={`${residual ? "Prediction residual" : "Observed and predicted displacement"} over time. ${partitionLabel} begins at ${holdout.toFixed(2)} seconds.`}
       onClick={(e) => {
         const r = e.currentTarget.getBoundingClientRect();
         onSeek(
@@ -118,7 +120,7 @@ export function Chart({
         strokeDasharray="4 5"
       />
       <text x={x(holdout) + 10} y={pad.t + 12} className="plot-note">
-        VALIDATION
+        {partitionLabel.toUpperCase()}
       </text>
       {residual ? (
         <path

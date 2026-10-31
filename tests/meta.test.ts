@@ -174,6 +174,9 @@ test("SAM preserves object identity and frame times through streamed protocol pa
   assert.equal(r.tracks[0].objectId, "2");
   assert.equal(r.tracks[0].points[1].t, 1);
   assert.equal(r.tracks[0].points[0].x, 12.5);
+  assert.equal(r.tracks[0].centroidPoints[0].x, 12.6);
+  assert.equal(r.tracks[0].centroidPoints[0].measurement, "mask-centroid");
+  assert.equal(r.tracks[0].centroidPoints[1].t, 1);
   assert.equal(r.run.estimatedUsd, 0.01);
 });
 test("incomplete SAM output is rejected without inventing observations", async () => {

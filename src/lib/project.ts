@@ -23,8 +23,15 @@ export type Project = {
   runs: Run[];
   comparison?: { twin: FrozenTwin; initialSeconds: number; sameSetup: boolean };
 };
-export type MeasurementSnapshot = Pick<Project,
-  "name" | "media" | "points" | "calibration" | "axis" | "trainFraction" | "synthetic"
+export type MeasurementSnapshot = Pick<
+  Project,
+  | "name"
+  | "media"
+  | "points"
+  | "calibration"
+  | "axis"
+  | "trainFraction"
+  | "synthetic"
 >;
 export type FrozenTwin = {
   version: 1;
@@ -96,7 +103,8 @@ export function parseProject(raw: unknown): Project {
     typeof p.question !== "string" ||
     p.question.length > 2000 ||
     (p.trackingTarget !== undefined &&
-      (typeof p.trackingTarget !== "string" || p.trackingTarget.length > 120)) ||
+      (typeof p.trackingTarget !== "string" ||
+        p.trackingTarget.length > 120)) ||
     typeof p.synthetic !== "boolean" ||
     !p.media ||
     typeof p.media.name !== "string" ||
@@ -123,7 +131,10 @@ export function parseProject(raw: unknown): Project {
         !finite(q.x, 0, p.media.width) ||
         !finite(q.y, 0, p.media.height) ||
         !["manual", "sam", "synthetic"].includes(q.source) ||
-        (q.objectId !== undefined && (typeof q.objectId !== "string" || q.objectId.length > 120)),
+        (q.objectId !== undefined &&
+          (typeof q.objectId !== "string" || q.objectId.length > 120)) ||
+        (q.measurement !== undefined &&
+          !["box-center", "mask-centroid"].includes(q.measurement)),
     )
   )
     throw new Error("Project contains invalid observations.");
@@ -182,52 +193,120 @@ export function parseProject(raw: unknown): Project {
       ))
   )
     throw new Error("Project plan is invalid.");
-  if (p.comparison !== undefined && (!p.comparison ||
-    !finite(p.comparison.initialSeconds, 0.01, 3600) ||
-    typeof p.comparison.sameSetup !== "boolean"
-  )) throw new Error("Prediction settings are invalid.");
+  if (
+    p.comparison !== undefined &&
+    (!p.comparison ||
+      !finite(p.comparison.initialSeconds, 0.01, 3600) ||
+      typeof p.comparison.sameSetup !== "boolean")
+  )
+    throw new Error("Prediction settings are invalid.");
   return {
     ...p,
     points,
     trackingTarget:
       p.trackingTarget ??
-      (p.synthetic && p.media.name === "pendulum-synthetic.mp4" ? "blue ball" : ""),
-    ...(p.comparison ? { comparison: { ...p.comparison, twin: parseFrozenTwin(p.comparison.twin) } } : {}),
+      (p.synthetic && p.media.name === "pendulum-synthetic.mp4"
+        ? "blue ball"
+        : ""),
+    ...(p.comparison
+      ? {
+          comparison: {
+            ...p.comparison,
+            twin: parseFrozenTwin(p.comparison.twin),
+          },
+        }
+      : {}),
   };
 }
 
 // Construct known fields in a stable order before hashing; discard untrusted extras.
-export function measurementSnapshot(p: MeasurementSnapshot): MeasurementSnapshot {
+export function measurementSnapshot(
+  p: MeasurementSnapshot,
+): MeasurementSnapshot {
   return {
     name: p.name,
-    media: { name: p.media.name, width: p.media.width, height: p.media.height,
-      duration: p.media.duration, fps: p.media.fps, cfrConfirmed: p.media.cfrConfirmed,
-      ...(p.media.sha256 ? { sha256: p.media.sha256 } : {}) },
-    points: p.points.map((q) => ({ t: q.t, x: q.x, y: q.y, source: q.source,
-      ...(q.objectId !== undefined ? { objectId: q.objectId } : {}) })),
-    calibration: p.calibration ? { a: [...p.calibration.a], b: [...p.calibration.b], meters: p.calibration.meters } : null,
-    axis: p.axis, trainFraction: p.trainFraction, synthetic: p.synthetic,
+    media: {
+      name: p.media.name,
+      width: p.media.width,
+      height: p.media.height,
+      duration: p.media.duration,
+      fps: p.media.fps,
+      cfrConfirmed: p.media.cfrConfirmed,
+      ...(p.media.sha256 ? { sha256: p.media.sha256 } : {}),
+    },
+    points: p.points.map((q) => ({
+      t: q.t,
+      x: q.x,
+      y: q.y,
+      source: q.source,
+      ...(q.objectId !== undefined ? { objectId: q.objectId } : {}),
+      ...(q.measurement !== undefined ? { measurement: q.measurement } : {}),
+    })),
+    calibration: p.calibration
+      ? {
+          a: [...p.calibration.a],
+          b: [...p.calibration.b],
+          meters: p.calibration.meters,
+        }
+      : null,
+    axis: p.axis,
+    trainFraction: p.trainFraction,
+    synthetic: p.synthetic,
   };
 }
 export function parseFrozenTwin(raw: unknown): FrozenTwin {
-  const t = raw as FrozenTwin, m = t?.parameters;
-  if (!t || t.version !== 1 || t.type !== "twinlab-model" ||
-    typeof t.id !== "string" || !/^[a-f0-9]{64}$/.test(t.id) || !t.source || !m ||
+  const t = raw as FrozenTwin,
+    m = t?.parameters;
+  if (
+    !t ||
+    t.version !== 1 ||
+    t.type !== "twinlab-model" ||
+    typeof t.id !== "string" ||
+    !/^[a-f0-9]{64}$/.test(t.id) ||
+    !t.source ||
+    !m ||
     !["linear", "quadratic", "oscillation", "damped"].includes(m.kind) ||
-    !Array.isArray(m.coefficients) || m.coefficients.length !== (m.kind === "linear" ? 2 : 3) ||
+    !Array.isArray(m.coefficients) ||
+    m.coefficients.length !== (m.kind === "linear" ? 2 : 3) ||
     !m.coefficients.every((c) => finite(c, -1e12, 1e12)) ||
-    !finite(m.frequency, 0, 120) || !finite(m.damping, 0, 100) ||
-    !finite(m.origin, 0, 3600) || !Number.isInteger(m.trainCount) ||
-    !finite(m.trainCount, 8, 1997)) throw new Error("This is not a supported frozen TwinLab model.");
+    !finite(m.frequency, 0, 120) ||
+    !finite(m.damping, 0, 100) ||
+    !finite(m.origin, 0, 3600) ||
+    !Number.isInteger(m.trainCount) ||
+    !finite(m.trainCount, 8, 1997)
+  )
+    throw new Error("This is not a supported frozen TwinLab model.");
   const s = t.source;
   // Explicit fields bound nesting: a frozen source cannot contain another comparison.
-  const p = parseProject({ version: 1, name: s.name, question: "", trackingTarget: "",
-    media: s.media, points: s.points, calibration: s.calibration, axis: s.axis,
-    trainFraction: s.trainFraction, synthetic: s.synthetic, runs: [] });
-  if (p.points.length < m.trainCount + 3) throw new Error("Frozen source has insufficient observations.");
-  return { version: 1, type: "twinlab-model", id: t.id, source: measurementSnapshot(p),
-    parameters: { kind: m.kind, coefficients: [...m.coefficients], frequency: m.frequency,
-      damping: m.damping, origin: m.origin, trainCount: m.trainCount } };
+  const p = parseProject({
+    version: 1,
+    name: s.name,
+    question: "",
+    trackingTarget: "",
+    media: s.media,
+    points: s.points,
+    calibration: s.calibration,
+    axis: s.axis,
+    trainFraction: s.trainFraction,
+    synthetic: s.synthetic,
+    runs: [],
+  });
+  if (p.points.length < m.trainCount + 3)
+    throw new Error("Frozen source has insufficient observations.");
+  return {
+    version: 1,
+    type: "twinlab-model",
+    id: t.id,
+    source: measurementSnapshot(p),
+    parameters: {
+      kind: m.kind,
+      coefficients: [...m.coefficients],
+      frequency: m.frequency,
+      damping: m.damping,
+      origin: m.origin,
+      trainCount: m.trainCount,
+    },
+  };
 }
 export function download(
   name: string,

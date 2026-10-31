@@ -1,46 +1,60 @@
 # TwinLab
 
-Public source: https://github.com/Aditya-Chawla-20/twinlab
+**Learn motion from recording A. Test the frozen model on recording B.**
 
-An original, local-first workbench for experimental video: calibrate, review observations, fit motion models and inspect predictions on later samples. Optional user-triggered Meta Muse Spark and SAM integration.
+An original React/TypeScript workbench for makers and prototype engineers: review video observations, compare explicit 1D motion models, evaluate a separate release and export reproducible evidence. Muse Spark proposes an analysis plan; SAM supplies reviewable object tracks. Calibration, fitting and evaluation run locally.
+
+- Browser demo: publication verification is recorded in [judge access](specs/JUDGE-ACCESS.md).
+- [Narrated demo video](public/demo/twinlab-demo.mp4), [captions](public/demo/twinlab-demo.vtt), [transcript](public/demo/transcript.md).
+- Public source: https://github.com/Aditya-Chawla-20/twinlab
+
+## Try it without an API key
 
 ```sh
 npm ci
 npm run dev
 ```
 
-Open http://127.0.0.1:5173. The generated pendulum sample works without credentials or paid requests.
+Open http://127.0.0.1:5173. Click **Real sample** to inspect source A, or **Predict → Try recorded real footage** for A/B. Review the 4 s initial-state window and same-setup assumption, then evaluate. Recorded Meta results load without a new inference request. The generated sample remains available for numerical exploration.
+
+For your own video: Import video → pixels or calibrate a verified reference → mark at least 12 points or import `t,x,y` CSV → inspect fits/validation → freeze A → open independent B → declare initial prefix → evaluate → export. Use Evidence to review/remove points. Save project JSON for a portable backup; the browser keeps one recovery draft, and personal videos must be relinked after refresh.
+
+## Actual result and its limits
+
+Two MIT-licensed Morpheus filmed spring excerpts, each 20 s / 600 verified 30 fps frames. Source A fits 420 earlier SAM mask-centroid observations; its 180-point same-clip validation RMSE is 2.16843 px. Frozen dynamics are 0.42015456 Hz and 0.01193317/s. B’s predeclared 4 s prefix uses 121 points for initial state; 479 later points are scored:
+
+| Predictor | Later B RMSE |
+| --- | ---: |
+| Frozen A dynamics | 2.98810 px |
+| Prefix persistence | 18.64277 px |
+| Prefix constant velocity | 22.71276 px |
+
+These are errors against SAM trajectories, **not physical measurement accuracy**. Approximate agent body-center reference agreement is weaker: A 10.373 / B 8.386 px vertical RMSE. There is no verified metric scale, authenticated unchanged hidden setup, human usability study or validated physical intervention. The proposed camera-mount use case has only an AI-generated workflow clip. See [full protocol and limitations](specs/REAL-FOOTAGE-VALIDATION.md).
+
+![Actual recorded-footage prediction](specs/assets/twinlab-prediction.png)
+
+## Reproduce and verify
+
+Node 22.9+ is required. FFmpeg/ffprobe must be on PATH for fixture tests/capped-runner timestamp checks; they decode locally and make no provider calls.
 
 ```sh
 npm run check
-npm run build
-npm start
+npm run build:demo
+npm run preview:demo
 ```
 
-For your own recording: import video → use pixels or calibrate a verified reference length for meters → mark a consistent landmark at 12+ times (or import `t,x,y` CSV) → inspect training/validation fits → export project, observations and report. Use Evidence to remove unreliable points. Reopen project JSON and relink its original video to reproduce it.
+The static build at http://127.0.0.1:4173 works under subdirectories, has no paid backend and does not request /api routes. [GitHub Pages workflow](.github/workflows/pages.yml) deploys it only on manual dispatch. The optional Node production server uses `npm run build` then `npm start` and remains loopback-only.
 
-For a separate recording: [freeze a model from A and evaluate B](specs/PREDICTION-WALKTHROUGH.md). The implemented CLI keeps frequency/decay or acceleration fixed, aligns only B's initial state, and exports later-only errors against simple baselines with input hashes. The browser prediction screen is pending; real-camera transfer has not been validated.
+[Browser/CLI frozen-prediction walkthrough](specs/PREDICTION-WALKTHROUGH.md) includes credential-free reproduction commands. The offline suite checks source integrity, held-out leakage, frozen dynamics, recovery, mask geometry, actual shipped footage and HTTP transport with no provider calls.
 
-The app needs Node 22.9+. The bounded Meta test runner and its fixture checks also require FFmpeg's `ffprobe` on PATH; those checks decode frame timestamps locally and make no provider calls.
+## Optional live Meta
 
-For user-run paid tests see [specs/META-SELF-TEST.md](specs/META-SELF-TEST.md). Credentials are server-only; live mode defaults off. Live Meta access was tested under a user-authorized cap on generated footage; real-video accuracy remains unverified. See [the test report](specs/AGENT-TESTING.md).
+Copy `.env.example` to `.env.local`, set `MODEL_API_KEY` server-side and enable `META_LIVE_ENABLED=true` only when ready for manually confirmed requests. Never use a `VITE_` key. Restart the server. The public static demo has no live endpoint and cannot spend owner credits. See [self-test instructions](specs/META-SELF-TEST.md).
 
-## Walkthrough
+Authorized agent tests made ten inference requests totaling **$0.5851035 from reported usage**, retaining **$8.40 conservative reservations** under the cumulative $10 ceiling. Reservations are not actual spend, billing is provider-authoritative, and no further testing is planned. [Evidence](specs/REAL-FOOTAGE-VALIDATION.md) distinguishes real footage, generated input and offline fake transport.
 
-See [the guided demo](specs/WALKTHROUGH.md) for the sample workflow, model comparison, validation plot, exports and how the paid Meta stages will work.
+## Documentation and rights
 
-![TwinLab workbench](specs/assets/twinlab-desktop.png)
+[Architecture](specs/ARCHITECTURE.md) · [progress](specs/PROGRESS.md) · [verification](specs/VERIFICATION.md) · [readiness](specs/READINESS-AUDIT.md) · [submission draft](specs/SUBMISSION-DRAFT.md) · [sources](specs/SOURCES.md)
 
-## Documentation
-- [Completion roadmap](specs/ROADMAP.md)
-- [Practical use case and video brief](specs/USE-CASE.md)
-- [Camera-mount Meta results](specs/CAMERA-MOUNT-RESULTS.md)
-- [Progress and decisions](specs/PROGRESS.md)
-- [Architecture and scope](specs/ARCHITECTURE.md)
-- [Sources and originality](specs/SOURCES.md)
-- [Verification results](specs/VERIFICATION.md)
-- [Hackathon demo and remaining gates](specs/HACKATHON.md)
-
-The sample is procedurally generated, not footage of a real experiment or live Meta output. Fits are one-dimensional mathematical approximations; this app does not discover arbitrary physical laws or establish causation. Metric results require fixed-camera planar motion and correct calibration. SAM timestamps require confirmed constant frame rate. Numerical checks do not establish real-world measurement accuracy.
-
-Application code and the original procedural sample are independently authored and [MIT licensed](LICENSE). Referenced projects are credited in SOURCES.md; no upstream application code is copied. Dependencies retain their own licenses in `public/notices/` and their installed packages. Imported videos and third-party datasets retain their owners' rights; this license does not relicense them.
+Original application code and procedural sample are [MIT licensed](LICENSE). No referenced application implementation was copied. Morpheus footage retains its attributed MIT notice; [derivation and hashes](public/examples/README.md). Dependencies/fonts retain their licenses in [public/notices](public/notices/README.txt). User-owned AI footage and private credentials are not published. Supported models are bounded 1D approximations, not arbitrary physics discovery or structural certification.

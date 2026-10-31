@@ -12,6 +12,7 @@ export function ModelPanel({
   onSelect,
   onPlan,
   onApplyPlan,
+  onFreeze,
 }: {
   project: Project;
   fits: Fit[];
@@ -23,6 +24,7 @@ export function ModelPanel({
   onSelect: (kind: string) => void;
   onPlan: () => void;
   onApplyPlan: () => void;
+  onFreeze?: () => void;
 }) {
   const scale = metersPerPixel(project.calibration),
     units = project.calibration ? "m" : "px",
@@ -165,6 +167,14 @@ export function ModelPanel({
             </dl>
           </>
         )}
+        <button
+          className="button secondary full"
+          disabled={!fit || busy}
+          onClick={onFreeze}
+          hidden={!onFreeze}
+        >
+          Freeze for another recording
+        </button>
         <button
           className="button secondary full"
           disabled={busy || !videoUrl || !status.enabled || !status.configured}
