@@ -31,7 +31,9 @@ Proposed audience: makers, prototype engineers and experimenters evaluating simp
 ## Links and final fields
 
 - Public source: https://github.com/Aditya-Chawla-20/twinlab
-- Product/demo links: insert verified URLs from JUDGE-ACCESS.md / VERIFICATION.md.
+- Product: https://aditya-chawla-20.github.io/twinlab/
+- Narrated demo: https://aditya-chawla-20.github.io/twinlab/demo/
+- Direct MP4: https://aditya-chawla-20.github.io/twinlab/demo/twinlab-demo.mp4
 - Video captions/transcript are bundled beside the final MP4.
 - Proposed theme: Push the Frontier; confirm actual portal/category wording.
 - Team/representative/contributors: user must confirm; do not infer.

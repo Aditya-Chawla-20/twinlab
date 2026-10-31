@@ -165,3 +165,10 @@
 - Published source reference coordinates, agreement rows and reproducible prediction CSV/report under specs/evidence, retaining weak landmark agreement and pixel-only assumptions. Updated stale product/architecture/roadmap/readiness/submission copy around the implemented narrower MVP. No metrology, physical intervention, user demand or accepted-entry claim.
 - Prepared a standalone static zip, license notices, Pages/check workflows and a native-control accessible video page. User explicitly authorized free GitHub Pages publication; the connector lacks Pages administration, so the official gh CLI configured workflow-based Pages. No paid server/key is exposed. Public URL is not called live until deployment/browser verification.
 - Created an edited actual-UI/filmed-footage presentation with synthetic local-system narration, explicit historical-run labels, captions/transcript and exact scene manifest. No new provider/service spend. Final encode/decode/link checks and source push remain in progress.
+
+## Public MVP presented — 2026-10-31
+
+- App93d69a8 pushed; remote SHA verified. Solved large-payload Git resets with sequential source/A/B/demo object transfers via a temporary project branch, preserving the final main commit/history and removing the temporary remote ref afterward.
+- Ubuntu CI33 tests/typecheck/both builds passed. Authorized workflow-based Pages build/deploy succeeded. Public product and narrated2:54 demo opened without sign-in; real A/B public score/CSV/report/project re-evaluation matched exact numerical evidence. Public video metadata/playback and artifact/notice links checked.
+- Full final video decode passed,33 caption cues and frame/source/manifest hashes verified. Updated README/judge/submission links to the actual deployed URLs. Final documentation push/remote confirmation follows; no new paid calls.
+- MVP software and presentation complete within stated boundaries. No portal submission or social post made. Participant/team/track/eligibility and actual final entry remain user decisions; calibrated physical accuracy, hidden setup verification and user validation remain explicitly unverified research.

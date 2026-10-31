@@ -1,6 +1,13 @@
 # Judge access
 
-The public product is a credential-free static browser build, separate from the owner’s optional loopback Meta server. User explicitly authorized GitHub Pages publication on 2026-10-31. Deployment and public URL verification are recorded in VERIFICATION.md after completion.
+The public product is a credential-free static browser build, separate from the owner’s optional loopback Meta server. User explicitly authorized GitHub Pages publication on 2026-10-31. Deployed and checked in Chrome without sign-in:
+
+- Product: https://aditya-chawla-20.github.io/twinlab/
+- Narrated2:54 demo/player: https://aditya-chawla-20.github.io/twinlab/demo/
+- Direct MP4: https://aditya-chawla-20.github.io/twinlab/demo/twinlab-demo.mp4
+- Source: https://github.com/Aditya-Chawla-20/twinlab
+
+Deployment run41213297489 and check run41213277519 both succeeded for app commit93d69a8f7eeb261b822a07022c92598eb9ad6c0a. Chrome reproduced the real121/479 prediction and downloaded valid evidence. Product remains a static browser build, not a paid hosted service. Full verification is in VERIFICATION.md.
 
 ## Reproduce locally
 

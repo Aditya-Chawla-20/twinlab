@@ -4,8 +4,8 @@
 
 An original React/TypeScript workbench for makers and prototype engineers: review video observations, compare explicit 1D motion models, evaluate a separate release and export reproducible evidence. Muse Spark proposes an analysis plan; SAM supplies reviewable object tracks. Calibration, fitting and evaluation run locally.
 
-- Browser demo: publication verification is recorded in [judge access](specs/JUDGE-ACCESS.md).
-- [Narrated demo video](public/demo/twinlab-demo.mp4), [captions](public/demo/twinlab-demo.vtt), [transcript](public/demo/transcript.md).
+- **[Open the live browser demo](https://aditya-chawla-20.github.io/twinlab/)** — no API key or sign-in.
+- **[Watch the 2:54 narrated walkthrough](https://aditya-chawla-20.github.io/twinlab/demo/)** · [captions](public/demo/twinlab-demo.vtt) · [transcript](public/demo/transcript.md).
 - Public source: https://github.com/Aditya-Chawla-20/twinlab
 
 ## Try it without an API key
